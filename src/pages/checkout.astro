@@ -1,0 +1,260 @@
+---
+import Base from "../layouts/Base.astro";
+const checkout = true;
+---
+
+<Base title="HOME TITLE" description="HOME DESCRIPTION" canonical="" ogImage="https://test-image.com/" checkout={checkout}>
+
+    <!--- The following DIV element will become the container for embedded checkout.
+    Place this DIV element in the page, wherever the embedded checkout is expected to be placed --->
+    <div id="fsc-embedded-checkout-container">
+
+    </div>
+
+    <div class="flex_item_left">
+        <div class="cartTitle">
+            <!-- Order Summary title bar -->
+            <h3>
+                <img src="./images/shopping_cart.png" class="cartImageCheckout">
+                Order Summary
+            </h3>
+        </div>
+        <!-- Shopping Cart -->
+
+        <div id="cartContents" data-fsc-selections-smartdisplay="" style="display: block;">
+            <div data-fsc-selections-smartdisplay="" data-fsc-items-container="fastspring_shopping_cart" data-fsc-filter="selected=true" style="display: block;">
+
+            <p>
+            <!-- Loop through the items in the order and display their details -->
+
+                    </p><div class="cartItemListing">
+
+                        <!-- Product Name -->
+                        <span class="cartProductName">Product 1</span>
+
+                        <!-- Increase and decrease quantity of product -->
+                        <span class="quantity buttons_added">
+                            <input class="minus" type="button" value="-">
+                            <input class="input-text qty text" type="text" data-fsc-item-path="product-1" data-fsc-item-path-value="product-1" value="1" size="4" data-fsc-autoapply="" data-fsc-item-quantity-value="" data-fsc-item-quantity="" data-fsc-action="Update">
+                            <input class="plus" type="button" value="+">
+                        </span>
+
+                        <!-- Remove product from order -->
+                        <i class="bi bi-x-circle remove" id="product-1" data-fsc-action="Remove" data-fsc-item-path-value="product-1"></i>
+                    </div>
+
+                    <!-- Product price and discounts -->
+                    <div>
+<div>
+        <span class="cartItemTotal">€14.00</span>
+</div>
+</div>
+
+                    <br>
+
+                    <!-- Cross Sells -->
+                                        
+                                            <div class="productOffers">
+                                                <div class="productOfferWrapper">
+                                                    <div class="productOfferTitleRow">
+                                                        You may also be interested in
+                                                    </div>
+                                                    <div class="crossSellRow">
+                                        
+                                                                <div class="crossSellProductName">Cross-Sell Product</div>
+                                                                <div class="crossSellProductPrice">
+                                                <span class="crossSellProductPrice">€10.00</span>
+                                        </div>
+                                        
+                                                                <div class="crossSellProductCTA">
+                                                                    <button class="btn-add-to-cart" style="display: block;" data-fsc-item-path-value="cross-sell-product" data-fsc-action="Add">Add to order</button>
+                                                                </div>
+                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <br>
+
+
+
+            <!-- Order summary and totals -->
+            <div class="summaryBox">
+
+                <!-- Order total and any discounts -->
+                <span class="orderTotal">Order Total:</span>
+                <span class="orderTotal" data-fsc-order-total="">€14.00</span>
+
+                <!-- Display information about the discount total -->
+
+                <!-- Tax information -->
+                <div class="orderTotal">Including VAT: €2.33 (20%)</div>
+
+            </div>
+            <p></p>
+
+            <!-- Coupon code input fields
+            Only show if there is no coupon applied to the order -->
+                <div class="couponCode">
+                    <input class="couponInput" id="couponInput" type="text" data-fsc-promocode-value="" placeholder="Coupon Code">
+                    <button class="applyCoupon" id="applyCoupon" data-fsc-action="Promocode">
+                        Apply Coupon
+                    </button>
+                </div>
+
+
+        </div>
+        </div>
+
+        <script data-fsc-template-for="fastspring_shopping_cart" type="text/x-handlebars-template">
+
+            <p>
+            <!-- Loop through the items in the order and display their details -->
+            {{#each items}}
+                {{#each items}}
+
+                    <div class="cartItemListing">
+
+                        <!-- Product Name -->
+                        <span class="cartProductName">{{display}}</span>
+
+                        <!-- Increase and decrease quantity of product -->
+                        <span class="quantity buttons_added">
+                            <input class="minus" type="button" value="-"></input>
+                            <input class="input-text qty text" type="text" data-fsc-item-path="{{path}}"
+                                data-fsc-item-path-value="{{path}}" value="{{quantity}}" size="4" data-fsc-autoapply
+                                data-fsc-item-quantity-value data-fsc-item-quantity data-fsc-action="Update"></input>
+                            <input class="plus" type="button" value="+"></input>
+                        </span>
+
+                        <!-- Remove product from order -->
+                        <i class="bi bi-x-circle remove" id="{{path}}" data-fsc-action="Remove"
+                            data-fsc-item-path-value="{{path}}"></i>
+                    </div>
+
+                    <!-- Product price and discounts -->
+                    <div>{{>pricing}}</div>
+
+                    <br />
+
+                    <!-- Cross Sells -->
+                    {{#each @root.groups}}
+                        {{#iff type '==' 'add'}}
+                            {{#iff driver '==' ../../path}}
+                                {{#iff selectableAdditions '==' true}}
+                                    {{#iff driverType '==' 'product'}}
+                                        {{>crosssell}}
+                                        <br />
+                                    {{/iff}}
+                                {{/iff}}
+                            {{/iff}}
+                        {{/iff}}
+                    {{/each}}
+
+                {{/each}}
+            {{/each}}
+
+        {{#each order}}
+
+            <!-- Order summary and totals -->
+            <div class="summaryBox">
+
+                <!-- Order total and any discounts -->
+                {{#iff totalValue '>' '0'}}
+                <span class="orderTotal">Order Total:</span>
+                {{#if discountTotalValue}}
+                <span class="orderTotalOriginal" data-fsc-order-originalTotal></span>
+                {{/if}}
+                <span class="orderTotal" data-fsc-order-total></span>
+                {{else}}
+                <p class="fsb-total">FREE</p>
+                {{/iff}}
+
+                <!-- Display information about the discount total -->
+                {{#if discountTotalValue}}
+                <div class="discountSavings">You save {{discountTotalPercent}}!</div>
+                {{/if}}
+
+                <!-- Tax information -->
+                <div class="orderTotal">Including {{taxType}}: {{tax}} ({{taxRate}})</div>
+
+            </div>
+            </p>
+
+            <!-- Coupon code input fields
+            Only show if there is no coupon applied to the order -->
+            {{#unless coupons.length}}
+                <div class="couponCode">
+                    <input class="couponInput" id="couponInput" type="text" data-fsc-promocode-value
+                        placeholder="Coupon Code" />
+                    <button class="applyCoupon" id="applyCoupon" data-fsc-action="Promocode">
+                        Apply Coupon
+                    </button>
+                </div>
+            {{/unless}}
+
+        {{/each}}
+
+        </script>
+
+
+    </div>
+
+</Base>
+
+<script type="text/javascript" id="handlebarScriptElm" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+
+<!-- Spinner to display action taking place. -->
+<div id="fastspring_spinner" style="animation-name: fsb-fadeIn; display: none;">
+    <img src="https://d1f8f9xcsvx3ha.cloudfront.net/pinhole/spin.svg">
+</div>
+
+<!-- Handlebars template for product pricing elements -->
+<script id="pricing-partial" type="text/x-handlebars-template">
+    <div>
+        {{#if discountTotalValue}}
+            <span class="cartItemTotalOriginalPrice">{{priceTotal}}</span>
+        {{/if}}
+        {{#iff totalValue '>' '0'}}
+            <span class="cartItemTotal">{{total}}</span>
+        {{else}}
+            <span class="cartItemTotal"> Free </span>
+        {{/iff}}
+    </div>
+</script>
+
+<!-- Handlebars template for product pricing elements for product offers -->
+<script id="productoffer-pricing-partial" type="text/x-handlebars-template">
+    {{#if discountTotalValue}}
+        <span class="cartItemTotalOriginalPrice">{{priceTotal}}</span>
+    {{/if}}
+    {{#iff totalValue '>' '0'}}
+        <span class="crossSellProductPrice">{{total}}</span>
+    {{else}}
+        <span class="crossSellProductPrice"> Free </span>
+    {{/iff}}
+</script>
+
+<!-- Handlebars template for crosssell offers -->
+<script id="crosssell-partial" type="text/x-handlebars-template">
+    <div class="productOffers">
+        <div class="productOfferWrapper">
+            <div class="productOfferTitleRow">
+                {{display}}
+            </div>
+            <div class="crossSellRow">
+                {{#each items}}
+                    {{#iff selected '==' false}}
+
+                        <div class="crossSellProductName">{{display}}</div>
+                        <div class="crossSellProductPrice">{{>productoffer-pricing}}</div>
+
+                        <div class="crossSellProductCTA">
+                            <button class="btn-add-to-cart" style="display: block;" data-fsc-item-path-value="{{path}}" data-fsc-action="Add">Add to order</button>
+                        </div>
+
+                    {{/iff}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</script>

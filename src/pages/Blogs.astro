@@ -1,0 +1,150 @@
+---
+import SideBar from "../components/SideBar.astro"
+import ExtandedSideBar from "../components/ExtandedSideBar.astro"
+import { getCollection, getEntry } from 'astro:content';
+import Card from "../components/Card.astro"
+import Test from "./Test";
+import Pagination from "../components/react/Pagination"
+let  allBlogPosts = await getCollection('blog')
+allBlogPosts = allBlogPosts.filter(blog=>blog.data.draft == false) 
+
+
+
+---
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'><!-- This site is optimized with the Yoast SEO plugin v21.4 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>TSplus® Blog - Remote Work Software Industry</title>
+  <meta name="description" content="Industry-related content to guide you through the existing world of remote work software. Knowledge-based content and guides." class="yoast-seo-meta-tag">
+  <link rel="canonical" href="https://tsplus.net/blog/" class="yoast-seo-meta-tag">
+  <meta property="og:locale" content="en_US" class="yoast-seo-meta-tag">
+  <meta property="og:type" content="article" class="yoast-seo-meta-tag">
+  <meta property="og:title" content="Welcome to the TSplus Blog - Remote Work Software Industry | TSplus" class="yoast-seo-meta-tag">
+  <meta property="og:description" content="Industry-related content to guide you through the existing world of remote work software. Knowledge-based content and guides." class="yoast-seo-meta-tag">
+  <meta property="og:url" content="https://tsplus.net/blog/" class="yoast-seo-meta-tag">
+  <meta property="og:site_name" content="TSplus.net" class="yoast-seo-meta-tag">
+  <meta property="article:modified_time" content="2023-06-14T17:02:54+00:00" class="yoast-seo-meta-tag">
+  <meta property="og:image" content="https://tsplus.net/wp-content/uploads/2021/11/TSplus-Remote-Access-Software-1.png" class="yoast-seo-meta-tag">
+  <meta property="og:image:width" content="810" class="yoast-seo-meta-tag">
+  <meta property="og:image:height" content="450" class="yoast-seo-meta-tag">
+  <meta property="og:image:type" content="image/png" class="yoast-seo-meta-tag">
+  <meta name="twitter:card" content="summary_large_image" class="yoast-seo-meta-tag">
+  <meta name="twitter:title" content="Welcome to the TSplus Blog - Remote Work Software Industry | TSplus" class="yoast-seo-meta-tag">
+  <meta name="twitter:description" content="Industry-related content to guide you through the existing world of remote work software. Knowledge-based content and guides." class="yoast-seo-meta-tag">
+  <meta name="twitter:image" content="https://tsplus.net/wp-content/uploads/2021/11/TSplus-Remote-Access-Software-1.png" class="yoast-seo-meta-tag">
+  <meta name="twitter:label1" content="Est. reading time" class="yoast-seo-meta-tag">
+  <meta name="twitter:data1" content="5 minutes" class="yoast-seo-meta-tag">
+  <script type="application/ld+json" class="yoast-schema-graph">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://tsplus.net/blog/","url":"https://tsplus.net/blog/","name":"TSplus® Blog - Remote Work Software Industry","isPartOf":{"@id":"https://tsplus.net/#website"},"primaryImageOfPage":{"@id":"https://tsplus.net/blog/#primaryimage"},"image":{"@id":"https://tsplus.net/blog/#primaryimage"},"thumbnailUrl":"https://tsplus.net/wp-content/uploads/2021/11/TSplus-Remote-Access-Software-Benefits-of-the-programme.png","datePublished":"2021-11-30T09:59:47+00:00","dateModified":"2023-06-14T17:02:54+00:00","description":"Industry-related content to guide you through the existing world of remote work software. Knowledge-based content and guides.","breadcrumb":{"@id":"https://tsplus.net/blog/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tsplus.net/blog/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/blog/#primaryimage","url":"https://tsplus.net/wp-content/uploads/2021/11/TSplus-Remote-Access-Software-Benefits-of-the-programme.png","contentUrl":"https://tsplus.net/wp-content/uploads/2021/11/TSplus-Remote-Access-Software-Benefits-of-the-programme.png","width":810,"height":450,"caption":"TSplus Remote Access Software - Benefits of the programme"},{"@type":"BreadcrumbList","@id":"https://tsplus.net/blog/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tsplus.net/"},{"@type":"ListItem","position":2,"name":"blog"}]},{"@type":"WebSite","@id":"https://tsplus.net/#website","url":"https://tsplus.net/","name":"TSplus.net","description":"Bringing together Remote Access, Application Delivery and Security solutions to IT professionals","publisher":{"@id":"https://tsplus.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tsplus.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://tsplus.net/#organization","name":"TSplus","url":"https://tsplus.net/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/#/schema/logo/image/","url":"https://tsplus.net/wp-content/uploads/2021/01/square-transparent.png","contentUrl":"https://tsplus.net/wp-content/uploads/2021/01/square-transparent.png","width":250,"height":250,"caption":"TSplus"},"image":{"@id":"https://tsplus.net/#/schema/logo/image/"}}]}
+  </script><!-- / Yoast SEO plugin. -->
+  <link rel='dns-prefetch' href='//sbl.onfastspring.com'>
+  <link rel='dns-prefetch' href='//plausible.io'>
+  <link rel='stylesheet' id='dashicons-css' href='https://tsplus.net/wp-includes/css/dashicons.min.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='admin-bar-css' href='https://tsplus.net/wp-includes/css/admin-bar.min.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='e-theme-ui-light-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/css/theme-light.min.css?ver=3.17.1' media='all'>
+  <link rel='stylesheet' id='wp-block-library-css' href='https://tsplus.net/wp-includes/css/dist/block-library/style.min.css?ver=6.3.2' media='all'>
+  <style id='safe-svg-svg-icon-style-inline-css'>
+  .safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+
+  </style>
+  <link rel='stylesheet' id='wp-components-css' href='https://tsplus.net/wp-includes/css/dist/components/style.min.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='wp-block-editor-css' href='https://tsplus.net/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='wp-reusable-blocks-css' href='https://tsplus.net/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='wp-editor-css' href='https://tsplus.net/wp-includes/css/dist/editor/style.min.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='fastspring-style-css-css' href='https://tsplus.net/wp-content/plugins/fastspring/dist/blocks.style.build.css?ver=6.3.2' media='all'>
+  <style id='classic-theme-styles-inline-css'>
+  /*! This file is auto-generated */
+  .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+  </style>
+  <link rel='stylesheet' id='trp-language-switcher-style-css' href='https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher.css?ver=2.6.4' media='all'>
+  <link rel='stylesheet' id='trp-popup-style-css' href='https://tsplus.net/wp-content/plugins/translatepress-developer/add-ons-pro/automatic-language-detection/assets/css/trp-popup.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='imagify-admin-bar-css' href='https://tsplus.net/wp-content/plugins/imagify/assets/css/admin-bar.min.css?ver=2.1.2' media='all'>
+  <link rel='stylesheet' id='normalize-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/normalize.css?ver=1698655282' media='all'>
+  <link rel='stylesheet' id='webflow-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/webflow.css?ver=1698655282' media='all'>
+  <link rel='stylesheet' id='tsplus.webflow-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/tsplus.webflow.css?ver=1698655282' media='all'>
+  <link rel='stylesheet' id='hello-elementor-css' href='https://tsplus.net/wp-content/themes/hello-elementor/style.min.css?ver=2.9.0' media='all'>
+  <link rel='stylesheet' id='hello-elementor-theme-style-css' href='https://tsplus.net/wp-content/themes/hello-elementor/theme.min.css?ver=2.9.0' media='all'>
+  <link rel='stylesheet' id='elementor-frontend-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.1' media='all'>
+  <link rel='stylesheet' id='eael-general-css' href='https://tsplus.net/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.8.13' media='all'>
+  <link rel='stylesheet' id='eael-13019-css' href='https://tsplus.net/wp-content/uploads/essential-addons-elementor/eael-13019.css?ver=1686762174' media='all'>
+  <link rel='stylesheet' id='swiper-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' media='all'>
+  <link rel='stylesheet' id='elementor-post-6-css' href='https://tsplus.net/wp-content/uploads/elementor/css/post-6.css?ver=1681913777' media='all'>
+  <link rel='stylesheet' id='elementor-pro-css' href='https://tsplus.net/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.17.0' media='all'>
+  <link rel='stylesheet' id='elementor-post-13019-css' href='https://tsplus.net/wp-content/uploads/elementor/css/post-13019.css?ver=1686762245' media='all'>
+  <link rel='stylesheet' id='fluentform-elementor-widget-css' href='https://tsplus.net/wp-content/plugins/fluentform/assets/css/fluent-forms-elementor-widget.css?ver=5.0.12' media='all'>
+  <link rel='stylesheet' id='elementor-post-11395-css' href='https://tsplus.net/wp-content/uploads/elementor/css/post-11395.css?ver=1697560432' media='all'>
+  <link rel='stylesheet' id='elementor-post-12291-css' href='https://tsplus.net/wp-content/uploads/elementor/css/post-12291.css?ver=1697560419' media='all'>
+  <link rel='stylesheet' id='yoast-seo-adminbar-css' href='https://tsplus.net/wp-content/plugins/wordpress-seo/css/dist/adminbar-2140.css' media='all'>
+  <link rel='stylesheet' id='hello-elementor-child-style-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master/style.css?ver=1.0.0' media='all'>
+  <link rel='stylesheet' id='ubermenu-css' href='https://tsplus.net/wp-content/plugins/ubermenu/pro/assets/css/ubermenu.min.css?ver=3.7.3' media='all'>
+  <link rel='stylesheet' id='ubermenu-grey-white-css' href='https://tsplus.net/wp-content/plugins/ubermenu/assets/css/skins/blackwhite.css?ver=6.3.2' media='all'>
+  <link rel='stylesheet' id='ubermenu-white-css' href='https://tsplus.net/wp-content/plugins/ubermenu/pro/assets/css/skins/white.css?ver=6.3.2' media='all'>
+  
+  
+  
+
+  
+
+
+
+</head>
+<body class="page-template-default page page-id-13019 logged-in admin-bar no-customize-support wp-custom-logo translatepress-en_US elementor-default elementor-kit-6 elementor-page elementor-page-13019">
+ 
+  
+  <main id="content" class="site-main post-13019 page type-page status-publish has-post-thumbnail hentry">
+    <div class="page-content">
+      <div data-elementor-type="wp-page" data-elementor-id="13019" class="elementor elementor-13019" data-elementor-post-type="page">
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-56547d24 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="56547d24" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+          <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-24a69ccc" data-id="24a69ccc" data-element_type="column">
+              <div class="elementor-widget-wrap elementor-element-populated">
+                <section class="elementor-section elementor-inner-section elementor-element elementor-element-35ea2909 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="35ea2909" data-element_type="section">
+                  <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-62c306d1" data-id="62c306d1" data-element_type="column">
+                      <div class="elementor-widget-wrap elementor-element-populated">
+                        <div class="elementor-element elementor-element-369a38f elementor-widget elementor-widget-text-editor" data-id="369a38f" data-element_type="widget" data-widget_type="text-editor.default">
+                          <div class="elementor-widget-container">
+                            <p style="color: #fe813a;">TSPLUS BLOG</p>
+                          </div>
+                        </div>
+                        <div class="elementor-element elementor-element-5fdf8d18 elementor-widget elementor-widget-heading" data-id="5fdf8d18" data-element_type="widget" data-widget_type="heading.default">
+                          <div class="elementor-widget-container">
+                            <h1 class="elementor-heading-title elementor-size-default">Welcome to the TSplus Blog</h1>
+                          </div>
+                        </div>
+                        <div class="elementor-element elementor-element-5a1fa0e5 elementor-widget elementor-widget-text-editor" data-id="5a1fa0e5" data-element_type="widget" data-widget_type="text-editor.default">
+                          <div class="elementor-widget-container">
+                            <p style="color:#ffffff;">Industry-related content to guide you through the exciting world of remote access software.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="elementor-section elementor-top-section elementor-element elementor-element-1a2e2895 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1a2e2895" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+          <div class="elementor-container elementor-column-gap-default">
+            <Pagination Data={allBlogPosts} client:load />
+            <SideBar/>
+          </div>
+        </section>
+      </div>
+      <div class="post-tags"></div>
+    </div>
+  </main>
+  
+  
+  </script>
+</body>
+</html>

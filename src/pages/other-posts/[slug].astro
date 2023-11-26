@@ -1,0 +1,1383 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from "../../layouts/Base.astro";
+import RelatedPosts from "../../components/RelatedPosts.astro"
+import ExtandedSideBar from "../../components/ExtandedSideBar.astro"
+import TableOfContent from  "../../components/TableOfContent.astro"
+import SideTableOfContent from  "../../components/SideTableOfContent.astro"
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  
+  return blogEntries.map(( blog) => {
+    return {
+      params: { slug: blog.slug },
+      props: { blog },
+    };
+  });
+ 
+}
+
+const { blog } = Astro.props;
+const { Content, headings , remarkPluginFrontmatter } = await blog.render();
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format("DD MMMM YYYY");
+---
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'>
+  <title>Best Remote Access Security Software - Free Trial | TSplus®</title>
+  <meta name="description" content="Try TSplus Advanced Security to Secure your Remote Desktop Access Infrastructure; the Best Remote Access Cybersecurity Software Toolbox.">
+  <link rel="canonical" href="https://tsplus.net/remote-access-security-software/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best Remote Access Security Software - Free Trial | TSplus®">
+  <meta property="og:description" content="Try TSplus Advanced Security to Secure your Remote Desktop Access Infrastructure; the Best Remote Access Cybersecurity Software Toolbox.">
+  <meta property="og:url" content="https://tsplus.net/remote-access-security-software/">
+  <meta property="og:site_name" content="TSplus.net">
+  <meta property="article:modified_time" content="2022-12-08T23:36:09+00:00">
+  <meta property="og:image" content="https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2.png">
+  <meta property="og:image:width" content="940">
+  <meta property="og:image:height" content="788">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Est. reading time">
+  <meta name="twitter:data1" content="8 minutes">
+  <script type="application/ld+json" class="yoast-schema-graph">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://tsplus.net/remote-access-security-software/","url":"https://tsplus.net/remote-access-security-software/","name":"Best Remote Access Security Software - Free Trial | TSplus®","isPartOf":{"@id":"https://tsplus.net/#website"},"primaryImageOfPage":{"@id":"https://tsplus.net/remote-access-security-software/#primaryimage"},"image":{"@id":"https://tsplus.net/remote-access-security-software/#primaryimage"},"thumbnailUrl":"https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2.png","datePublished":"2022-12-08T11:58:45+00:00","dateModified":"2022-12-08T23:36:09+00:00","description":"Try TSplus Advanced Security to Secure your Remote Desktop Access Infrastructure; the Best Remote Access Cybersecurity Software Toolbox.","breadcrumb":{"@id":"https://tsplus.net/remote-access-security-software/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tsplus.net/remote-access-security-software/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/remote-access-security-software/#primaryimage","url":"https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2.png","contentUrl":"https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2.png","width":940,"height":788,"caption":"Advanced Security - Remote Access Security Software"},{"@type":"BreadcrumbList","@id":"https://tsplus.net/remote-access-security-software/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tsplus.net/"},{"@type":"ListItem","position":2,"name":"Content &#8211; Remote Access Security Software"}]},{"@type":"WebSite","@id":"https://tsplus.net/#website","url":"https://tsplus.net/","name":"TSplus.net","description":"Bringing together Remote Access, Application Delivery and Security solutions to IT professionals","publisher":{"@id":"https://tsplus.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tsplus.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://tsplus.net/#organization","name":"TSplus","url":"https://tsplus.net/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/#/schema/logo/image/","url":"https://tsplus.net/wp-content/uploads/2021/01/square-transparent.png","contentUrl":"https://tsplus.net/wp-content/uploads/2021/01/square-transparent.png","width":250,"height":250,"caption":"TSplus"},"image":{"@id":"https://tsplus.net/#/schema/logo/image/"}}]}
+  </script>
+  <link rel='dns-prefetch' href='//sbl.onfastspring.com'>
+  <link rel='dns-prefetch' href='//plausible.io'>
+  <link rel='dns-prefetch' href='//www.googletagmanager.com'>
+  <link rel='dns-prefetch' href='//www.google-analytics.com'>
+  <link rel='stylesheet' id='fastspring-style-css-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/fastspring__dist__blocks-style-build-css-v96aa362f1328f27e2fad549091a52fc45365440f.css' media='all'>
+  <style id='classic-theme-styles-inline-css'>
+  /*! This file is auto-generated */
+  .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+  </style>
+  <style data-wpacu-inline-css-file='1'>
+  /*!/wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher.css*/.menu-item-object-language_switcher .trp-flag-image{display:inline-block;margin:-1px 5px;vertical-align:baseline;padding:0;border:0;border-radius:0}.trp-language-switcher{height:42px;position:relative;box-sizing:border-box;width:200px;text-overflow:ellipsis;white-space:nowrap}.trp-language-switcher>div{box-sizing:border-box;padding:4px 20px 3px 13px;border:1.5px solid #949494;border-radius:2px;background-image:url(/wp-content/plugins/translatepress-multilingual/assets/css/../../assets/images/arrow-down-3101.svg);background-repeat:no-repeat;background-position:calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 3px) calc(1em + 0px); background-size:8px 8px,8px 8px;background-repeat:no-repeat;background-color:#fff}.trp-language-switcher>div:hover{background-image:none}.trp-language-switcher>div>a{display:block;padding:7px 12px;border-radius:3px;text-decoration:none;color:#1E1E1E;font-style:normal;font-weight:400;font-size:16px}.trp-language-switcher>div>a:hover{background:#F0F0F0;border-radius:2px}.trp-language-switcher>div>a.trp-ls-shortcode-disabled-language{cursor:default}.trp-language-switcher>div>a.trp-ls-shortcode-disabled-language:hover{background:none}.trp-language-switcher>div>a>img{display:inline;margin:0 3px;width:18px;height:12px;border-radius:0}.trp-language-switcher .trp-ls-shortcode-current-language{display:inline-block}.trp-language-switcher:focus .trp-ls-shortcode-current-language,.trp-language-switcher:hover .trp-ls-shortcode-current-language{visibility:hidden}.trp-language-switcher .trp-ls-shortcode-language{display:inline-block;height:1px;overflow:hidden;visibility:hidden;z-index:1;max-height:250px;overflow-y:auto;left:0;top:0;min-height:auto}.trp-language-switcher:focus .trp-ls-shortcode-language,.trp-language-switcher:hover .trp-ls-shortcode-language{visibility:visible;max-height:250px;padding:4px 13px;height:auto;overflow-y:auto;position:absolute;left:0;top:0;display:inline-block!important;min-height:auto}#wpadminbar #wp-admin-bar-trp_edit_translation .ab-icon:before{content:'\f326';top:3px}@media screen and (max-width:782px){#wpadminbar #wp-admin-bar-trp_edit_translation>.ab-item{text-indent:0}#wpadminbar li#wp-admin-bar-trp_edit_translation{display:block}}
+  </style>
+  <link rel='stylesheet' id='trp-popup-style-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/translatepress-developer__add-ons-pro__automatic-language-detection__assets__css__trp-popup-css-vb1cbd9f2d07ba9e486fabbdc8dd287b5f0a05081.css' media='all'>
+  <link rel='stylesheet' id='normalize-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/normalize.css?ver=1700438156' media='all'>
+  <link rel='stylesheet' id='webflow-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/webflow.css?ver=1700438156' media='all'>
+  <link rel='stylesheet' id='tsplus.webflow-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/tsplus.webflow.css?ver=1700438156' media='all'>
+  <link rel='stylesheet' id='hello-elementor-css' href='https://tsplus.net/wp-content/themes/hello-elementor/style.min.css?ver=2.9.0' media='all'>
+  <link rel='stylesheet' id='swiper-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' media='all'>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-kit-6{--e-global-color-primary:#1F2937;--e-global-color-secondary:#1F2937;--e-global-color-text:#6B7280;--e-global-color-accent:#FF9C4B;--e-global-color-906638f:#FFFFFF;--e-global-color-9b79c44:#1F2937;--e-global-color-00ed603:#6B7280;--e-global-color-99309a0:#6B7280;--e-global-color-1cccb09:#9CA3AF;--e-global-color-852c622:#E5E7EB;--e-global-color-2310507:#F3F4F6;--e-global-color-8f866b1:#F9FAFB;--e-global-color-1c9bc30:#32455D;--e-global-color-61a2a0f:#111827;--e-global-color-45b2f27:#FE813A;--e-global-color-4d7ad8d:#FF9C4B;--e-global-color-de7637a:#FFAF48;--e-global-color-de7d129:#FED7AA;--e-global-color-7a7541b:#F99106;--e-global-color-f0d7e9c:#212529;--e-global-color-db3a4a3:#000000;--e-global-color-ac5cbbf:#F99209;--e-global-color-a93a9f9:#AAAAAA;--e-global-color-bd6135e:#03294E;--e-global-color-c78c8b4:#185180;--e-global-color-2c131e0:#031F3A;--e-global-color-99520a4:#CD7500;--e-global-typography-primary-font-family:"Inter";--e-global-typography-primary-font-weight:400;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Inter";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Inter";--e-global-typography-accent-font-weight:500;--e-global-typography-59e417c-font-family:"Inter";--e-global-typography-59e417c-font-weight:700;--e-global-typography-59e417c-line-height:1.4em;--e-global-typography-479e7a4-font-family:"Inter";--e-global-typography-479e7a4-line-height:1.4em;--e-global-typography-b3c0468-font-family:"Inter";--e-global-typography-b3c0468-font-weight:400;--e-global-typography-bc7e1e3-font-family:"Inter";--e-global-typography-bc7e1e3-font-size:14px;font-family:"Inter", Sans-serif;}.elementor-kit-6 a{font-family:"Inter", Sans-serif;}.elementor-kit-6 h1{font-family:"Inter", Sans-serif;}.elementor-kit-6 h2{font-family:"Inter", Sans-serif;}.elementor-kit-6 h3{font-family:"Inter", Sans-serif;}.elementor-kit-6 h4{font-family:"Inter", Sans-serif;}.elementor-kit-6 h5{font-family:"Inter", Sans-serif;}.elementor-kit-6 h6{font-family:"Inter", Sans-serif;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){margin-bottom:20px;}.elementor-element{--widgets-spacing:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+  </style>
+  <link rel='stylesheet' id='elementor-pro-css' href='https://tsplus.net/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.17.1' media='all'>
+  <link rel='stylesheet' id='elementor-post-26542-css' href='https://tsplus.net/wp-content/uploads/elementor/css/post-26542.css?ver=1681913815' media='all'>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-11395 .elementor-element.elementor-element-6edfa2b{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-11395 .elementor-element.elementor-element-4ad2124 > .elementor-element-populated{margin:0px 0px 0px 0px;--e-column-margin-right:0px;--e-column-margin-left:0px;padding:0px 0px 0px 0px;}.elementor-11395 .elementor-element.elementor-element-82ac0c0 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}/* Start custom CSS for html, class: .elementor-element-82ac0c0 */.ts-phone-number{margin-block-end:0}/* End custom CSS */
+  </style>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-12291 .elementor-element.elementor-element-52b12d6{margin-top:0px;margin-bottom:0ptsplusherex;padding:0px 0px 0px 0px;}.elementor-12291 .elementor-element.elementor-element-fc02960 > .elementor-element-populated{margin:0px 0px 0px 0px;--e-column-margin-right:0px;--e-column-margin-left:0px;padding:0px 0px 0px 0px;}.elementor-12291 .elementor-element.elementor-element-287cf1a > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}
+  </style>
+  <link rel="https://api.w.org/" href="https://tsplus.net/wp-json/">
+  <link rel="alternate" type="application/json" href="https://tsplus.net/wp-json/wp/v2/pages/26542">
+  <meta name="msvalidate.01" content="92E52F04BAED205275B6F510CB4C749E">
+  <meta name="google-site-verification" content="C2qN6IlVo3vYIpSNlIplWLcQ9KYtdLXrWBqbFOVPpZ4">
+  <style id="wplmi-inline-css" type="text/css">
+  span.wplmi-user-avatar { width: 16px;display: inline-block !important;flex-shrink: 0; } img.wplmi-elementor-avatar { border-radius: 100%;margin-right: 3px; }
+  </style>
+  <link rel="alternate" hreflang="en-US" href="https://tsplus.net/remote-access-security-software/">
+  <link rel="alternate" hreflang="es-ES" href="https://tsplus.net/es/remote-access-security-software/">
+  <link rel="alternate" hreflang="pt-BR" href="https://tsplus.net/pt/remote-access-security-software/">
+  <link rel="alternate" hreflang="pt-PT" href="https://tsplus.net/pt_pt/remote-access-security-software/">
+  <link rel="alternate" hreflang="it-IT" href="https://tsplus.net/it/remote-access-security-software/">
+  <link rel="alternate" hreflang="fr-FR" href="https://tsplus.net/fr/remote-access-security-software/">
+  <link rel="alternate" hreflang="zh-CN" href="https://tsplus.net/zh/remote-access-security-software/">
+  <link rel="alternate" hreflang="ru-RU" href="https://tsplus.net/ru/remote-access-security-software/">
+  <link rel="alternate" hreflang="hi-IN" href="https://tsplus.net/hi/remote-access-security-software/">
+  <link rel="alternate" hreflang="tr-TR" href="https://tsplus.net/tr/remote-access-security-software/">
+  <link rel="alternate" hreflang="ja" href="https://tsplus.net/ja/remote-access-security-software/">
+  <link rel="alternate" hreflang="ar" href="https://tsplus.net/ar/remote-access-security-software/">
+  <link rel="alternate" hreflang="cs-CZ" href="https://tsplus.net/cs/remote-access-security-software/">
+  <link rel="alternate" hreflang="hu-HU" href="https://tsplus.net/hu/remote-access-security-software/">
+  <link rel="alternate" hreflang="sk-SK" href="https://tsplus.net/sk/remote-access-security-software/">
+  <link rel="alternate" hreflang="bg-BG" href="https://tsplus.net/bg/remote-access-security-software/">
+  <link rel="alternate" hreflang="bn-BD" href="https://tsplus.net/bn/remote-access-security-software/">
+  <link rel="alternate" hreflang="ca" href="https://tsplus.net/ca/remote-access-security-software/">
+  <link rel="alternate" hreflang="da-DK" href="https://tsplus.net/da/remote-access-security-software/">
+  <link rel="alternate" hreflang="el" href="https://tsplus.net/el/remote-access-security-software/">
+  <link rel="alternate" hreflang="fa-IR" href="https://tsplus.net/fa/remote-access-security-software/">
+  <link rel="alternate" hreflang="hr" href="https://tsplus.net/hr/remote-access-security-software/">
+  <link rel="alternate" hreflang="fi" href="https://tsplus.net/fi/remote-access-security-software/">
+  <link rel="alternate" hreflang="id-ID" href="https://tsplus.net/id/remote-access-security-software/">
+  <link rel="alternate" hreflang="km" href="https://tsplus.net/km/remote-access-security-software/">
+  <link rel="alternate" hreflang="ko-KR" href="https://tsplus.net/ko/remote-access-security-software/">
+  <link rel="alternate" hreflang="lo" href="https://tsplus.net/lo/remote-access-security-software/">
+  <link rel="alternate" hreflang="ms-MY" href="https://tsplus.net/ms/remote-access-security-software/">
+  <link rel="alternate" hreflang="nb-NO" href="https://tsplus.net/nb/remote-access-security-software/">
+  <link rel="alternate" hreflang="nl-NL" href="https://tsplus.net/nl/remote-access-security-software/">
+  <link rel="alternate" hreflang="pl-PL" href="https://tsplus.net/pl/remote-access-security-software/">
+  <link rel="alternate" hreflang="ro-RO" href="https://tsplus.net/ro/remote-access-security-software/">
+  <link rel="alternate" hreflang="sv-SE" href="https://tsplus.net/sv/remote-access-security-software/">
+  <link rel="alternate" hreflang="ta-IN" href="https://tsplus.net/ta/remote-access-security-software/">
+  <link rel="alternate" hreflang="th" href="https://tsplus.net/th/remote-access-security-software/">
+  <link rel="alternate" hreflang="tl" href="https://tsplus.net/tl/remote-access-security-software/">
+  <link rel="alternate" hreflang="te" href="https://tsplus.net/te/remote-access-security-software/">
+  <link rel="alternate" hreflang="vi" href="https://tsplus.net/vi/remote-access-security-software/">
+  <link rel="alternate" hreflang="zh-TW" href="https://tsplus.net/zh_tw/remote-access-security-software/">
+  <link rel="alternate" hreflang="en-GB" href="https://tsplus.net/en_gb/remote-access-security-software/">
+  <link rel="alternate" hreflang="en" href="https://tsplus.net/remote-access-security-software/">
+  <link rel="alternate" hreflang="es" href="https://tsplus.net/es/remote-access-security-software/">
+  <link rel="alternate" hreflang="pt" href="https://tsplus.net/pt/remote-access-security-software/">
+  <link rel="alternate" hreflang="it" href="https://tsplus.net/it/remote-access-security-software/">
+  <link rel="alternate" hreflang="fr" href="https://tsplus.net/fr/remote-access-security-software/">
+  <link rel="alternate" hreflang="zh" href="https://tsplus.net/zh/remote-access-security-software/">
+  <link rel="alternate" hreflang="ru" href="https://tsplus.net/ru/remote-access-security-software/">
+  <link rel="alternate" hreflang="hi" href="https://tsplus.net/hi/remote-access-security-software/">
+  <link rel="alternate" hreflang="tr" href="https://tsplus.net/tr/remote-access-security-software/">
+  <link rel="alternate" hreflang="cs" href="https://tsplus.net/cs/remote-access-security-software/">
+  <link rel="alternate" hreflang="hu" href="https://tsplus.net/hu/remote-access-security-software/">
+  <link rel="alternate" hreflang="sk" href="https://tsplus.net/sk/remote-access-security-software/">
+  <link rel="alternate" hreflang="bg" href="https://tsplus.net/bg/remote-access-security-software/">
+  <link rel="alternate" hreflang="bn" href="https://tsplus.net/bn/remote-access-security-software/">
+  <link rel="alternate" hreflang="da" href="https://tsplus.net/da/remote-access-security-software/">
+  <link rel="alternate" hreflang="fa" href="https://tsplus.net/fa/remote-access-security-software/">
+  <link rel="alternate" hreflang="id" href="https://tsplus.net/id/remote-access-security-software/">
+  <link rel="alternate" hreflang="ko" href="https://tsplus.net/ko/remote-access-security-software/">
+  <link rel="alternate" hreflang="ms" href="https://tsplus.net/ms/remote-access-security-software/">
+  <link rel="alternate" hreflang="nb" href="https://tsplus.net/nb/remote-access-security-software/">
+  <link rel="alternate" hreflang="nl" href="https://tsplus.net/nl/remote-access-security-software/">
+  <link rel="alternate" hreflang="pl" href="https://tsplus.net/pl/remote-access-security-software/">
+  <link rel="alternate" hreflang="ro" href="https://tsplus.net/ro/remote-access-security-software/">
+  <link rel="alternate" hreflang="sv" href="https://tsplus.net/sv/remote-access-security-software/">
+  <link rel="alternate" hreflang="ta" href="https://tsplus.net/ta/remote-access-security-software/">
+  <link rel="alternate" hreflang="x-default" href="https://tsplus.net/remote-access-security-software/">
+  <meta name="generator" content="Elementor 3.17.3; features: e_dom_optimization, e_optimized_assets_loading, e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+  <link rel="icon" href="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp" sizes="32x32">
+  <link rel="icon" href="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp">
+  <meta name="msapplication-TileImage" content="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp">
+</head>
+<body class="page-template-default page page-id-26542 wp-custom-logo translatepress-en_US elementor-default elementor-kit-6 elementor-page elementor-page-26542">
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/autop.min.js?ver=dacd785d109317df2707' id='wp-autop-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/blob.min.js?ver=10a1c5c0acdef3d15657' id='wp-blob-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/block-serialization-default-parser.min.js?ver=30ffd7e7e199f10b2a6d' id='wp-block-serialization-default-parser-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/react.min.js?ver=18.2.0' id='react-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1' id='wp-hooks-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/deprecated.min.js?ver=73ad3591e7bc95f4777a' id='wp-deprecated-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/dom.min.js?ver=845eabf47b55af03adfa' id='wp-dom-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.2.0' id='react-dom-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/escape-html.min.js?ver=03e27a7b6ae14f7afaa6' id='wp-escape-html-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/element.min.js?ver=ed1c7604880e8b574b40' id='wp-element-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/is-shallow-equal.min.js?ver=20c2b06ecf04afb14fee' id='wp-is-shallow-equal-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef' id='wp-i18n-js'></script> 
+  <script id="wp-i18n-js-after">
+
+
+
+  wp.i18n.setLocaleData({'text direction\u0004ltr':['ltr']})
+  </script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/keycodes.min.js?ver=3460bd0fac9859d6886c' id='wp-keycodes-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/priority-queue.min.js?ver=422e19e9d48b269c5219' id='wp-priority-queue-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/compose.min.js?ver=9424edf50a26435105c0' id='wp-compose-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/private-apis.min.js?ver=c7aedd57ea3c9b334e7d' id='wp-private-apis-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/redux-routine.min.js?ver=0be1b2a6a79703e28531' id='wp-redux-routine-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/data.min.js?ver=1504e29349b8a9d1ae51' id='wp-data-js'></script> 
+  <script id="wp-data-js-after">
+
+
+
+  (function(){var userId=0;var storageKey="WP_DATA_USER_"+userId;wp.data.use(wp.data.plugins.persistence,{storageKey:storageKey})})()
+  </script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/html-entities.min.js?ver=36a4a255da7dd2e1bf8e' id='wp-html-entities-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/shortcode.min.js?ver=c128a3008a96e820aa86' id='wp-shortcode-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/blocks.min.js?ver=b5d3b99262dfb659bd26' id='wp-blocks-js'></script> 
+  <script type="text/javascript" src="https://sbl.onfastspring.com/sbl/0.9.4/fastspring-builder.min.js?ver=1" defer="true" id="fsc-api" data-storefront="jwts.onfastspring.com/popup-tsplus-net"></script> 
+  <script src='https://tsplus.net/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script> 
+  <script id='trp-language-cookie-js-extra'>
+
+
+
+  var trp_language_cookie_data={"abs_home":"https:\/\/tsplus.net","url_slugs":{"en_US":"en","es_ES":"es","pt_BR":"pt","pt_PT":"pt_pt","it_IT":"it","fr_FR":"fr","zh_CN":"zh","ru_RU":"ru","hi_IN":"hi","tr_TR":"tr","ja":"ja","ar":"ar","cs_CZ":"cs","hu_HU":"hu","sk_SK":"sk","bg_BG":"bg","bn_BD":"bn","ca":"ca","da_DK":"da","el":"el","fa_IR":"fa","hr":"hr","fi":"fi","id_ID":"id","km":"km","ko_KR":"ko","lo":"lo","ms_MY":"ms","nb_NO":"nb","nl_NL":"nl","pl_PL":"pl","ro_RO":"ro","sv_SE":"sv","ta_IN":"ta","th":"th","tl":"tl","te":"te","vi":"vi","zh_TW":"zh_tw","en_GB":"en_gb"},"cookie_name":"trp_language","cookie_age":"30","cookie_path":"\/","default_language":"en_US","publish_languages":["en_US","es_ES","pt_BR","pt_PT","it_IT","fr_FR","zh_CN","ru_RU","hi_IN","tr_TR","ja","ar","cs_CZ","hu_HU","sk_SK","bg_BG","bn_BD","ca","da_DK","el","fa_IR","hr","fi","id_ID","km","ko_KR","lo","ms_MY","nb_NO","nl_NL","pl_PL","ro_RO","sv_SE","ta_IN","th","tl","te","vi","zh_TW","en_GB"],"trp_ald_ajax_url":"https:\/\/tsplus.net\/wp-content\/plugins\/translatepress-developer\/add-ons-pro\/automatic-language-detection\/includes\/trp-ald-ajax.php","detection_method":"browser-ip","popup_option":"popup","popup_type":"normal_popup","popup_textarea":"We've detected you might be speaking a different language. Do you want to change to:","popup_textarea_change_button":"Change Language","popup_textarea_close_button":"Close and do not switch language","iso_codes":{"en_US":"en","es_ES":"es","pt_BR":"pt","pt_PT":"pt","it_IT":"it","fr_FR":"fr","zh_CN":"zh-CN","ru_RU":"ru","hi_IN":"hi","tr_TR":"tr","ja":"ja","ar":"ar","cs_CZ":"cs","hu_HU":"hu","sk_SK":"sk","bg_BG":"bg","bn_BD":"bn","ca":"ca","da_DK":"da","el":"el","fa_IR":"fa","hr":"hr","fi":"fi","id_ID":"id","km":"km","ko_KR":"ko","lo":"lo","ms_MY":"ms","nb_NO":"no","nl_NL":"nl","pl_PL":"pl","ro_RO":"ro","sv_SE":"sv","ta_IN":"ta","th":"th","tl":"tl","te":"te","vi":"vi","zh_TW":"zh-TW","en_GB":"en"},"language_urls":{"en_US":"https:\/\/tsplus.net\/remote-access-security-software\/","es_ES":"https:\/\/tsplus.net\/es\/remote-access-security-software\/","pt_BR":"https:\/\/tsplus.net\/pt\/remote-access-security-software\/","pt_PT":"https:\/\/tsplus.net\/pt_pt\/remote-access-security-software\/","it_IT":"https:\/\/tsplus.net\/it\/remote-access-security-software\/","fr_FR":"https:\/\/tsplus.net\/fr\/remote-access-security-software\/","zh_CN":"https:\/\/tsplus.net\/zh\/remote-access-security-software\/","ru_RU":"https:\/\/tsplus.net\/ru\/remote-access-security-software\/","hi_IN":"https:\/\/tsplus.net\/hi\/remote-access-security-software\/","tr_TR":"https:\/\/tsplus.net\/tr\/remote-access-security-software\/","ja":"https:\/\/tsplus.net\/ja\/remote-access-security-software\/","ar":"https:\/\/tsplus.net\/ar\/remote-access-security-software\/","cs_CZ":"https:\/\/tsplus.net\/cs\/remote-access-security-software\/","hu_HU":"https:\/\/tsplus.net\/hu\/remote-access-security-software\/","sk_SK":"https:\/\/tsplus.net\/sk\/remote-access-security-software\/","bg_BG":"https:\/\/tsplus.net\/bg\/remote-access-security-software\/","bn_BD":"https:\/\/tsplus.net\/bn\/remote-access-security-software\/","ca":"https:\/\/tsplus.net\/ca\/remote-access-security-software\/","da_DK":"https:\/\/tsplus.net\/da\/remote-access-security-software\/","el":"https:\/\/tsplus.net\/el\/remote-access-security-software\/","fa_IR":"https:\/\/tsplus.net\/fa\/remote-access-security-software\/","hr":"https:\/\/tsplus.net\/hr\/remote-access-security-software\/","fi":"https:\/\/tsplus.net\/fi\/remote-access-security-software\/","id_ID":"https:\/\/tsplus.net\/id\/remote-access-security-software\/","km":"https:\/\/tsplus.net\/km\/remote-access-security-software\/","ko_KR":"https:\/\/tsplus.net\/ko\/remote-access-security-software\/","lo":"https:\/\/tsplus.net\/lo\/remote-access-security-software\/","ms_MY":"https:\/\/tsplus.net\/ms\/remote-access-security-software\/","nb_NO":"https:\/\/tsplus.net\/nb\/remote-access-security-software\/","nl_NL":"https:\/\/tsplus.net\/nl\/remote-access-security-software\/","pl_PL":"https:\/\/tsplus.net\/pl\/remote-access-security-software\/","ro_RO":"https:\/\/tsplus.net\/ro\/remote-access-security-software\/","sv_SE":"https:\/\/tsplus.net\/sv\/remote-access-security-software\/","ta_IN":"https:\/\/tsplus.net\/ta\/remote-access-security-software\/","th":"https:\/\/tsplus.net\/th\/remote-access-security-software\/","tl":"https:\/\/tsplus.net\/tl\/remote-access-security-software\/","te":"https:\/\/tsplus.net\/te\/remote-access-security-software\/","vi":"https:\/\/tsplus.net\/vi\/remote-access-security-software\/","zh_TW":"https:\/\/tsplus.net\/zh_tw\/remote-access-security-software\/","en_GB":"https:\/\/tsplus.net\/en_gb\/remote-access-security-software\/"},"english_name":{"en_US":"English (United States)","es_ES":"Spanish","pt_BR":"Portuguese (Brazil)","pt_PT":"Portuguese (Portugal)","it_IT":"Italian","fr_FR":"French","zh_CN":"Chinese (China)","ru_RU":"Russian","hi_IN":"Hindi","tr_TR":"Turkish","ja":"Japanese","ar":"Arabic","cs_CZ":"Czech","hu_HU":"Hungarian","sk_SK":"Slovak","bg_BG":"Bulgarian","bn_BD":"Bengali","ca":"Catalan","da_DK":"Danish","el":"Greek","fa_IR":"Persian","hr":"Croatian","fi":"Finnish","id_ID":"Indonesian","km":"Khmer","ko_KR":"Korean","lo":"Lao","ms_MY":"Malay","nb_NO":"Norwegian","nl_NL":"Dutch","pl_PL":"Polish","ro_RO":"Romanian","sv_SE":"Swedish","ta_IN":"Tamil","th":"Thai","tl":"Tagalog","te":"Telugu","vi":"Vietnamese","zh_TW":"Chinese (Taiwan)","en_GB":"English (UK)"},"is_iphone_user_check":""}
+  </script> 
+  <script src='https://tsplus.net/wp-content/plugins/translatepress-developer/add-ons-pro/automatic-language-detection/assets/js/trp-language-cookie.js?ver=1.0.9' id='trp-language-cookie-js'></script> 
+  <script defer data-domain='tsplus.net' data-api='https://plausible.io/api/event' src='https://plausible.io/js/plausible.outbound-links.js?ver=1.3.6' id='plausible'></script> 
+  <script id="plausible-analytics-js-after">
+
+
+
+  window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}
+  </script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10872320716"></script> 
+  <script>
+
+
+
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+  gtag('js',new Date());gtag('config','AW-10872320716')
+  </script> <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+  <main id="content" class="site-main post-26542 page type-page status-publish has-post-thumbnail hentry">
+
+	
+    <div class="page-content">
+          <div data-elementor-type="wp-page" data-elementor-id="26542" class="elementor elementor-26542" data-elementor-post-type="page">
+                    <section class="elementor-section elementor-top-section elementor-element elementor-element-2ce620b elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2ce620b" data-element_type="section" id="tsplus" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-background-overlay"></div>
+                <div class="elementor-container elementor-column-gap-narrow">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-788094fa" data-id="788094fa" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;none&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <section class="elementor-section elementor-inner-section elementor-element elementor-element-2748a2bb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2748a2bb" data-element_type="section">
+              <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-385b568c" data-id="385b568c" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-5d011022 elementor-widget__width-initial elementor-widget elementor-widget-heading" data-id="5d011022" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <h1 class="elementor-heading-title elementor-size-default">Best Remote Access Security Software</h1>		</div>
+          </div>
+          <div class="elementor-element elementor-element-24c6cc0 elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="24c6cc0" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                Discover the most comprehensive <strong style="color: white;">Remote Access Security Software</strong> exclusively designed for Remote Desktop infrastructures. Secure your Remote PCs and Servers with 9 Powerful Security Features.						</div>
+          </div>
+          <div class="elementor-element elementor-element-16876dd4 elementor-icon-list--layout-inline elementor-align-left elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="16876dd4" data-element_type="widget" data-widget_type="icon-list.default">
+          <div class="elementor-widget-container">
+            <ul class="elementor-icon-list-items elementor-inline-items">
+                <li class="elementor-icon-list-item elementor-inline-item">
+                        <span class="elementor-icon-list-icon">
+                <svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+                      <span class="elementor-icon-list-text">Unbeatable value for price</span>
+                    </li>
+                  <li class="elementor-icon-list-item elementor-inline-item">
+                        <span class="elementor-icon-list-icon">
+                <svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+                      <span class="elementor-icon-list-text">Full 360° Protection</span>
+                    </li>
+                  <li class="elementor-icon-list-item elementor-inline-item">
+                        <span class="elementor-icon-list-icon">
+                <svg aria-hidden="true" class="e-font-icon-svg e-fas-check" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>						</span>
+                      <span class="elementor-icon-list-text">Unmatched feature set</span>
+                    </li>
+              </ul>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-36c9bea elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button" data-id="36c9bea" data-element_type="widget" data-widget_type="button.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-button-wrapper">
+        <a class="elementor-button elementor-button-link elementor-size-sm" href="/download/">
+              <span class="elementor-button-content-wrapper">
+              <span class="elementor-button-text">Download free trial</span>
+      </span>
+            </a>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-1088313 elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button" data-id="1088313" data-element_type="widget" data-widget_type="button.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-button-wrapper">
+        <a class="elementor-button elementor-button-link elementor-size-sm" href="/advanced-security/">
+              <span class="elementor-button-content-wrapper">
+              <span class="elementor-button-text">Learn more</span>
+      </span>
+            </a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2839e9ba" data-id="2839e9ba" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-c7bee9f elementor-widget elementor-widget-image" data-id="c7bee9f" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+                                <img decoding="async" fetchpriority="high" width="940" height="788" src="https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2.png" class="attachment-full size-full wp-image-26544" alt="Advanced Security - Remote Access Security Software" srcset="https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2.png 940w, https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2-300x251.png 300w, https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2-768x644.png 768w, https://tsplus.net/wp-content/uploads/2022/12/Advanced-Security-2-14x12.png 14w" sizes="(max-width: 940px) 100vw, 940px">															</div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </section>
+          <section class="elementor-section elementor-inner-section elementor-element elementor-element-a58819b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a58819b" data-element_type="section">
+              <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-b820a56" data-id="b820a56" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-1b5f383a elementor-widget elementor-widget-heading" data-id="1b5f383a" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">TSPLUS IS TRUSTED BY OVER 500,000+ COMPANIES</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-6475f58 elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="6475f58" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+                                <img decoding="async" src="https://tsplus.net/images/huawei-logo-customer-grey.svg" title="" alt="" loading="lazy">															</div>
+          </div>
+          <div class="elementor-element elementor-element-e1eba52 elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="e1eba52" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+                                <img decoding="async" src="https://tsplus.net/images/oracle-logo-customer-grey.svg" title="" alt="" loading="lazy">															</div>
+          </div>
+          <div class="elementor-element elementor-element-9307dd1 elementor-widget__width-initial elementor-widget elementor-widget-image" data-id="9307dd1" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+                                <img decoding="async" src="https://tsplus.net/images/siemens-logo-customer-grey.svg" title="" alt="" loading="lazy">															</div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </section>
+            </div>
+      </div>
+                </div>
+      </section>
+          <section class="elementor-section elementor-top-section elementor-element elementor-element-696fec3c elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="696fec3c" data-element_type="section" id="intro" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+              <div class="elementor-container elementor-column-gap-extended">
+                {/*here  */}
+                <SideTableOfContent/>
+            
+          <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6fb9588b" data-id="6fb9588b" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <Content/>
+            </div>
+      </div>
+                </div>
+      </section>
+          <footer class="elementor-section elementor-top-section elementor-element elementor-element-6f3a42d elementor-section-stretched elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="6f3a42d" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}" style="width: 1632px; left: 0px;">
+                <div class="elementor-background-overlay"></div>
+                <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11c3b808" data-id="11c3b808" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-34e398e3 elementor-widget elementor-widget-image" data-id="34e398e3" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+                                <img decoding="async" width="300" height="52" src="https://tsplus.net/wp-content/uploads/2021/01/logo_lg-300x52.png" class="attachment-medium size-medium wp-image-72" alt="logo tsplus" srcset="https://tsplus.net/wp-content/uploads/2021/01/logo_lg-300x52.png 300w, https://tsplus.net/wp-content/uploads/2021/01/logo_lg.png 685w" sizes="(max-width: 300px) 100vw, 300px">															</div>
+          </div>
+          <div class="elementor-element elementor-element-1c7feef7 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1c7feef7" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <footer class="elementor-section elementor-inner-section elementor-element elementor-element-2487fe1b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2487fe1b" data-element_type="section">
+              <div class="elementor-container elementor-column-gap-narrow">
+            <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-56f8fbd5" data-id="56f8fbd5" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-78625dd5 elementor-widget elementor-widget-heading" data-id="78625dd5" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">PRODUCTS</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-494c60c5 elementor-absolute elementor-widget__width-auto elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="494c60c5" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-1e91e430 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1e91e430" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-46afa95c elementor-widget elementor-widget-text-editor" data-id="46afa95c" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="/secure-remote-access" data-wplink-edit="true">TSplus</a><br><a class="footer-cat" href="https://new.tsplus.net/remote-work/">Remote Work</a><br><a class="footer-cat" href="https://new.tsplus.net/security-companions/">Security and Monitoring</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-d286991" data-id="d286991" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-15ca5d81 elementor-widget elementor-widget-heading" data-id="15ca5d81" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">DOWNLOAD</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-1de2946b elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1de2946b" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-219622dc elementor-widget elementor-widget-text-editor" data-id="219622dc" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a class="footer-cat" href="https://new.tsplus.net/advanced-security/">TSplus Advanced Security</a><br><a class="footer-cat" href="https://new.tsplus.net/server-genius/">Server Genius</a><br><a class="footer-cat" href="https://new.tsplus.net/remote-work/">Remote Work</a><br><a class="footer-cat" href="https://new.tsplus.net/download#mobile-app">TSplus Mobile App</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2b44d79d" data-id="2b44d79d" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-255f973c elementor-widget elementor-widget-heading" data-id="255f973c" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">STORE</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-76bfe208 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="76bfe208" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-1ecd0ea4 elementor-widget elementor-widget-text-editor" data-id="1ecd0ea4" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a class="footer-cat" href="https://new.tsplus.net/checkout/">TSplus</a><br><a class="footer-cat" href="https://new.tsplus.net/store-security-companions/">TSplus Advanced Security</a><br><a class="footer-cat" href="https://jwts.onfastspring.com/REM-WORK0" target="_blank" rel="noopener">Remote Work</a><br><a class="footer-cat" href="https://new.tsplus.net/support-updates/">Updates &amp; Support</a><br><a class="footer-cat" href="https://new.tsplus.net/upgrade-existing-license/">Add users or Upgrade Edition</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-44cf012" data-id="44cf012" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-163b080e elementor-widget elementor-widget-heading" data-id="163b080e" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">SUPPORT</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-230e3a18 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="230e3a18" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-2ce05abd elementor-widget elementor-widget-text-editor" data-id="2ce05abd" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a class="footer-cat" href="https://support.tsplus.net/" target="_blank" rel="noopener">Support</a><br><a class="footer-cat" href="https://new.tsplus.net/video-tutorials/">Video Tutorials</a><br><a class="footer-cat" href="https://new.tsplus.net/contact/">Contact</a><br><a class="footer-cat" href="https://new.tsplus.net/about-us/">About us</a></p>						</div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </footer>
+          <div class="elementor-element elementor-element-1d07050c elementor-widget elementor-widget-spacer" data-id="1d07050c" data-element_type="widget" data-widget_type="spacer.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-spacer">
+        <div class="elementor-spacer-inner"></div>
+      </div>
+          </div>
+          </div>
+          <footer class="elementor-section elementor-inner-section elementor-element elementor-element-490cc8b0 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="490cc8b0" data-element_type="section">
+              <div class="elementor-container elementor-column-gap-no">
+            <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-51cadb38" data-id="51cadb38" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-6fe5acba elementor-widget elementor-widget-text-editor" data-id="6fe5acba" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/about-us/">About us</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-eb094c6" data-id="eb094c6" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-5b71d090 elementor-widget elementor-widget-text-editor" data-id="5b71d090" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/terms-of-use/">Terms of use</a>&nbsp;</p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-24b51c3e" data-id="24b51c3e" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-71bdd7bd elementor-widget elementor-widget-text-editor" data-id="71bdd7bd" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/privacy-policy/">Privacy policy</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-55be13c3" data-id="55be13c3" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-25530d5 elementor-widget elementor-widget-text-editor" data-id="25530d5" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/sitemap/">Sitemap</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-47288ce6" data-id="47288ce6" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-d5d37a9 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="d5d37a9" data-element_type="widget" data-widget_type="icon.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-icon-wrapper">
+        <a class="elementor-icon" href="https://www.facebook.com/TSplusSoftware/" target="_blank">
+        <svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>			</a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-5f2eff0b" data-id="5f2eff0b" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-7a3a2dca elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="7a3a2dca" data-element_type="widget" data-widget_type="icon.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-icon-wrapper">
+        <a class="elementor-icon" href="https://twitter.com/TSplusSoftware" target="_blank">
+        <svg aria-hidden="true" class="e-font-icon-svg e-fab-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>			</a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-56305079" data-id="56305079" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-70625fce elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="70625fce" data-element_type="widget" data-widget_type="icon.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-icon-wrapper">
+        <a class="elementor-icon" href="https://www.youtube.com/channel/UCE-_KnkqtPVyxfAsY6GGviA" target="_blank">
+        <svg aria-hidden="true" class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>			</a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </footer>
+          <div class="elementor-element elementor-element-2237f1b0 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-text-editor" data-id="2237f1b0" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                            </div>
+          </div>
+          <div class="elementor-element elementor-element-20a159d8 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-text-editor" data-id="20a159d8" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                            </div>
+          </div>
+          <div class="elementor-element elementor-element-642147ef elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-text-editor" data-id="642147ef" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                            </div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </footer>
+          <footer class="elementor-section elementor-top-section elementor-element elementor-element-49debe22 elementor-section-stretched elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="49debe22" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}" style="width: 1632px; left: 0px;">
+                <div class="elementor-background-overlay"></div>
+                <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-389e70b3" data-id="389e70b3" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-5960646 elementor-widget elementor-widget-image" data-id="5960646" data-element_type="widget" data-widget_type="image.default">
+          <div class="elementor-widget-container">
+                                <img decoding="async" width="300" height="52" src="https://tsplus.net/wp-content/uploads/2021/01/logo_lg-300x52.png" class="attachment-medium size-medium wp-image-72" alt="logo tsplus" srcset="https://tsplus.net/wp-content/uploads/2021/01/logo_lg-300x52.png 300w, https://tsplus.net/wp-content/uploads/2021/01/logo_lg.png 685w" sizes="(max-width: 300px) 100vw, 300px">															</div>
+          </div>
+          <div class="elementor-element elementor-element-559cfe48 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="559cfe48" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <footer class="elementor-section elementor-inner-section elementor-element elementor-element-1e9da3cb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1e9da3cb" data-element_type="section">
+              <div class="elementor-container elementor-column-gap-narrow">
+            <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-5dbb531e" data-id="5dbb531e" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-67425cc4 elementor-widget elementor-widget-heading" data-id="67425cc4" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">PRODUCTS</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-3425ced elementor-absolute elementor-widget__width-auto elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="3425ced" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-13d1a633 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="13d1a633" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-1259e4fa elementor-widget elementor-widget-text-editor" data-id="1259e4fa" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="/secure-remote-access" data-wplink-edit="true">TSplus</a><br><a class="footer-cat" href="https://new.tsplus.net/remote-work/">Remote Work</a><br><a class="footer-cat" href="https://new.tsplus.net/security-companions/">Security and Monitoring</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-6549e35c" data-id="6549e35c" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-6a9862cf elementor-widget elementor-widget-heading" data-id="6a9862cf" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">DOWNLOAD</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-2dd16190 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="2dd16190" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-9844e32 elementor-widget elementor-widget-text-editor" data-id="9844e32" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a class="footer-cat" href="https://new.tsplus.net/advanced-security/">TSplus Advanced Security</a><br><a class="footer-cat" href="https://new.tsplus.net/server-genius/">Server Genius</a><br><a class="footer-cat" href="https://new.tsplus.net/remote-work/">Remote Work</a><br><a class="footer-cat" href="https://new.tsplus.net/download#mobile-app">TSplus Mobile App</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-6d5d9e24" data-id="6d5d9e24" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-32a48c2b elementor-widget elementor-widget-heading" data-id="32a48c2b" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">STORE</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-76c66989 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="76c66989" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-3cb69cd9 elementor-widget elementor-widget-text-editor" data-id="3cb69cd9" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a class="footer-cat" href="https://new.tsplus.net/checkout/">TSplus</a><br><a class="footer-cat" href="https://new.tsplus.net/store-security-companions/">TSplus Advanced Security</a><br><a class="footer-cat" href="https://jwts.onfastspring.com/REM-WORK0" target="_blank" rel="noopener">Remote Work</a><br><a class="footer-cat" href="https://new.tsplus.net/support-updates/">Updates &amp; Support</a><br><a class="footer-cat" href="https://new.tsplus.net/upgrade-existing-license/">Add users or Upgrade Edition</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-422055f9" data-id="422055f9" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-51f0ef5c elementor-widget elementor-widget-heading" data-id="51f0ef5c" data-element_type="widget" data-widget_type="heading.default">
+          <div class="elementor-widget-container">
+        <div class="elementor-heading-title elementor-size-default">SUPPORT</div>		</div>
+          </div>
+          <div class="elementor-element elementor-element-1106cdaf elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="1106cdaf" data-element_type="widget" data-widget_type="divider.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-divider">
+        <span class="elementor-divider-separator">
+              </span>
+      </div>
+          </div>
+          </div>
+          <div class="elementor-element elementor-element-484445bf elementor-widget elementor-widget-text-editor" data-id="484445bf" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a class="footer-cat" href="https://support.tsplus.net/" target="_blank" rel="noopener">Support</a><br><a class="footer-cat" href="https://new.tsplus.net/video-tutorials/">Video Tutorials</a><br><a class="footer-cat" href="https://new.tsplus.net/contact/">Contact</a><br><a class="footer-cat" href="https://new.tsplus.net/about-us/">About us</a></p>						</div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </footer>
+          <div class="elementor-element elementor-element-73cdde59 elementor-widget elementor-widget-spacer" data-id="73cdde59" data-element_type="widget" data-widget_type="spacer.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-spacer">
+        <div class="elementor-spacer-inner"></div>
+      </div>
+          </div>
+          </div>
+          <footer class="elementor-section elementor-inner-section elementor-element elementor-element-34c0d258 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="34c0d258" data-element_type="section">
+              <div class="elementor-container elementor-column-gap-no">
+            <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-3c6b04cd" data-id="3c6b04cd" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-2500c3be elementor-widget elementor-widget-text-editor" data-id="2500c3be" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/about-us/">About us</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-56841f86" data-id="56841f86" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-c5bdaf4 elementor-widget elementor-widget-text-editor" data-id="c5bdaf4" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/terms-of-use/">Terms of use</a>&nbsp;</p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-1d7fe9a7" data-id="1d7fe9a7" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-242e9231 elementor-widget elementor-widget-text-editor" data-id="242e9231" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/privacy-policy/">Privacy policy</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-19392b84" data-id="19392b84" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-723aee47 elementor-widget elementor-widget-text-editor" data-id="723aee47" data-element_type="widget" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                <p><a href="https://new.tsplus.net/sitemap/">Sitemap</a></p>						</div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-3815117b" data-id="3815117b" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-2412f589 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="2412f589" data-element_type="widget" data-widget_type="icon.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-icon-wrapper">
+        <a class="elementor-icon" href="https://www.facebook.com/TSplusSoftware/" target="_blank">
+        <svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>			</a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-5bb3b076" data-id="5bb3b076" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-6bfeb9f0 elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="6bfeb9f0" data-element_type="widget" data-widget_type="icon.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-icon-wrapper">
+        <a class="elementor-icon" href="https://twitter.com/TSplusSoftware" target="_blank">
+        <svg aria-hidden="true" class="e-font-icon-svg e-fab-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>			</a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+          <div class="elementor-column elementor-col-14 elementor-inner-column elementor-element elementor-element-79b24c09" data-id="79b24c09" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-widget-wrap elementor-element-populated">
+                  <div class="elementor-element elementor-element-9c4dd6e elementor-widget__width-auto elementor-view-default elementor-widget elementor-widget-icon" data-id="9c4dd6e" data-element_type="widget" data-widget_type="icon.default">
+          <div class="elementor-widget-container">
+            <div class="elementor-icon-wrapper">
+        <a class="elementor-icon" href="https://www.youtube.com/channel/UCE-_KnkqtPVyxfAsY6GGviA" target="_blank">
+        <svg aria-hidden="true" class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>			</a>
+      </div>
+          </div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </footer>
+          <div class="elementor-element elementor-element-f070b19 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-text-editor" data-id="f070b19" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                            </div>
+          </div>
+          <div class="elementor-element elementor-element-cedfd1d elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-text-editor" data-id="cedfd1d" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                            </div>
+          </div>
+          <div class="elementor-element elementor-element-216235ce elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-text-editor" data-id="216235ce" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="text-editor.default">
+          <div class="elementor-widget-container">
+                            </div>
+          </div>
+            </div>
+      </div>
+                </div>
+      </footer>
+                </div>
+          <div class="post-tags">
+            </div>
+        </div>
+  
+    
+  </main>
+  <template id="tp-language" data-tp-language="en_US"></template>
+  <style>
+  .elementor-button-link.elementor-button.elementor-size-sm{
+  display:inline-block!important;
+  }
+
+  [data-fsb-viewdetails]{
+  color: #f99106;
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+  .fsb-emptyCart, .fa-shopping-basket{
+  color: #1f2937;
+  }
+
+  .fsb-promocode{
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: sans-serif;
+  }
+
+  [data-fsb-crossselltitle]{
+  color: #1f2937;
+  font-size:20px;
+  font-weight: 500;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+
+  .name{
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+  input.form-control{
+  font-size: 1rem;
+  font-family: Arial;
+  }
+
+  [data-fsb-viewdetails]:hover{
+  color: #FE813A;
+  }
+
+  .col{
+  line-height: 24px;
+  font-size: 16px;
+  }
+
+  span.pricing{
+  font-size: 16px;
+  line-height: 24px;
+  }
+
+  .fsb-display{
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 24px;
+  }
+
+  .fsb-number, .fsb-qtyinput{
+  font-family: Arial;
+  line-height: 24px;
+  color: #1f2937;
+  }
+
+  .fsb-inline-item, [data-fsc-item-quantity]{
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+  .fsb-extPrice, .fsb-total{
+  font-size: 1rem;
+  font-family: Arial;
+  color: #1f2937;
+  font-size: 20px;
+  }
+
+  div.text-right > strong{
+  font-size: 1rem;
+  font-family: Arial;
+  color: #1f2937;
+  font-size: 16px;
+  }
+
+  #fsb-modal-content{
+  background-color:#F9FAFB;
+  margin-top: 8%!important;
+  }
+
+  #fsb-close{
+  color: #ffffff;
+  }
+
+  [aria-labelledby="portfolioModal1Label"]{
+  top: 22%!important;
+  }
+
+  .fsb-border{
+  background-color:#FFFFFF;
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.08), 0px 15px 25px -5px rgba(0, 0, 0, 0.05);
+  border-width: 0!important;
+  border-radius:10px!important;
+  }
+
+  .fastspring .border{
+  border-width: 0!important;
+  }
+
+  .fsb-plus, .fsb-minus{
+  cursor:pointer;
+  }
+
+  .minicart{
+  color: #1f2937!important;
+  }
+
+  [data-fsc-minicart]:hover{
+  box-shadow: 0px 0px 15px 5px rgb(51 69 93 / 20%)!important;
+  outline: #00B67A solid 3px;
+  cursor: pointer!important;
+  }
+
+  [data-fsc-minicart]{
+  box-shadow: 0px 0px 15px 5px rgb(51 69 93 / 20%)!important;
+  }
+
+
+  span[data-fsb-carttitle]{ 
+  color: #FFFFFF!important;
+  font-family: sans-serif;
+  font-weight: 600;
+  } 
+
+  .row > * > * > div.card-header { 
+  background-image: linear-gradient(20deg,  #008459, #00B67A);
+  color: #FFFFFF!important;
+  padding-bottom: 5px!important;
+  padding-top: 5px!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  border-width: 0!important;
+  border-radius-top:5px!important;
+  border-radius-bottom:5px!important;
+  line-height: 24px;
+  } 
+
+  h4[data-fsb-crossselltitle] + div > * > div { 
+  background-color:#FFFFFF;
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.08), 0px 15px 25px -5px rgba(0, 0, 0, 0.05);
+  border-radius:6px!important;
+  } 
+
+  .fsb-modal-header{
+  background-image: linear-gradient(20deg, #FE813A, #FFAF48);
+  }
+
+  .fsb-promocode{
+  padding-right: 8px;
+  font-family: sans-serif;
+  }
+
+  .form-control{
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  border-width: 0!important;
+  }
+
+  button[data-fsb-applycouponbuttonclass]{
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  background-color: #E5E7EB!important;
+  color: #6B7280!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  border-width: 0!important;
+  line-height: 26px;
+  }
+
+  button[data-fsb-applycouponbuttonclass]:hover{
+  background-color: #d3d5db!important;
+  }
+
+  button[data-fsb-checkoutbuttonclass]{
+  background-image: linear-gradient(90deg, #FE813A, #FFAF48);
+  border-width: 0!important;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size:17px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border-radius: 5px!important;
+  }
+
+  button[data-fsb-checkoutbuttonclass]:hover{
+  background-image: linear-gradient(90deg, #FE813A, #FE813A);
+  }
+
+  .fsb-total{
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size:20px;
+  }
+
+  a[data-fsb-crosssellbuttonclass]{
+  background-image: linear-gradient(90deg, #FE813A, #FFAF48);
+  border-width: 0!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  color:#ffffff!important;
+  border-radius: 5px!important;
+  }
+
+  a[data-fsb-crosssellbuttonclass]:hover{
+  background-image: linear-gradient(90deg, #FE813A, #FE813A);
+  }
+
+  button[data-fsb-upsellbuttonclass]{
+  background-image: linear-gradient(90deg, #FE813A, #FFAF48);
+  border-width: 0!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  color:#ffffff!important;
+  border-radius: 5px!important;
+  }
+
+  button[data-fsb-upsellbuttonclass]:hover{
+  background-image: linear-gradient(90deg, #FE813A, #FE813A);
+  }
+
+  [class="card mt-2 mb-3"]{
+  box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.08);
+  border-width: 0!important;
+  }
+
+  [data-fsb-crossselltitle]{
+  font-family: sans-serif!important;
+  }
+
+  [data-fsc-item-display]{
+  font-weight:700;
+  }
+
+  .fsb-inline-item.price{
+  color: #6B7280!important;
+  }
+
+  hr{
+  background-color: #6B7280!important;
+  }
+
+  .card-body > .row{
+  margin-bottom: 16px!important;
+  }
+
+  .fsb-option-input{
+  width: 24px!important;
+  height: 24px!important;
+  border-color:#E5E7EB!important;
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  }
+
+  .fsb-option-input:checked::before{
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79289 19.6858L1.29288 12.7126C0.902373 12.2936 0.902373 11.6144 1.29288 11.1954L2.70706 9.67821C3.09757 9.25923 3.73077 9.25923 4.12128 9.67821L8.5 14.3756L17.8787 4.3142C18.2692 3.89527 18.9024 3.89527 19.2929 4.3142L20.7071 5.83138C21.0976 6.25031 21.0976 6.92957 20.7071 7.34855L9.20711 19.6858C8.81656 20.1047 8.1834 20.1047 7.79289 19.6858Z' fill='url(%23paint0_linear_102_18)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_102_18' x1='21' y1='12' x2='1' y2='12' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2300B67A'/%3E%3Cstop offset='1' stop-color='%23008459'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")!important;
+  width: 24px!important;
+  height: 24px!important;
+  }
+
+  .fsb-option-input:checked::after{
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79289 19.6858L1.29288 12.7126C0.902373 12.2936 0.902373 11.6144 1.29288 11.1954L2.70706 9.67821C3.09757 9.25923 3.73077 9.25923 4.12128 9.67821L8.5 14.3756L17.8787 4.3142C18.2692 3.89527 18.9024 3.89527 19.2929 4.3142L20.7071 5.83138C21.0976 6.25031 21.0976 6.92957 20.7071 7.34855L9.20711 19.6858C8.81656 20.1047 8.1834 20.1047 7.79289 19.6858Z' fill='url(%23paint0_linear_102_18)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_102_18' x1='21' y1='12' x2='1' y2='12' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2300B67A'/%3E%3Cstop offset='1' stop-color='%23008459'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")!important;
+  width: 24px!important;
+  height: 24px!important;
+  }a.removeText { color: #6b7280;}a.removeText:hover { color: #c60b0b;}p.text-success {color: #28a745;}
+  </style>
+  <script>
+  fastspring_options={enableTranslations:"yes",loadFA:!1,enableGA:"yes",enableCart:!0,cartType:"fsb-MODSM",showPromo:"yes",applyCouponButtonClass:"fastspring_btn fastspring_btn-success",checkoutButtonClass:"fastspring_btn fastspring_btn-success",crossSellButtonClass:"fastspring_btn fastspring_btn-success",upSellButtonClass:"fastspring_btn fastspring_btn-success",edsButtonClass:"fastspring_btn fastspring_btn-success",removeIcon:"fa fa-trash-alt",applyCouponButtonIcon:"none",checkoutButtonIcon:"fa fa-arrow-right",crossSellButtonIcon:"fa fa-plus",upSellButtonIcon:"fa fa-plus",edsButtonIcon:"fa fa-plus",enableMiniCart:"yes",miniCartLocation:"bottomleft",miniCartIcon:"fa fa-shopping-cart",miniCartBubbleColor:"#c60b0b",cartHeaderBGColor:"#fe813a",cartHeaderTextColor:"#ffffff",popupClosedRedirectURL:"/",miniCartCheckoutBGColor:"#fe813a",miniCartCheckoutBGColorHover:"#d65912",miniCartCheckoutTextColor:"#ffffff",miniCartCheckoutTextColorHover:"#ffffff",popupClosedRedirectParameter:"orderID",translations:{en:{couponLabelText:"Have a promo code?",couponPlaceholderText:"Coupon ID",crossSellText:"Add to Order",edsText:"Add to Order",orderEmptyText:"Your cart is empty.",upSellText:"Upgrade Now",},da:{},de:{},es:{},fi:{},fr:{crossSellText:"Ajouter au panier",edsText:"Ajouter au panier",nextChargeText:"Prochaine facture:",},hr:{},it:{},ja:{},ko:{},nl:{},no:{},pt:{},ru:{},sv:{},zh:{},}};var cartlocation='fsb-MODSM';function popupClosed(data){var fsb_spinner=document.getElementById("fsb-spinner");fsb_spinner.style.animationName="fsb-revfadeIn";setTimeout(function(){fsb_spinner.style.animationName="fsb-fadeIn";fsb_spinner.style.display="none"},450);if(data){fastspring.builder.reset();window.location.replace("/")}else{closeitall()}}
+  </script>
+  <div class="trp_model_container" id="trp_ald_modal_container" style="display: none" data-no-dynamic-translation="" data-no-translation="">
+    <div class="trp_ald_modal" id="trp_ald_modal_popup">
+      <div id="trp_ald_popup_text"></div>
+      <div class="trp_ald_select_and_button">
+        <div class="trp_ald_ls_container">
+          <div class="trp-language-switcher trp-language-switcher-container" id="trp_ald_popup_select_container" data-no-translation="">
+            <div class="trp-ls-shortcode-current-language" id="en_US" special-selector="trp_ald_popup_current_language" data-trp-ald-selected-language="en_US">
+              <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+            </div>
+            <div class="trp-ls-shortcode-language">
+              <div class="trp-ald-popup-select" id="en_US" data-trp-ald-selected-language="en_US">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+              </div>
+              <div class="trp-ald-popup-select" id="es_ES" data-trp-ald-selected-language="es_ES">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_ES.png" width="18" height="12" alt="es_ES" title="Spanish"> ES
+              </div>
+              <div class="trp-ald-popup-select" id="pt_BR" data-trp-ald-selected-language="pt_BR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese (Brazil)"> PT
+              </div>
+              <div class="trp-ald-popup-select" id="pt_PT" data-trp-ald-selected-language="pt_PT">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_PT.png" width="18" height="12" alt="pt_PT" title="Portuguese (Portugal)"> PT_PT
+              </div>
+              <div class="trp-ald-popup-select" id="it_IT" data-trp-ald-selected-language="it_IT">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/it_IT.png" width="18" height="12" alt="it_IT" title="Italian"> IT
+              </div>
+              <div class="trp-ald-popup-select" id="fr_FR" data-trp-ald-selected-language="fr_FR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"> FR
+              </div>
+              <div class="trp-ald-popup-select" id="zh_CN" data-trp-ald-selected-language="zh_CN">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_CN.png" width="18" height="12" alt="zh_CN" title="Chinese (China)"> ZH
+              </div>
+              <div class="trp-ald-popup-select" id="ru_RU" data-trp-ald-selected-language="ru_RU">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ru_RU.png" width="18" height="12" alt="ru_RU" title="Russian"> RU
+              </div>
+              <div class="trp-ald-popup-select" id="hi_IN" data-trp-ald-selected-language="hi_IN">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hi_IN.png" width="18" height="12" alt="hi_IN" title="Hindi"> HI
+              </div>
+              <div class="trp-ald-popup-select" id="tr_TR" data-trp-ald-selected-language="tr_TR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tr_TR.png" width="18" height="12" alt="tr_TR" title="Turkish"> TR
+              </div>
+              <div class="trp-ald-popup-select" id="ja" data-trp-ald-selected-language="ja">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ja.png" width="18" height="12" alt="ja" title="Japanese"> JA
+              </div>
+              <div class="trp-ald-popup-select" id="ar" data-trp-ald-selected-language="ar">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ar.png" width="18" height="12" alt="ar" title="Arabic"> AR
+              </div>
+              <div class="trp-ald-popup-select" id="cs_CZ" data-trp-ald-selected-language="cs_CZ">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/cs_CZ.png" width="18" height="12" alt="cs_CZ" title="Czech"> CS
+              </div>
+              <div class="trp-ald-popup-select" id="hu_HU" data-trp-ald-selected-language="hu_HU">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hu_HU.png" width="18" height="12" alt="hu_HU" title="Hungarian"> HU
+              </div>
+              <div class="trp-ald-popup-select" id="sk_SK" data-trp-ald-selected-language="sk_SK">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sk_SK.png" width="18" height="12" alt="sk_SK" title="Slovak"> SK
+              </div>
+              <div class="trp-ald-popup-select" id="bg_BG" data-trp-ald-selected-language="bg_BG">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bg_BG.png" width="18" height="12" alt="bg_BG" title="Bulgarian"> BG
+              </div>
+              <div class="trp-ald-popup-select" id="bn_BD" data-trp-ald-selected-language="bn_BD">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bn_BD.png" width="18" height="12" alt="bn_BD" title="Bengali"> BN
+              </div>
+              <div class="trp-ald-popup-select" id="ca" data-trp-ald-selected-language="ca">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ca.png" width="18" height="12" alt="ca" title="Catalan"> CA
+              </div>
+              <div class="trp-ald-popup-select" id="da_DK" data-trp-ald-selected-language="da_DK">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/da_DK.png" width="18" height="12" alt="da_DK" title="Danish"> DA
+              </div>
+              <div class="trp-ald-popup-select" id="el" data-trp-ald-selected-language="el">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/el.png" width="18" height="12" alt="el" title="Greek"> EL
+              </div>
+              <div class="trp-ald-popup-select" id="fa_IR" data-trp-ald-selected-language="fa_IR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fa_IR.png" width="18" height="12" alt="fa_IR" title="Persian"> FA
+              </div>
+              <div class="trp-ald-popup-select" id="hr" data-trp-ald-selected-language="hr">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hr.png" width="18" height="12" alt="hr" title="Croatian"> HR
+              </div>
+              <div class="trp-ald-popup-select" id="fi" data-trp-ald-selected-language="fi">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fi.png" width="18" height="12" alt="fi" title="Finnish"> FI
+              </div>
+              <div class="trp-ald-popup-select" id="id_ID" data-trp-ald-selected-language="id_ID">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/id_ID.png" width="18" height="12" alt="id_ID" title="Indonesian"> ID
+              </div>
+              <div class="trp-ald-popup-select" id="km" data-trp-ald-selected-language="km">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/km.png" width="18" height="12" alt="km" title="Khmer"> KM
+              </div>
+              <div class="trp-ald-popup-select" id="ko_KR" data-trp-ald-selected-language="ko_KR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ko_KR.png" width="18" height="12" alt="ko_KR" title="Korean"> KO
+              </div>
+              <div class="trp-ald-popup-select" id="lo" data-trp-ald-selected-language="lo">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/lo.png" width="18" height="12" alt="lo" title="Lao"> LO
+              </div>
+              <div class="trp-ald-popup-select" id="ms_MY" data-trp-ald-selected-language="ms_MY">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ms_MY.png" width="18" height="12" alt="ms_MY" title="Malay"> MS
+              </div>
+              <div class="trp-ald-popup-select" id="nb_NO" data-trp-ald-selected-language="nb_NO">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nb_NO.png" width="18" height="12" alt="nb_NO" title="Norwegian"> NB
+              </div>
+              <div class="trp-ald-popup-select" id="nl_NL" data-trp-ald-selected-language="nl_NL">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nl_NL.png" width="18" height="12" alt="nl_NL" title="Dutch"> NL
+              </div>
+              <div class="trp-ald-popup-select" id="pl_PL" data-trp-ald-selected-language="pl_PL">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pl_PL.png" width="18" height="12" alt="pl_PL" title="Polish"> PL
+              </div>
+              <div class="trp-ald-popup-select" id="ro_RO" data-trp-ald-selected-language="ro_RO">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ro_RO.png" width="18" height="12" alt="ro_RO" title="Romanian"> RO
+              </div>
+              <div class="trp-ald-popup-select" id="sv_SE" data-trp-ald-selected-language="sv_SE">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sv_SE.png" width="18" height="12" alt="sv_SE" title="Swedish"> SV
+              </div>
+              <div class="trp-ald-popup-select" id="ta_IN" data-trp-ald-selected-language="ta_IN">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ta_IN.png" width="18" height="12" alt="ta_IN" title="Tamil"> TA
+              </div>
+              <div class="trp-ald-popup-select" id="th" data-trp-ald-selected-language="th">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/th.png" width="18" height="12" alt="th" title="Thai"> TH
+              </div>
+              <div class="trp-ald-popup-select" id="tl" data-trp-ald-selected-language="tl">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tl.png" width="18" height="12" alt="tl" title="Tagalog"> TL
+              </div>
+              <div class="trp-ald-popup-select" id="te" data-trp-ald-selected-language="te">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/te.png" width="18" height="12" alt="te" title="Telugu"> TE
+              </div>
+              <div class="trp-ald-popup-select" id="vi" data-trp-ald-selected-language="vi">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png" width="18" height="12" alt="vi" title="Vietnamese"> VI
+              </div>
+              <div class="trp-ald-popup-select" id="zh_TW" data-trp-ald-selected-language="zh_TW">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_TW.png" width="18" height="12" alt="zh_TW" title="Chinese (Taiwan)"> ZH_TW
+              </div>
+              <div class="trp-ald-popup-select" id="en_GB" data-trp-ald-selected-language="en_GB">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_GB.png" width="18" height="12" alt="en_GB" title="English (UK)"> EN_GB
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trp_ald_button">
+          <a href="https://tsplus.net" id="trp_ald_popup_change_language"></a>
+        </div>
+      </div><a id="trp_ald_x_button_and_textarea"><span id="trp_ald_x_button"></span><span id="trp_ald_x_button_textarea"></span></a>
+    </div>
+  </div>
+  <template id="trp_ald_no_text_popup_template">
+    <div id="trp_no_text_popup_wrap">
+      <div id="trp_no_text_popup" class="trp_ald_no_text_popup" data-no-dynamic-translation="" data-no-translation="">
+        <div id="trp_ald_not_text_popup_ls_and_button">
+          <div id="trp_ald_no_text_popup_div">
+            <span id="trp_ald_no_text_popup_text"></span>
+          </div>
+          <div class="trp_ald_ls_container">
+            <div class="trp-language-switcher trp-language-switcher-container" id="trp_ald_no_text_select" data-no-translation="">
+              <div class="trp-ls-shortcode-current-language" id="en_US" special-selector="trp_ald_popup_current_language" data-trp-ald-selected-language="en_US">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+              </div>
+              <div class="trp-ls-shortcode-language" id="trp_ald_no_text_popup_select_container">
+                <div class="trp-ald-popup-select" id="en_US" data-trp-ald-selected-language="en_US">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+                </div>
+                <div class="trp-ald-popup-select" id="es_ES" data-trp-ald-selected-language="es_ES">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_ES.png" width="18" height="12" alt="es_ES" title="Spanish"> ES
+                </div>
+                <div class="trp-ald-popup-select" id="pt_BR" data-trp-ald-selected-language="pt_BR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese (Brazil)"> PT
+                </div>
+                <div class="trp-ald-popup-select" id="pt_PT" data-trp-ald-selected-language="pt_PT">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_PT.png" width="18" height="12" alt="pt_PT" title="Portuguese (Portugal)"> PT_PT
+                </div>
+                <div class="trp-ald-popup-select" id="it_IT" data-trp-ald-selected-language="it_IT">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/it_IT.png" width="18" height="12" alt="it_IT" title="Italian"> IT
+                </div>
+                <div class="trp-ald-popup-select" id="fr_FR" data-trp-ald-selected-language="fr_FR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"> FR
+                </div>
+                <div class="trp-ald-popup-select" id="zh_CN" data-trp-ald-selected-language="zh_CN">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_CN.png" width="18" height="12" alt="zh_CN" title="Chinese (China)"> ZH
+                </div>
+                <div class="trp-ald-popup-select" id="ru_RU" data-trp-ald-selected-language="ru_RU">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ru_RU.png" width="18" height="12" alt="ru_RU" title="Russian"> RU
+                </div>
+                <div class="trp-ald-popup-select" id="hi_IN" data-trp-ald-selected-language="hi_IN">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hi_IN.png" width="18" height="12" alt="hi_IN" title="Hindi"> HI
+                </div>
+                <div class="trp-ald-popup-select" id="tr_TR" data-trp-ald-selected-language="tr_TR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tr_TR.png" width="18" height="12" alt="tr_TR" title="Turkish"> TR
+                </div>
+                <div class="trp-ald-popup-select" id="ja" data-trp-ald-selected-language="ja">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ja.png" width="18" height="12" alt="ja" title="Japanese"> JA
+                </div>
+                <div class="trp-ald-popup-select" id="ar" data-trp-ald-selected-language="ar">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ar.png" width="18" height="12" alt="ar" title="Arabic"> AR
+                </div>
+                <div class="trp-ald-popup-select" id="cs_CZ" data-trp-ald-selected-language="cs_CZ">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/cs_CZ.png" width="18" height="12" alt="cs_CZ" title="Czech"> CS
+                </div>
+                <div class="trp-ald-popup-select" id="hu_HU" data-trp-ald-selected-language="hu_HU">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hu_HU.png" width="18" height="12" alt="hu_HU" title="Hungarian"> HU
+                </div>
+                <div class="trp-ald-popup-select" id="sk_SK" data-trp-ald-selected-language="sk_SK">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sk_SK.png" width="18" height="12" alt="sk_SK" title="Slovak"> SK
+                </div>
+                <div class="trp-ald-popup-select" id="bg_BG" data-trp-ald-selected-language="bg_BG">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bg_BG.png" width="18" height="12" alt="bg_BG" title="Bulgarian"> BG
+                </div>
+                <div class="trp-ald-popup-select" id="bn_BD" data-trp-ald-selected-language="bn_BD">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bn_BD.png" width="18" height="12" alt="bn_BD" title="Bengali"> BN
+                </div>
+                <div class="trp-ald-popup-select" id="ca" data-trp-ald-selected-language="ca">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ca.png" width="18" height="12" alt="ca" title="Catalan"> CA
+                </div>
+                <div class="trp-ald-popup-select" id="da_DK" data-trp-ald-selected-language="da_DK">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/da_DK.png" width="18" height="12" alt="da_DK" title="Danish"> DA
+                </div>
+                <div class="trp-ald-popup-select" id="el" data-trp-ald-selected-language="el">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/el.png" width="18" height="12" alt="el" title="Greek"> EL
+                </div>
+                <div class="trp-ald-popup-select" id="fa_IR" data-trp-ald-selected-language="fa_IR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fa_IR.png" width="18" height="12" alt="fa_IR" title="Persian"> FA
+                </div>
+                <div class="trp-ald-popup-select" id="hr" data-trp-ald-selected-language="hr">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hr.png" width="18" height="12" alt="hr" title="Croatian"> HR
+                </div>
+                <div class="trp-ald-popup-select" id="fi" data-trp-ald-selected-language="fi">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fi.png" width="18" height="12" alt="fi" title="Finnish"> FI
+                </div>
+                <div class="trp-ald-popup-select" id="id_ID" data-trp-ald-selected-language="id_ID">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/id_ID.png" width="18" height="12" alt="id_ID" title="Indonesian"> ID
+                </div>
+                <div class="trp-ald-popup-select" id="km" data-trp-ald-selected-language="km">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/km.png" width="18" height="12" alt="km" title="Khmer"> KM
+                </div>
+                <div class="trp-ald-popup-select" id="ko_KR" data-trp-ald-selected-language="ko_KR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ko_KR.png" width="18" height="12" alt="ko_KR" title="Korean"> KO
+                </div>
+                <div class="trp-ald-popup-select" id="lo" data-trp-ald-selected-language="lo">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/lo.png" width="18" height="12" alt="lo" title="Lao"> LO
+                </div>
+                <div class="trp-ald-popup-select" id="ms_MY" data-trp-ald-selected-language="ms_MY">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ms_MY.png" width="18" height="12" alt="ms_MY" title="Malay"> MS
+                </div>
+                <div class="trp-ald-popup-select" id="nb_NO" data-trp-ald-selected-language="nb_NO">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nb_NO.png" width="18" height="12" alt="nb_NO" title="Norwegian"> NB
+                </div>
+                <div class="trp-ald-popup-select" id="nl_NL" data-trp-ald-selected-language="nl_NL">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nl_NL.png" width="18" height="12" alt="nl_NL" title="Dutch"> NL
+                </div>
+                <div class="trp-ald-popup-select" id="pl_PL" data-trp-ald-selected-language="pl_PL">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pl_PL.png" width="18" height="12" alt="pl_PL" title="Polish"> PL
+                </div>
+                <div class="trp-ald-popup-select" id="ro_RO" data-trp-ald-selected-language="ro_RO">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ro_RO.png" width="18" height="12" alt="ro_RO" title="Romanian"> RO
+                </div>
+                <div class="trp-ald-popup-select" id="sv_SE" data-trp-ald-selected-language="sv_SE">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sv_SE.png" width="18" height="12" alt="sv_SE" title="Swedish"> SV
+                </div>
+                <div class="trp-ald-popup-select" id="ta_IN" data-trp-ald-selected-language="ta_IN">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ta_IN.png" width="18" height="12" alt="ta_IN" title="Tamil"> TA
+                </div>
+                <div class="trp-ald-popup-select" id="th" data-trp-ald-selected-language="th">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/th.png" width="18" height="12" alt="th" title="Thai"> TH
+                </div>
+                <div class="trp-ald-popup-select" id="tl" data-trp-ald-selected-language="tl">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tl.png" width="18" height="12" alt="tl" title="Tagalog"> TL
+                </div>
+                <div class="trp-ald-popup-select" id="te" data-trp-ald-selected-language="te">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/te.png" width="18" height="12" alt="te" title="Telugu"> TE
+                </div>
+                <div class="trp-ald-popup-select" id="vi" data-trp-ald-selected-language="vi">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png" width="18" height="12" alt="vi" title="Vietnamese"> VI
+                </div>
+                <div class="trp-ald-popup-select" id="zh_TW" data-trp-ald-selected-language="zh_TW">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_TW.png" width="18" height="12" alt="zh_TW" title="Chinese (Taiwan)"> ZH_TW
+                </div>
+                <div class="trp-ald-popup-select" id="en_GB" data-trp-ald-selected-language="en_GB">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_GB.png" width="18" height="12" alt="en_GB" title="English (UK)"> EN_GB
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="trp_ald_change_language_div">
+            <a href="https://tsplus.net" id="trp_ald_no_text_popup_change_language"></a>
+          </div>
+          <div id="trp_ald_no_text_popup_x_button_and_textarea">
+            <a id="trp_ald_no_text_popup_x_button"></a><span id="trp_ald_no_text_popup_x_button_textarea"></span>
+          </div>
+        </div>
+        <div id="trp_ald_no_text_popup_x">
+          <button id="trp_close"></button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var wpacuLinkTag1001=document.createElement('link');wpacuLinkTag1001.rel='stylesheet';wpacuLinkTag1001.href='https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.3';wpacuLinkTag1001.type='text/css';wpacuLinkTag1001.media='all';wpacuLinkTag1001.property='stylesheet';var wpacuUa=window.navigator.userAgent;if((wpacuUa.indexOf('MSIE ')>0||wpacuUa.indexOf('Trident/')>0||wpacuUa.indexOf('Edge/')>0)||typeof document.documentMode!=='undefined'){document.body.appendChild(wpacuLinkTag1001)}else{document.body.prepend(wpacuLinkTag1001)}})
+  </script> <noscript>
+  <link rel='preload' as='style' data-wpacu-preload-it-async='1' onload="this.onload=null;this.rel='stylesheet'" id='wpacu-moved-from-head-to-body-wpacu-preload-elementor-frontend-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.3' media='all'></noscript>
+  <link rel='stylesheet' id='fsb_fontawesome-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/fastspring__includes__-__public__css__awesome-css-vc03568f46222bd0e3de8fba2eb832859c85a964c.css' media='all'>
+  <script src='https://tsplus.net/wp-content/plugins/fastspring/public/js/fastspring-public.js?ver=1.0.0' id='fastspring-js'></script> 
+  <script id="rocket-browser-checker-js-after">
+
+
+
+  "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}()
+  </script> 
+  <script id='rocket-preload-links-js-extra'>
+
+
+
+  var RocketPreloadLinksConfig={"excludeUris":"\/recommendations\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/tsplus.net","onHoverDelay":"100","rateThrottle":"3"}
+  </script> 
+  <script id="rocket-preload-links-js-after">
+
+
+
+  (function(){"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run()}())
+  </script> 
+  <script src='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../js/ts-utilities.js?ver=1700438156' id='ts-utilities-js'></script> 
+  <script src='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../js/webflow.js?ver=1700438156' id='webflow-js-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.17.1' id='elementor-pro-webpack-runtime-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.17.3' id='elementor-webpack-runtime-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.17.3' id='elementor-frontend-modules-js'></script> 
+  <script id="elementor-pro-frontend-js-before">
+
+
+
+  var ElementorProFrontendConfig={"ajaxurl":"https:\/\/tsplus.net\/wp-admin\/admin-ajax.php","nonce":"602b827f4c","urls":{"assets":"https:\/\/tsplus.net\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/tsplus.net\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":!0},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":!0},"pinterest":{"title":"Pinterest","has_counter":!0},"reddit":{"title":"Reddit","has_counter":!0},"vk":{"title":"VK","has_counter":!0},"odnoklassniki":{"title":"OK","has_counter":!0},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":!0},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":!0},"xing":{"title":"XING","has_counter":!0},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/tsplus.net\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}}
+  </script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.17.1' id='elementor-pro-frontend-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script> 
+  <script id="elementor-frontend-js-before">
+
+
+
+  var elementorFrontendConfig={"environmentMode":{"edit":!1,"wpPreview":!1,"isScriptDebug":!1},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":!1,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":!0},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":!1},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":!0},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":!1},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":!1},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":!1}}},"version":"3.17.3","is_static":!1,"experimentalFeatures":{"e_dom_optimization":!0,"e_optimized_assets_loading":!0,"e_font_icon_svg":!0,"additional_custom_breakpoints":!0,"theme_builder_v2":!0,"landing-pages":!0,"page-transitions":!0,"notes":!0,"form-submissions":!0,"e_scroll_snap":!0},"urls":{"assets":"https:\/\/tsplus.net\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":26542,"title":"Best%20Remote%20Access%20Security%20Software%20-%20Free%20Trial%20%7C%20TSplus%C2%AE","excerpt":"","featuredImage":"https:\/\/tsplus.net\/wp-content\/uploads\/2022\/12\/Advanced-Security-2.png"}}
+  </script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.17.3' id='elementor-frontend-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.17.1' id='pro-elements-handlers-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.17.1' id='e-sticky-js'></script> <noscript>
+  <link rel="stylesheet" href="https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.3" media="all"></noscript><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
+</body>
+</html>

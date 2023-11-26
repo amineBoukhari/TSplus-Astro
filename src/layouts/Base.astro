@@ -1,0 +1,27 @@
+---
+import "../styles/normalize.css";
+import "../styles/webflow.css";
+import "../styles/tsplus.webflow.css";
+import "../styles/fonts.css";
+
+import Head from "../components/Head.astro";
+import Start from "../components/Start.astro";
+import Header from "../components/Header.astro";
+import HeaderProducts from "../components/HeaderProducts.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, description, canonical, noindex, ogImage, homepage, raHome, product, checkout } = Astro.props
+---
+
+<html lang="en">
+  <Head title={title} description={description} canonical={canonical} noindex={noindex} ogImage={ogImage} homepage={homepage} raHome={raHome} checkout={checkout}/>
+  <body class="body">
+    <Start />
+    {product == true ?
+      <HeaderProducts /> :
+      <Header />
+    }
+    <slot /> {/* content injected here */}
+    <Footer />
+  </body>
+</html>

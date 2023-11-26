@@ -1,0 +1,65 @@
+---
+const { title, imageLink, data , slug} = Astro.props
+
+function getFirstTwentyWords(text) {
+  // Use the split method to split the text into an array of words
+  const words = text.split(/\s+/);
+
+  // Use the slice method to get the first twenty words
+  const firstTwentyWords = words.slice(0, 20);
+
+  // Use the join method to join the words back into a string
+  const result = firstTwentyWords.join(' ');
+
+  return result;
+}
+
+function cleanMarkdownText(text) {
+  // Define the patterns to match
+  var imageLinkPattern = /\[!\[.*?\]\(.*?\)\]\(.*?\)/;
+  var headingPattern = /##\s*/g; // Match ## followed by optional spaces
+  var boldPattern = /\*\*(.*?)\*\*/g; // Match **text**
+
+  // Remove the specified Markdown image link
+  var cleanedText = text.replace(imageLinkPattern, '');
+
+  // Remove Markdown headings
+  cleanedText = cleanedText.replace(headingPattern, '');
+
+  // Remove Markdown bold
+  cleanedText = cleanedText.replace(boldPattern, '$1'); // Keep the text inside bold
+
+  // Return the cleaned text
+  return cleanedText;
+}
+
+const description = getFirstTwentyWords(cleanMarkdownText(data))
+---
+
+
+
+<article class="eael-grid-post eael-post-grid-column" data-id="33980">
+    <div class="eael-grid-post-holder">
+      <div class="eael-grid-post-holder-inner">
+        <div class="eael-entry-media">
+          <div class="eael-entry-overlay fade-in">
+            <a href={"../" + slug}></a>
+          </div>
+          <div class="eael-entry-thumbnail"><img fetchpriority="high" width="1120" height="630" src={"./images/"+imageLink} class="attachment-full size-full wp-image-34068" alt="Title of article &quot;Best Remote Access Security Software&quot;, TSplus logo and link, illustrated by a picture of a locked padlock with a curtain of IT symbols." decoding="async" ></div>
+        </div>
+        <div class="eael-entry-wrapper">
+          <header class="eael-entry-header">
+            <h2 class="eael-entry-title"><a class="eael-grid-post-link" href={"../blogs/" + slug}  title="Best Remote Access Security Software">{title}</a></h2>
+          </header>
+          <div class="eael-entry-header-after style-two">
+            <div class="eael-entry-meta"></div>
+          </div>
+          <div class="eael-entry-content">
+            <div class="eael-grid-post-excerpt">
+              <p>{description + "..."}</p><a href={slug} class="eael-post-elements-readmore-btn">Read article →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>

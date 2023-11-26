@@ -1,0 +1,99 @@
+:root {
+    --body-text-grey: #6b7280;
+    --white: white;
+    --dark-orange: #fe813a;
+    --soft-orange: #ffaf48;
+    --dark-blue-rds: #3a88fe;
+    --light-blue-rds: #48bdff;
+    --border-gray-delimitation: #e5e7eb;
+    --light-grey-backgrounf: #f9fafb;
+    --dark-blue-text: #1f2937;
+    --second-pt-blue-gradient: #32455d;
+    --very-light-grey-bck: #f3f4f6;
+    --light-gray-text: #9ca3af;
+    --mid-orange-text: #ff9c4b;
+    --hover-light-grey-text: #6b7280;
+    --hover-gray-links: #111827;
+    --super-light-orange: #fed7aa;
+    --mid-blue-rds: #3284ff;
+    --e-global-color-primary: #1F2937;
+  --e-global-color-secondary: #1F2937;
+  --e-global-color-text: #6B7280;
+  --e-global-color-accent: #FF9C4B;
+  --e-global-color-906638f: #FFFFFF;
+  --e-global-color-9b79c44: #1F2937;
+  --e-global-color-00ed603: #6B7280;
+  --e-global-color-99309a0: #6B7280;
+  --e-global-color-1cccb09: #9CA3AF;
+  --e-global-color-852c622: #E5E7EB;
+  --e-global-color-2310507: #F3F4F6;
+  --e-global-color-8f866b1: #F9FAFB;
+  --e-global-color-1c9bc30: #32455D;
+  --e-global-color-61a2a0f: #111827;
+  --e-global-color-45b2f27: #FE813A;
+  --e-global-color-4d7ad8d: #FF9C4B;
+  --e-global-color-de7637a: #FFAF48;
+  --e-global-color-de7d129: #FED7AA;
+  --e-global-color-7a7541b: #F99106;
+  --e-global-color-f0d7e9c: #212529;
+  --e-global-color-db3a4a3: #000000;
+  --e-global-color-ac5cbbf: #F99209;
+  --e-global-color-a93a9f9: #AAAAAA;
+  --e-global-color-bd6135e: #03294E;
+  --e-global-color-c78c8b4: #185180;
+  --e-global-color-2c131e0: #031F3A;
+  --e-global-color-99520a4: #CD7500;
+  --e-global-typography-primary-font-family: "Inter";
+  --e-global-typography-primary-font-weight: 400;
+  --e-global-typography-secondary-font-family: "Roboto Slab";
+  --e-global-typography-secondary-font-weight: 400;
+  --e-global-typography-text-font-family: "Inter";
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-accent-font-family: "Inter";
+  --e-global-typography-accent-font-weight: 500;
+  --e-global-typography-59e417c-font-family: "Inter";
+  --e-global-typography-59e417c-font-weight: 700;
+  --e-global-typography-59e417c-line-height: 1.4em;
+  --e-global-typography-479e7a4-font-family: "Inter";
+  --e-global-typography-479e7a4-line-height: 1.4em;
+  --e-global-typography-b3c0468-font-family: "Inter";
+  --e-global-typography-b3c0468-font-weight: 400;
+  --e-global-typography-bc7e1e3-font-family: "Inter";
+  --e-global-typography-bc7e1e3-font-size: 14px;
+  font-family: "Inter", Sans-serif;
+}
+
+
+.active{
+    background-color: #1F2937 !important;
+    color: white;
+}
+
+.pagination{
+
+  display: flex;
+  gap:10px
+}
+.pagination li {
+  list-style-type: none;
+  cursor: pointer;
+  border: #000000 solid 2px;
+  width: 30px;
+  text-align: center;
+}
+
+.pagination-container{
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
+
+.pagination-container li {
+  list-style-type: none;  
+}
+
+.main-Pagination{
+  display: flex;
+}

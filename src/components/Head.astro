@@ -1,0 +1,94 @@
+---
+import { SEO } from "astro-seo"
+const { title, description, canonical, noindex, ogImage, homepage, raHome, checkout } = Astro.props
+---
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  {noindex == "true" ?
+  <SEO title={title} description={description} canonical={canonical} noindex={noindex}/> :
+  <SEO title={title} description={description} canonical={canonical}/>}
+
+  <link rel="preload" href="/fonts/inter-v13-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v13-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v13-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v13-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v13-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v13-latin-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/roboto-mono-v23-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/icons-software-ui-kit.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!--<link rel="icon" href="/favicon.webp" type="image/x-icon"> TO CREATE-->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!--<link rel="/apple-touch-icon" href="/apple-touch-icon.png"> TO CREATE--> 
+
+  <meta property="og:site_name" content="TSplus.net">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+
+
+  { checkout && <script
+    id="fsc-api"
+    src="https://sbl.onfastspring.com/sbl/0.9.5/fastspring-builder.min.js"
+    type="text/javascript"
+    data-storefront="jwts.onfastspring.com/embedded-tsplus-net">
+  </script>}
+  
+
+  { homepage && <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TSplus",
+        "alternateName": "TSplus",
+        "legalName": "TSplus SAS",
+        "foundingDate": "2007",
+        "url": "https://tsplus.net/",
+        "logo": "https://tsplus.net//images/tsplus-logo-square-gray-gradient.svg",
+        "description": "TSplus is the complete Remote Access software suite for IT Professionals.",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lyon",
+        "postalCode": "69007",
+        "streetAddress": "63 rue André Bollier",
+        "addressCountry": "FRANCE"
+        },
+        "sameAs": [
+        "https://www.youtube.com/channel/UCE-_KnkqtPVyxfAsY6GGviA",
+        "https://fr.linkedin.com/company/tsplusgroup",
+        "https://twitter.com/TSplusSoftware",
+        "https://www.facebook.com/TSplusSoftware/"
+        ]
+    }
+  </script>}
+
+{ raHome && <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TSplus Remote Access",
+        "image": "https://tsplus.net//images/tsplus-remote-access-logo-gray-gradient-short.svg",
+        "url": "https://tsplus.net/remote-access/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "TSplus SAS"
+        },
+        "applicationCategory": "Remote Desktop",
+        "downloadUrl": "https://tsplus.net/download/",
+        "operatingSystem": "Microsoft Windows versions 7 to 11 or Windows Server 2008R2 to 2022",
+        "screenshot": "https://tsplus.net//images/multi-devices-remote-access.webp",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "115"
+        }
+    }
+  </script>}
+
+</head>
+
+
+

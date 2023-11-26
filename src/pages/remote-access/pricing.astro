@@ -1,0 +1,1407 @@
+---
+import Base from "../../layouts/Base.astro";
+import "../../styles/pricing-ra.css";
+const product = true;
+
+---
+
+<Base title="HOME TITLE" description="HOME DESCRIPTION" canonical="" ogImage="https://test-image.com/" product={product}>
+    <div class="div-block-58 spec-pricing-ra">
+        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+          role="banner" class="navbar-logo-left-container secondary w-nav">
+          <div class="container-2 larger">
+            <div class="navbar-wrapper spec">
+              <a href="https://tsplus.net/remote-access/" class="navbar-brand secondary w-nav-brand"><img
+                  src="/images/tsplus-remote-access-logo-gray-gradient-short.svg" loading="lazy"
+                  alt="tsplus remote access logo grey" class="image-7 secondary"></a>
+              <div class="menu-button-2 w-nav-button">
+                <div class="w-icon-nav-menu"></div>
+              </div>
+              <nav role="navigation" class="nav-menu-2 gray w-nav-menu">
+                <a href="https://tsplus.net/remote-access/" class="nav-link-2 spec w-nav-link">Home</a>
+                <a href="https://tsplus.net/remote-access/features/" class="nav-link-2 spec w-nav-link">Features</a>
+                <a href="https://tsplus.net/pricing/" class="nav-link-2 selected w-nav-link">Pricing</a>
+                <a href="https://tsplus.net/remote-access/installation/" class="nav-link-2 spec w-nav-link">Quick-start
+                  Guide</a>
+                <div class="nav-divider spec"></div>
+                <div class="_2-buttons header-buttons-wrapper nomargin-left spec">
+                  <div class="html-embed-3 test flex w-embed">
+                    <a class="button-free-trial large spaced header small"
+                      href="javascript:DownloadAndRedirect1()">Download</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="div-block-17">
+        <div class="html-embed-4 right upper darker w-embed"><svg width="404"
+            height="784" fill="none" viewBox="0 0 404 784">
+            <defs>
+              <pattern id="e229dbec-10e9-49ee-8ec3-0286ca089ed" x="0" y="0" width="20" height="20"
+                patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
+              </pattern>
+            </defs>
+            <rect width="404" height="784" fill="url(#e229dbec-10e9-49ee-8ec3-0286ca089ed)"></rect>
+          </svg></div>
+      </div>
+      <div class="section pricing-section">
+        <div class="div-block-104">
+          <a href="https://tsplus.net/pricing/" class="link-10 current">Remote Access</a>
+          <a href="https://tsplus.net/pricing/remote-support/" class="link-10">Remote Support</a>
+          <a href="https://tsplus.net/pricing/advanced-security/" class="link-10">Advanced Security</a>
+          <a href="https://tsplus.net/pricing/server-monitoring/" class="link-10">Server Monitoring</a>
+        </div>
+        <div class="container-medium-624px pricing">
+          <h1 class="heading-5 center">TSplus Pricing</h1>
+          <p class="paragraph-3 center next">Buy once, use it forever.</p>
+          <p data-w-id="522ad4aa-4be1-2175-4b78-80ecd46fa4c3" class="paragraph-16 padding center">Perpetual and Affordable
+            Licences</p>
+        </div>
+        <div class="container-default largish w-container">
+          <div data-w-id="1604cf24-0ef5-4851-6701-f5fea33a3436"
+            class="html-embed-38 w-embed">
+            <div class="bandeau-custom row">
+              <div class="bandeau-custom-text column1">
+                <h3 class="bandeau-custom-main-cta">Customize Your License</h3>
+                <p class="bandeau-custom-second-cta">More users, more savings.</p>
+              </div>
+              <div class="bandeau-custom-users column2">
+                <div class="ts-tooltip-box">
+                  <p class="bandeau-custom-mini-header help-icon">How many users?</p>
+                  <span class="ts-tooltip-text-bottom">Select how many users maximum will use TSplus Remote Access. If it's
+                    more than 25, select the "Unlimited" option.</span>
+                  <div class="switch-toggle-users">
+                    <input type="radio" id="threeUsersPlan" name="users-choice" value="3" onclick="updatePricesRA();"
+                      checked="">
+                    <label for="threeUsersPlan">3</label>
+                    <input type="radio" id="fiveUsersPlan" name="users-choice" value="5" onclick="updatePricesRA();">
+                    <label for="fiveUsersPlan">5</label>
+                    <input type="radio" id="tenUsersPlan" name="users-choice" value="10" onclick="updatePricesRA();">
+                    <label for="tenUsersPlan">10</label>
+                    <input type="radio" id="twentyFiveUsersPlan" name="users-choice" value="25" onclick="updatePricesRA();">
+                    <label for="twentyFiveUsersPlan">25</label>
+                    <input type="radio" id="unlimitedUsersPlan" name="users-choice" value="Unlimited"
+                      onclick="updatePricesRA();">
+                    <label class="smaller-text-unlimited" for="unlimitedUsersPlan">Unlimited</label>
+                  </div>
+                </div>
+                <p id="users-pop-message-plan-with" class="bandeau-custom-recommended rounded-check-icon">Users discount
+                  applied</p>
+                <p id="users-pop-message-plan-without" class="bandeau-custom-recommended ts-not-included-list-after">No user
+                  discount</p>
+              </div>
+              <div class="bandeau-custom-users column3">
+                <div class="ts-tooltip-box">
+                  <p class="bandeau-custom-mini-header help-icon">Years of Updates & Support?</p>
+                  <span class="ts-tooltip-text-bottom">Get the latest features, security updates and receive online
+                    assistance. (Selected by most users)</span>
+                  <div class="switch-toggle-users switch-us">
+                    <input type="radio" id="US0" name="us-choice" value="0" onclick="updateUS();updatePricesRA();">
+                    <label for="US0">0</label>
+                    <input type="radio" id="US1" name="us-choice" value="1" onclick="updateUS();updatePricesRA();" checked="">
+                    <label for="US1">1</label>
+                    <input type="radio" id="US2" name="us-choice" value="2" onclick="updateUS();updatePricesRA();">
+                    <label for="US2">2</label>
+                    <input type="radio" id="US3" name="us-choice" value="3" onclick="updateUS();updatePricesRA();">
+                    <label for="US3">3</label>
+                  </div>
+                </div>
+                <p id="us-pop-message-plan-with" class="bandeau-custom-recommended rounded-check-icon">Updates & support
+                  included</p>
+                <p id="us-pop-message-plan-without" class="bandeau-custom-recommended ts-not-included-list-after">No support &
+                  software updates</p>
+              </div>
+              <div class="bandeau-custom-2fa column4">
+                <div class="ts-tooltip-box">
+                  <p class="bandeau-custom-mini-header help-icon">What kind of license?</p>
+                  <span class="ts-tooltip-text-bottom">The bundles include TSplus Remote Access PLUS our other
+                    software.<br>For a fraction of the cost.</span>
+                  <div class="switch-toggle-2fa">
+                    <input type="radio" id="noBundle" name="2fa-choice" value="No" onclick="updatePricesRA();" checked="">
+                    <label for="noBundle">Edition</label>
+                    <input type="radio" id="yesBundle" name="2fa-choice" value="Yes" onclick="updatePricesRA();">
+                    <label for="yesBundle">Bundle</label>
+                  </div>
+                </div>
+                <p id="twofa-pop-message-with" class="bandeau-custom-recommended ts-not-included-list-after">No savings on
+                  bundle</p>
+                <p id="twofa-pop-message-without" class="bandeau-custom-recommended rounded-check-icon-secu">Bundle savings
+                  applied</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-grid pricing-grid spec home">
+            <div id="w-node-ae008a05-dce2-e882-ea71-e433d7c70bec-61694a69" class="card-plan-item ra overflow pricing spec">
+              <div class="card plan-card basic overflow">
+                <a href="#" class="card-plan-top-content w-inline-block">
+                  <div class="html-embed-39 w-embed">
+                    <p class="plan-title-wf">Desktop Edition<span class="ts-plus-orange-gradient-special"> PLUS</span></p>
+                  </div>
+                </a>
+                <div class="title card-plan-features w-embed">
+                  <div class="ts-tooltip-box-white"><span class="help-icon-white">Perpetual license</span>
+                    <span class="ts-tooltip-text">The license won't expire.<br>
+                      Buy once, use it for life.</span>
+                  </div>
+                </div>
+                <div class="card-plan-content">
+                  <div class="card-plan-features-wrapper _100">
+                    <div class="w-layout-grid card-plan-features-grid less-gap-row">
+                      <div id="w-node-a60c628d-1646-261c-5b3d-de65a6bbb292-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">Remote Desktop Access</p> <span
+                            class="ts-tooltip-text-center">Enables any Windows systems from W7 to W11 Pro and Server 2008 to
+                            2020 to remotely deliver applications and user desktops.</span>
+                        </div>
+                      </div>
+                      <div id="w-node-_689edb47-c1ac-c1b4-55f8-fc2b0b733df2-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">Application Delivery</p> <span
+                            class="ts-tooltip-text-center">Users can remotely access the applications they need.</span>
+                        </div>
+                      </div>
+                      <div id="w-node-e25feac1-90be-4763-1e82-146d4b1e6eae-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">Remote Printing</p> <span
+                            class="ts-tooltip-text-center">Print remotely from anywhere and from any device.</span>
+                        </div>
+                      </div>
+                      <div class="plan-feature-wrapper">
+                        <div class="html-embed-13 small w-embed"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.07574 9.61145L0.175729 5.42755C-0.0585763 5.17618 -0.0585763 4.76863 0.175729 4.51724L1.02424 3.60693C1.25854 3.35555 1.63846 3.35555 1.87277 3.60693L4.5 6.4254L10.1272 0.388534C10.3615 0.137172 10.7414 0.137172 10.9758 0.388534L11.8242 1.29884C12.0586 1.5502 12.0586 1.95776 11.8242 2.20914L4.92426 9.61153C4.68994 9.86289 4.31004 9.86289 4.07574 9.61145Z"
+                              fill="#FE813A"></path>
+                          </svg></div>
+                        <div data-w-id="e75fd2d9-5ef3-3ee2-b877-48ebebdbc4ef"
+                          class="text-block-4 link">See all features</div>
+                      </div>
+                      <div id="w-node-_3ff4e424-40bd-4192-0263-f0a15ccd1224-61694a69" class="div-block-102"></div>
+                      <div class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-not-included-list-before help-icon iconToSwitch"><span
+                              class="ts-plus-orange-gradient-special-small">ADD-ON</span> Advanced Security Essentials</p>
+                          <span class="ts-tooltip-text-center">Add an extra layer of security to your servers. (Brute force
+                            defender, IP management, Homeland and working hours protection.)</span>
+                        </div>
+                      </div>
+                      <div class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-not-included-list-before help-icon iconToSwitch"><span
+                              class="ts-plus-orange-gradient-special-small">ADD-ON</span> Server Monitoring - 1 server</p>
+                          <span class="ts-tooltip-text-center">Real-time monitoring and reporting for remote desktop servers.
+                            Track your servers and websites’ health to troubleshoot issues faster.</span>
+                        </div>
+                      </div>
+                      <div class="w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-not-included-list-before help-icon iconToSwitch"><span
+                              class="ts-plus-orange-gradient-special-small">ADD-ON</span> Remote Support - 1 year</p> <span
+                            class="ts-tooltip-text-center">Provide instant remote assistance to your clients anywhere, at any
+                            time.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-embed">
+                  <div class="bundleOn ts-the-rounded-button-orange-ra ts-not-too-large-button"
+                    data-fsc-item-path-value="VER-DP10" data-fsc-item-path="VER-DP10" data-fsc-addthis="VER-DP10" onclick="(function(){
+          sessionStorage.setItem('product','Remote Access');
+          sessionStorage.setItem('plan','Desktop');
+          sessionStorage.setItem('type','Bundle');
+      })(); addSourceTag(); addTaxCaptions(true);">
+                    <div class="ts-tooltip-box-white-inline" data-fsc-item-path-value="VER-DP10" data-fsc-item-path="VER-DP10"
+                      data-fsc-addthis="VER-DP10">
+                      <span class="ts-compare-price-text" data-fsc-item-path-value="VER-DP10" data-fsc-item-path="VER-DP10"
+                        data-fsc-addthis="VER-DP10">$<span id="ts-compare-ra-desktop-bundle"
+                          data-fsc-item-path-value="VER-DP10" data-fsc-item-path="VER-DP10"
+                          data-fsc-addthis="VER-DP10">1350</span></span>
+                    </div>
+                    <span class="ts-select-text-button" data-fsc-item-path-value="VER-DP10" data-fsc-item-path="VER-DP10"
+                      data-fsc-addthis="VER-DP10">Add to cart
+                    </span>
+                  </div>
+                </div>
+                <div class="html-embed-40 vb w-embed">
+                  <div class="ts-tooltip-box-white-inline hiddenTest">
+                    <span class="rightCurrencyPlan">$</span>
+                    <span id="ts-price-desktop-bundle" class="TSnewText">36</span>
+                    <span class="help-icon-grey ts-slash-user">/user</span>
+                    <span class="ts-tooltip-text ts-tooltip-users-update">For 25 users.</span>
+                  </div>
+                  <span class="ts-compare-price-text-2 bundleOn">Instead of $<span
+                      id="ts-compare-ra-desktop-bundle-theory">1440</span> if<br>bought separately.</span>
+                </div>
+                <div class="bundleoff negative-gap-top w-embed">
+                  <div class="ts-the-rounded-button-blue-ra ts-not-too-large-button" data-fsc-item-path-value="VER-PTR3"
+                    data-fsc-item-path="VER-PTR3" data-fsc-addthis="VER-PTR3" onclick="(function(){
+          sessionStorage.setItem('product','Remote Access');
+          sessionStorage.setItem('plan','Desktop');
+          sessionStorage.setItem('type','Edition');
+      })(); addSourceTag(); addTaxCaptions(true);">
+                    <div class="ts-tooltip-box-white-inline" data-fsc-item-path-value="VER-PTR3" data-fsc-item-path="VER-PTR3"
+                      data-fsc-addthis="VER-PTR3">
+                      <span class="ts-compare-price-text" data-fsc-item-path-value="VER-PTR3" data-fsc-item-path="VER-PTR3"
+                        data-fsc-addthis="VER-PTR3">$<span id="ts-compare-ra-desktop-plan" data-fsc-item-path-value="VER-PTR3"
+                          data-fsc-item-path="VER-PTR3" data-fsc-addthis="VER-PTR3">182</span></span>
+                    </div>
+                    <span class="ts-select-text-button" data-fsc-item-path-value="VER-PTR3" data-fsc-item-path="VER-PTR3"
+                      data-fsc-addthis="VER-PTR3">Add to cart
+                    </span>
+                  </div>
+                </div>
+                <div class="bundleoff gap-top vb temphidden w-embed">
+                  <div class="ts-tooltip-box-white-inline">
+                    <span class="rightCurrencyPlan">$</span>
+                    <span id="ts-price-desktop-plan" class="TSnewText">61</span>
+                    <span class="help-icon-grey ts-slash-user">/user</span>
+                    <span class="ts-tooltip-text ts-tooltip-users-update">For 3 users.</span>
+                  </div>
+                </div>
+                <div style="opacity:0;display:none" class="modal-2-popup">
+                  <div class="modal-w-scroll">
+                    <a data-w-id="ae008a05-dce2-e882-ea71-e433d7c70c0d" href="#" class="modal-bg w-inline-block"></a>
+                    <div class="modal-scroll w-clearfix">
+                      <a data-w-id="ae008a05-dce2-e882-ea71-e433d7c70c0f" href="#"
+                        class="close-btn-w for-scroll w-inline-block">
+                        <div class="close-btn-line is--1st"></div>
+                        <div class="close-btn-line is--2nd"></div>
+                      </a>
+                      <div class="modal-scroll-content-w">
+                        <div class="html-embed-25 w-embed">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th align="left" class="ts-first-column ts-table-header">Key features</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Desktop</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Web Mobile</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Enterprise</th>
+                              </tr>
+                            </thead>
+                            <tbody class="ts-tbody-compare-features">
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Remote Desktop Access</p>
+                                    <span class="ts-tooltip-text">Enables any Windows Server to remotely deliver applications
+                                      and user desktops.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Application Delivery</p>
+                                    <span class="ts-tooltip-text">Users can remotely access the applications they need.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Remote Printing</p>
+                                    <span class="ts-tooltip-text">Print remotely from anywhere and from any device.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Web Portal and HTML5 Client</p>
+                                    <span class="ts-tooltip-text">Access your Windows applications and desktops through any
+                                      browser and any device, without a plugin or app to install on the device.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Farm Manager and Gateway</p>
+                                    <span class="ts-tooltip-text">Manage your farm of servers and access them through
+                                      SSO.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Scalable deployment</p>
+                                    <span class="ts-tooltip-text">Automatically distributes new incoming connections to the
+                                      least loaded server of the farm and add new servers if required.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th align="left" class="ts-first-column ts-table-header">Available add-ons</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Desktop</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Web Mobile</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Enterprise</th>
+                              </tr>
+                            </thead>
+                            <tbody class="ts-tbody-compare-features">
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="ts-no-translation help-icon">Advanced Security - Essentials</p>
+                                    <span class="ts-tooltip-text">Add an extra layer of security to your servers. (Brute force
+                                      defender, IP management, Homeland and working hours protection.)</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="ts-no-translation help-icon">Advanced Security - Ultimate</p>
+                                    <span class="ts-tooltip-text">The ultimate cybersecurity toolbox for maximum security.
+                                      (All features from Essentials + Ransomware protection, Endpoint protection, Permissions
+                                      and Access policies management.)</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="ts-no-translation help-icon">2-Factor Authentication</p>
+                                    <span class="ts-tooltip-text">Protect your servers and data with 2FA for incoming remote
+                                      connections. Available offline and on multiple devices.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="w-embed">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th align="left" class="ts-first-column ts-table-header">More features</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Desktop</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Web Mobile</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2">Enterprise</th>
+                              </tr>
+                            </thead>
+                            <tbody class="ts-tbody-compare-features">
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">TSplus Administrator Tool (AdminTool)</p>
+                                    <span class="ts-tooltip-text">Configure all Remote Access tools in one place.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Concurrent connections support</p>
+                                    <span class="ts-tooltip-text">Enable from 3 to 50+ concurrent sessions to connect per
+                                      server.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Application Control per user and/or per groups</p>
+                                    <span class="ts-tooltip-text">Assign applications to users or groups in a few
+                                      clicks.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">TSplus Remote Taskbar / Floating Panel</p>
+                                    <span class="ts-tooltip-text">The user launches an app in 1-click from the floating panel
+                                      on their local desktop.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">TSplus Portable Client Generator</p>
+                                    <span class="ts-tooltip-text">Create your customized connection client using the client
+                                      generator.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Seamless and RemoteApp connection clients</p>
+                                    <span class="ts-tooltip-text">Provide a launch menu on the local desktop of users to open
+                                      applications hosted on your server.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Fully compliant with RDP protocol</p>
+                                    <span class="ts-tooltip-text">TSplus Remote Access is compatible with any RDP
+                                      client.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Dual Screen support, bi-directional Sound, RemoteFX<br></p>
+                                    <span class="ts-tooltip-text">Tsplus Remote Access is compatible with dual screens,
+                                      bi-directional Sound and RemoteFX.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="html-embed-26 w-embed">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th align="left" class="ts-first-column ts-table-header th-hidden">More features</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2 th-hidden">Desktop</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2 th-hidden">Web Mobile</th>
+                                <th align="center" class="ts-no-translation ts-table-header-2 th-hidden">Enterprise</th>
+                              </tr>
+                            </thead>
+                            <tbody class="ts-tbody-compare-features">
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Local and Remote connection support</p>
+                                    <span class="ts-tooltip-text">Provides your remote and local users access to centralized
+                                      Windows applications on a full remote desktop.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Workgroup and Active Directory users support</p>
+                                    <span class="ts-tooltip-text">Administrators can easily control access to Windows apps
+                                      based on Active Directory users/groups as well as local accounts, Azure and AWS.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Connection from any web browser with TSplus HTTP Web Server</p>
+                                    <span class="ts-tooltip-text">Connect from any web browser (Chrome, Safari, Firefox,
+                                      etc.)</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Secured connection from any web browser with TSplus HTTPS Web Server
+                                      and SSH server</p>
+                                    <span class="ts-tooltip-text">The connections are fully secured.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Windows and HTML5 web access clients included in the HTML logon
+                                      files.</p>
+                                    <span class="ts-tooltip-text">Windows and HTML5 web access clients included in the HTML
+                                      logon files</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Easy connection from iPhone/iPad and Android devices</p>
+                                    <span class="ts-tooltip-text">Connect from any device.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Customizable logon web page with TSplus Webmaster Toolkit</p>
+                                    <span class="ts-tooltip-text">Easily customize the TSplus Web Portal with your company
+                                      colors, name, logo, and images.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">With TSplus Web Applications Portal, access your applications list
+                                      inside any web browser</p>
+                                    <span class="ts-tooltip-text">The secure TSplus Web Portal enables delivery of a full
+                                      remote desktop or application(s) on any device using any web browser.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Connect with just an e-mail or a pin-code with TSplus Web Credentials
+                                    </p>
+                                    <span class="ts-tooltip-text">Users can connect with a simple PIN code or their e-mail
+                                      address, without having to enter (or know) the matching Windows credentials. Ideal for
+                                      connecting from a tablet or a mobile device.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Connect on your Web Portal with TSplus Web App on any device.</p>
+                                    <span class="ts-tooltip-text">Connect on your Web Portal with TSplus Web App on any
+                                      device.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">TSplus farm of servers (one license per server)</p>
+                                    <span class="ts-tooltip-text">Scale up your Remote Access infrastructure.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Unlimited number of users working concurrently on a scalable
+                                      Load-Balanced architecture.</p>
+                                    <span class="ts-tooltip-text">The TSplus load balancing feature splits the load between
+                                      multiple servers in your farm. It also allows falling back to failover servers in case
+                                      of a production incident.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Single Enterprise Portal to access all your TSplus servers</p>
+                                    <span class="ts-tooltip-text">Using one set of login credentials, users can access
+                                      multiple servers with the TSplus Gateway Web Portal.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Assign one or several Application Server(s) to users or groups</p>
+                                    <span class="ts-tooltip-text">Once you have published some applications, you can assign
+                                      them to one or more users or groups.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                              <tr>
+                                <td align="left" class="ts-table-feature">
+                                  <div class="ts-tooltip-box">
+                                    <p class="help-icon">Load Balancing and Failover support</p>
+                                    <span class="ts-tooltip-text">The TSplus load balancing feature splits the load between
+                                      multiple servers in your farm. It also allows falling back to failover servers in case
+                                      of a production incident.</span>
+                                  </div>
+                                </td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-not-included" align="center"></td>
+                                <td class="ts-feature-included" align="center"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="w-embed">
+                          <style>
+                            thead,
+                            table,
+                            th {
+                              border: none;
+                              background-color: #fff !;
+                            }
+      
+                            th {
+                              padding-bottom: 15px;
+                            }
+      
+                            td,
+                            tbody {
+                              border: none;
+                              background-color: #f9fafb;
+                              padding-left: 20px;
+                            }
+      
+                            td {
+                              padding-bottom: 5px;
+                              padding-top: 5px;
+                            }
+      
+                            table {
+                              margin-bottom: 35px;
+                              width: 100%;
+                            }
+      
+                            .ts-feature-included {
+                              background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='12' viewBox='0 0 15 12' fill='none'%3E%3Cpath d='M5.09467 11.7643L0.219661 6.53442C-0.0732203 6.22021 -0.0732203 5.71077 0.219661 5.39654L1.2803 4.25865C1.57318 3.94442 2.04808 3.94442 2.34096 4.25865L5.625 7.78174L12.659 0.235652C12.9519 -0.0785507 13.4268 -0.0785507 13.7197 0.235652L14.7803 1.37353C15.0732 1.68774 15.0732 2.19718 14.7803 2.51141L6.15533 11.7644C5.86242 12.0786 5.38755 12.0786 5.09467 11.7643V11.7643Z' fill='%2322c55e'%3E%3C/path%3E%3C/svg%3E ");
+                              background-repeat: no-repeat;
+                              background-position: center;
+                              background-size: 14px;
+                            }
+      
+                            .ts-feature-not-included {
+                              background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M10.3432 7.5L14.6075 3.23565C15.1308 2.71236 15.1308 1.86392 14.6075 1.3402L13.6598 0.392472C13.1365 -0.130824 12.2881 -0.130824 11.7643 0.392472L7.5 4.65682L3.23565 0.392472C2.71236 -0.130824 1.86392 -0.130824 1.3402 0.392472L0.392472 1.3402C-0.130824 1.86349 -0.130824 2.71193 0.392472 3.23565L4.65682 7.5L0.392472 11.7643C-0.130824 12.2876 -0.130824 13.1361 0.392472 13.6598L1.3402 14.6075C1.86349 15.1308 2.71236 15.1308 3.23565 14.6075L7.5 10.3432L11.7643 14.6075C12.2876 15.1308 13.1365 15.1308 13.6598 14.6075L14.6075 13.6598C15.1308 13.1365 15.1308 12.2881 14.6075 11.7643L10.3432 7.5Z' fill='%23CDCDCD'%3E%3C/path%3E%3C/svg%3E ");
+                              background-repeat: no-repeat;
+                              background-position: center;
+                              background-size: 13px;
+                            }
+      
+                            .ts-first-column {
+                              width: 50%;
+                              padding-left: 20px;
+                            }
+      
+                            .ts-table-feature {
+                              color: #1f2937;
+                              font-size: 16px;
+                              font-family: Inter, sans-serif;
+                            }
+      
+                            .ts-table-header {
+                              color: #1f2937;
+                              font-size: 19px;
+                              font-family: Inter, sans-serif;
+                              vertical-align: bottom;
+                            }
+      
+                            .ts-table-header-2 {
+                              color: #6A6A6A;
+                              font-size: 14px;
+                              font-family: Inter, sans-serif;
+                              vertical-align: bottom;
+                            }
+      
+                            .help-icon {
+                              display: inline;
+                            }
+      
+                            .help-icon:after {
+                              margin-left: 6px;
+                              content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='10.125' height='10.125' viewBox='0 0 10.125 10.125'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Cpath id='Path_11985' data-name='Path 11985' d='M5.063-10.312A5.048,5.048,0,0,1,10.125-5.25,5.048,5.048,0,0,1,5.063-.187,5.048,5.048,0,0,1,0-5.25,5.048,5.048,0,0,1,5.063-10.312Zm0,.92A4.125,4.125,0,0,0,.92-5.25,4.125,4.125,0,0,0,5.063-1.108,4.125,4.125,0,0,0,9.2-5.25,4.125,4.125,0,0,0,5.063-9.392Zm-.091,5.8a.457.457,0,0,1,.347.15.521.521,0,0,1,.141.37.5.5,0,0,1-.147.384.48.48,0,0,1-.34.14.5.5,0,0,1-.349-.138.5.5,0,0,1-.149-.386.514.514,0,0,1,.144-.37A.471.471,0,0,1,4.971-3.589Zm.08-4.244a1.807,1.807,0,0,1,.838.187,1.387,1.387,0,0,1,.561.508,1.307,1.307,0,0,1,.2.7,1.14,1.14,0,0,1-.113.52,1.59,1.59,0,0,1-.268.386q-.155.162-.558.547a2.356,2.356,0,0,0-.178.19.776.776,0,0,0-.1.15.767.767,0,0,0-.051.136q-.018.068-.054.239a.373.373,0,0,1-.39.363.385.385,0,0,1-.286-.119.485.485,0,0,1-.116-.353,1.377,1.377,0,0,1,.085-.508,1.3,1.3,0,0,1,.226-.377,5.347,5.347,0,0,1,.38-.386q.209-.2.3-.3a1,1,0,0,0,.157-.222.565.565,0,0,0,.064-.265A.637.637,0,0,0,5.553-6.9a.685.685,0,0,0-.5-.192.67.67,0,0,0-.53.194,1.579,1.579,0,0,0-.288.571q-.111.395-.422.395A.4.4,0,0,1,3.5-6.074a.435.435,0,0,1-.126-.3,1.323,1.323,0,0,1,.2-.672,1.579,1.579,0,0,1,.583-.564A1.74,1.74,0,0,1,5.051-7.833Z' fill='none' clip-rule='evenodd'/%3E%3C/clipPath%3E%3CclipPath id='clip-path-2'%3E%3Cpath id='Path_11984' data-name='Path 11984' d='M-224,2815H1216V-977H-224Z' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='Group_2181' data-name='Group 2181' transform='translate(0 10.313)'%3E%3Cg id='Group_2180' data-name='Group 2180' clip-path='url(%23clip-path)'%3E%3Cg id='Group_2179' data-name='Group 2179' clip-path='url(%23clip-path-2)'%3E%3Cpath id='Path_11983' data-name='Path 11983' d='M-5-15.312H15.125V4.813H-5Z' fill='rgb(106,106,106)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                            }
+      
+                            /* styling the tooltip content*/
+                            .ts-tooltip-text,
+                            .ts-tooltip-text-center {
+                              visibility: hidden;
+                              opacity: 0;
+                              transition: opacity .3s;
+                              width: 300px;
+                              background-color: #fff;
+                              border: 1px solid #C4C4C4;
+                              color: #6A6A6A;
+                              text-align: center;
+                              padding: 10px;
+                              border-radius: 5px;
+                              font-family: Inter, sans-serif;
+                              font-weight: 400;
+                              line-height: 145%;
+                              position: absolute;
+                              z-index: 99;
+                              bottom: 150%;
+                              left: 50%;
+                              margin-left: -170px;
+                              font-size: 0;
+                            }
+      
+                            /* grey rectangle after tooltip box */
+                            .ts-tooltip-text:after,
+                            .ts-tooltip-text-center:after {
+                              content: "";
+                              position: absolute;
+                              top: 100%;
+                              left: 50%;
+                              margin-left: -.5rem;
+                              border: 5px solid transparent;
+                              border-top-color: #C4C4C4;
+                            }
+      
+                            /* reveal tooltip box when hovered*/
+                            .ts-tooltip-box:hover .ts-tooltip-text,
+                            .ts-tooltip-box:hover .ts-tooltip-text-center {
+                              visibility: visible;
+                              opacity: 1;
+                              font-size: 15px
+                            }
+      
+                            .th-hidden {
+                              position: relative;
+                              z-index: -100;
+                            }
+      
+                            /* placing the tooltip box */
+                            .ts-tooltip-box {
+                              position: relative;
+                              display: block;
+                              margin: 0;
+                              cursor: pointer;
+                            }
+      
+                            @media (max-width:767px) {
+                              .ts-tooltip-text {
+                                margin-left: -55px;
+                              }
+                            }
+                          </style>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="w-node-ae008a05-dce2-e882-ea71-e433d7c70c17-61694a69" class="card-plan-item ra overflow pricing">
+              <div class="card plan-card large overflow">
+                <p class="paragraph-17 green">MOST POPULAR</p>
+                <a href="#" class="card-plan-top-content w-inline-block">
+                  <div class="html-embed-39 w-embed">
+                    <p class="plan-title-wf">Web Mobile Edition<span class="ts-plus-orange-gradient-special"> PLUS</span></p>
+                  </div>
+                </a>
+                <div class="title card-plan-features second w-embed">
+                  <div class="ts-tooltip-box-white"><span class="help-icon-white">Perpetual license</span>
+                    <span class="ts-tooltip-text">The license won't expire.<br>
+                      Buy once, use it for life.</span>
+                  </div>
+                </div>
+                <div class="card-plan-content">
+                  <div class="card-plan-features-wrapper _100">
+                    <div class="w-layout-grid card-plan-features-grid less-gap-row">
+                      <div id="w-node-ac1c48d6-1d4b-bff7-401c-a9906c7d84de-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon"><b>Desktop Edition</b><span
+                              class="ts-plus-orange-gradient-special"> PLUS</span></p> <span class="ts-tooltip-text-center"
+                            id="update-tooltip-switch-web">The Web Mobile Edition includes all features from the Desktop
+                            Edition, the Web Portal and the HTML5 client. All you need to web enable your Windows
+                            systems.</span>
+                        </div>
+                      </div>
+                      <div id="w-node-c615461a-b0a8-abcd-fa42-368b2bba09db-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">Web Portal</p> <span
+                            class="ts-tooltip-text-center">Publish applications through the web and customize the branding of
+                            your web portal.</span>
+                        </div>
+                      </div>
+                      <div id="w-node-_4d6084ad-2123-9778-cc9e-c39c4f2bf6aa-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">HTML5 Client</p> <span
+                            class="ts-tooltip-text-center">Access your Windows applications and desktops through any browser
+                            and any device, without a plugin or app to install on the device.</span>
+                        </div>
+                      </div>
+                      <div class="plan-feature-wrapper">
+                        <div class="html-embed-13 small w-embed"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.07574 9.61145L0.175729 5.42755C-0.0585763 5.17618 -0.0585763 4.76863 0.175729 4.51724L1.02424 3.60693C1.25854 3.35555 1.63846 3.35555 1.87277 3.60693L4.5 6.4254L10.1272 0.388534C10.3615 0.137172 10.7414 0.137172 10.9758 0.388534L11.8242 1.29884C12.0586 1.5502 12.0586 1.95776 11.8242 2.20914L4.92426 9.61153C4.68994 9.86289 4.31004 9.86289 4.07574 9.61145Z"
+                              fill="#FE813A"></path>
+                          </svg></div>
+                        <div data-w-id="ae9c1bc5-b265-569f-4f41-02feb150f3d1"
+                          class="text-block-4 link">See all features</div>
+                      </div>
+                      <div id="w-node-_0c134286-8fc0-136b-8254-7c29eb157b93-61694a69" class="div-block-102"></div>
+                      <div class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-not-included-list-before help-icon iconToSwitch fa-small-text"><span
+                              class="ts-plus-orange-gradient-special-small">OPTION</span> Two-Factor Authentication</p> <span
+                            class="ts-tooltip-text-center">Protect your servers and data with 2FA for incoming remote
+                            connections. Available offline and on multiple devices.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-embed">
+                  <div class="bundleOn ts-the-rounded-button-orange-ra ts-not-too-large-button"
+                    data-fsc-item-path-value="VER-WP10" data-fsc-item-path="VER-WP10" data-fsc-addthis="VER-WP10" onclick="(function(){
+          sessionStorage.setItem('product','Remote Access');
+          sessionStorage.setItem('plan','Web Mobile');
+          sessionStorage.setItem('type','Bundle');
+      })(); addSourceTag(); addTaxCaptions(true);">
+                    <div class="ts-tooltip-box-white-inline" data-fsc-item-path-value="VER-WP10" data-fsc-item-path="VER-WP10"
+                      data-fsc-addthis="VER-WP10">
+                      <span class="ts-compare-price-text" data-fsc-item-path-value="VER-WP10" data-fsc-item-path="VER-WP10"
+                        data-fsc-addthis="VER-WP10">$<span id="ts-compare-ra-web-bundle" data-fsc-item-path-value="VER-WP10"
+                          data-fsc-item-path="VER-WP10" data-fsc-addthis="VER-WP10">2000</span></span>
+                    </div>
+                    <span class="ts-select-text-button" data-fsc-item-path-value="VER-WP10" data-fsc-item-path="VER-WP10"
+                      data-fsc-addthis="VER-WP10">Add to cart
+                    </span>
+                  </div>
+                </div>
+                <div class="html-embed-40 vb w-embed">
+                  <div class="ts-tooltip-box-white-inline hiddenTest">
+                    <span class="rightCurrencyPlan">$</span>
+                    <span id="ts-price-web-bundle" class="TSnewText">56</span>
+                    <span class="help-icon-grey ts-slash-user">/user</span>
+                    <span class="ts-tooltip-text ts-tooltip-users-update">For 25 users.</span>
+                  </div>
+                  <span class="ts-compare-price-text-2 bundleOn">Instead of $<span
+                      id="ts-compare-ra-web-bundle-theory">2190</span> if<br>bought separately.</span>
+                </div>
+                <div class="bundleoff negative-gap-top w-embed">
+                  <div class="ts-the-rounded-button-blue-ra ts-not-too-large-button" data-fsc-item-path-value="VER-MOB3"
+                    data-fsc-item-path="VER-MOB3" data-fsc-addthis="VER-MOB3" onclick="(function(){
+          sessionStorage.setItem('product','Remote Access');
+          sessionStorage.setItem('plan','Web Mobile');
+          sessionStorage.setItem('type','Edition');
+      })(); addSourceTag(); addTaxCaptions(true);">
+                    <div class="ts-tooltip-box-white-inline" data-fsc-item-path-value="VER-MOB3" data-fsc-item-path="VER-MOB3"
+                      data-fsc-addthis="VER-MOB3">
+                      <span class="ts-compare-price-text" data-fsc-item-path-value="VER-MOB3" data-fsc-item-path="VER-MOB3"
+                        data-fsc-addthis="VER-MOB3">$<span id="ts-compare-ra-web-plan" data-fsc-item-path-value="VER-MOB3"
+                          data-fsc-item-path="VER-MOB3" data-fsc-addthis="VER-MOB3">254</span></span>
+                    </div>
+                    <span class="ts-select-text-button" data-fsc-item-path-value="VER-MOB3" data-fsc-item-path="VER-MOB3"
+                      data-fsc-addthis="VER-MOB3">Add to cart
+                    </span>
+                  </div>
+                </div>
+                <div class="bundleoff gap-top vb w-embed">
+                  <div class="ts-tooltip-box-white-inline"><span class="rightCurrencyPlan">$</span>
+                    <span id="ts-price-web-plan" class="TSnewText">85</span>
+                    <span class="help-icon-grey ts-slash-user">/user</span>
+                    <span class="ts-tooltip-text ts-tooltip-users-update">For 3 users.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="w-node-ae008a05-dce2-e882-ea71-e433d7c70c38-61694a69" class="card-plan-item ra overflow pricing spec">
+              <div class="card plan-card large overflow">
+                <p class="paragraph-17">BEST VALUE</p>
+                <a href="#" class="card-plan-top-content w-inline-block">
+                  <div class="html-embed-39 w-embed">
+                    <p class="plan-title-wf">Enterprise Edition<span class="ts-plus-orange-gradient-special"> PLUS</span></p>
+                  </div>
+                </a>
+                <div class="title card-plan-features third w-embed">
+                  <div class="ts-tooltip-box-white"><span class="help-icon-white">Perpetual license</span>
+                    <span class="ts-tooltip-text">The license won't expire.<br>
+                      Buy once, use it for life.</span>
+                  </div>
+                </div>
+                <div class="card-plan-content">
+                  <div class="card-plan-features-wrapper _100">
+                    <div class="w-layout-grid card-plan-features-grid less-gap-row">
+                      <div id="w-node-_717b60ab-d317-d29d-8c69-1b2b320f1242-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon"><b>Web Mobile Edition</b><span
+                              class="ts-plus-orange-gradient-special"> PLUS</span></p> <span
+                            class="ts-tooltip-text-center update-tooltip-switch-enterprise"
+                            id="update-tooltip-switch-enterprise">The Enterprise Edition includes all features from the Web
+                            Mobile Edition, the Farm Manager and the TSplus Gateway.</span>
+                        </div>
+                      </div>
+                      <div id="w-node-_9df4143a-616f-7dfc-4510-91bc02534479-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">Farm Manager</p> <span
+                            class="ts-tooltip-text-center">Manage your farm of servers<br>and split the load between multiple
+                            servers of your cluster.</span>
+                        </div>
+                      </div>
+                      <div id="w-node-_00a6c810-f752-d572-2b69-2c8cb7b57a9c-61694a69" class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-included-list-before help-icon">Gateway</p> <span class="ts-tooltip-text-center">Access
+                            multiple servers with control of the users credentials and Single-Sign-On (SSO).</span>
+                        </div>
+                      </div>
+                      <div class="plan-feature-wrapper">
+                        <div class="html-embed-13 small w-embed"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M4.07574 9.61145L0.175729 5.42755C-0.0585763 5.17618 -0.0585763 4.76863 0.175729 4.51724L1.02424 3.60693C1.25854 3.35555 1.63846 3.35555 1.87277 3.60693L4.5 6.4254L10.1272 0.388534C10.3615 0.137172 10.7414 0.137172 10.9758 0.388534L11.8242 1.29884C12.0586 1.5502 12.0586 1.95776 11.8242 2.20914L4.92426 9.61153C4.68994 9.86289 4.31004 9.86289 4.07574 9.61145Z"
+                              fill="#FE813A"></path>
+                          </svg></div>
+                        <div data-w-id="43828974-d795-0269-a9b5-3f1de207c950"
+                          class="text-block-4 link">See all features</div>
+                      </div>
+                      <div id="w-node-_772d0936-ec60-9f90-db50-ae76fd072777-61694a69" class="div-block-102"></div>
+                      <div class="html-embed-46 w-embed">
+                        <div class="ts-tooltip-box">
+                          <p class="ts-not-included-list-before help-icon iconToSwitch"><span
+                              class="ts-plus-orange-gradient-special-small">ADD-ON</span> Advanced Security <b>Ultimate</b>
+                          </p> <span class="ts-tooltip-text-center">The ultimate cybersecurity toolbox for maximum security.
+                            (All features from Essentials + Ransomware protection, Endpoint protection, Permissions and Access
+                            policies management.)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-embed">
+                  <div class="bundleOn ts-the-rounded-button-orange-ra ts-not-too-large-button"
+                    data-fsc-item-path-value="VER-PLUS10" data-fsc-item-path="VER-PLUS10" data-fsc-addthis="VER-PLUS10"
+                    onclick="(function(){
+          sessionStorage.setItem('product','Remote Access');
+          sessionStorage.setItem('plan','Enterprise');
+          sessionStorage.setItem('type','Bundle');
+      })(); addSourceTag(); addTaxCaptions(true);">
+                    <div class="ts-tooltip-box-white-inline" data-fsc-item-path-value="VER-PLUS10"
+                      data-fsc-item-path="VER-PLUS10" data-fsc-addthis="VER-PLUS10">
+                      <span class="ts-compare-price-text" data-fsc-item-path-value="VER-PLUS10"
+                        data-fsc-item-path="VER-PLUS10" data-fsc-addthis="VER-PLUS10">$<span
+                          id="ts-compare-ra-enterprise-bundle" data-fsc-item-path-value="VER-PLUS10"
+                          data-fsc-item-path="VER-PLUS10" data-fsc-addthis="VER-PLUS10">1000</span></span>
+                    </div>
+                    <span class="ts-select-text-button" data-fsc-item-path-value="VER-PLUS10" data-fsc-item-path="VER-PLUS10"
+                      data-fsc-addthis="VER-PLUS10">Add to cart
+                    </span>
+                  </div>
+                </div>
+                <div class="html-embed-40 vb w-embed">
+                  <div class="ts-tooltip-box-white-inline hiddenTest">
+                    <span class="rightCurrencyPlan">$</span>
+                    <span id="ts-price-enterprise-bundle" class="TSnewText">70</span>
+                    <span class="help-icon-grey ts-slash-user">/user</span>
+                    <span class="ts-tooltip-text ts-tooltip-users-update">For 25 users.</span>
+                  </div>
+                  <span class="ts-compare-price-text-2 bundleOn">Instead of $<span
+                      id="ts-compare-ra-enterprise-bundle-theory">2640</span> if<br>bought separately.</span>
+                </div>
+                <div class="bundleoff negative-gap-top w-embed">
+                  <div class="ts-the-rounded-button-blue-ra ts-not-too-large-button" data-fsc-item-path-value="VER-ENT3"
+                    data-fsc-item-path="VER-ENT3" data-fsc-addthis="VER-ENT3" onclick="(function(){
+          sessionStorage.setItem('product','Remote Access');
+          sessionStorage.setItem('plan','Enterprise');
+          sessionStorage.setItem('type','Edition');
+      })(); addSourceTag(); addTaxCaptions(true);">
+                    <div class="ts-tooltip-box-white-inline" data-fsc-item-path-value="VER-ENT3" data-fsc-item-path="VER-ENT3"
+                      data-fsc-addthis="VER-ENT3">
+                      <span class="ts-compare-price-text" data-fsc-item-path-value="VER-ENT3" data-fsc-item-path="VER-ENT3"
+                        data-fsc-addthis="VER-ENT3">$<span id="ts-compare-ra-enterprise-plan"
+                          data-fsc-item-path-value="VER-ENT3" data-fsc-item-path="VER-ENT3"
+                          data-fsc-addthis="VER-ENT3">290</span></span>
+                    </div>
+                    <span class="ts-select-text-button" data-fsc-item-path-value="VER-ENT3" data-fsc-item-path="VER-ENT3"
+                      data-fsc-addthis="VER-ENT3">Add to cart
+                    </span>
+                  </div>
+                </div>
+                <div class="bundleoff gap-top vb w-embed">
+                  <div class="ts-tooltip-box-white-inline"><span class="rightCurrencyPlan">$</span>
+                    <span id="ts-price-enterprise-plan" class="TSnewText">97</span>
+                    <span class="help-icon-grey ts-slash-user">/user</span>
+                    <span class="ts-tooltip-text ts-tooltip-users-update">For 3 users.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-grid pricing-grid spec home taxes">
+            <p class="taxmayapply ra">* excluding tax</p>
+            <p class="taxmayapply ra hide-mob">* excluding tax</p>
+            <p class="taxmayapply ra hide-mob">* excluding tax</p>
+          </div>
+          <div class="div-block-19 more">
+            <div class="_2-buttons home-hero-v2 pricing gap">
+              <a rel="noopener nofollow"
+                href="https://tsplus.net/wp-content/uploads/2022/03/Compare-TSplus-Remote-Access-Editions.pdf" target="_blank"
+                class="button-secondary w-button">Compare Editions</a>
+              <div class="space _2-buttons"></div>
+              <a rel="noopener nofollow" href="https://tsplus.net/wp-content/uploads/2023/06/TSplus-Price-List.pdf"
+                target="_blank" class="button-secondary w-button">Download Price List</a>
+              <div class="space _2-buttons"></div>
+              <a href="https://tsplus.net/store" class="button-secondary w-button">Manage/Upgrade existing Licenses</a>
+            </div>
+            <h2 class="heading-4">TSPLUS IS TRUSTED BY OVER 500,000 COMPANIES</h2>
+            <div class="div-block-20">
+              <div id="w-node-_522ad4aa-4be1-2175-4b78-80ecd46fa4f2-61694a69" class="div-block-21"><img
+                  src="/images/oracle-logo-customer-grey.svg" loading="lazy" alt="oracle logo reference" height="40"></div>
+              <div id="w-node-_522ad4aa-4be1-2175-4b78-80ecd46fa4f4-61694a69" class="div-block-21"><img
+                  src="/images/huawei-logo-customer-grey.svg" loading="lazy" alt="huawei logo reference" height="40"></div>
+              <div id="w-node-_522ad4aa-4be1-2175-4b78-80ecd46fa4f6-61694a69" class="div-block-21"><img
+                  src="/images/siemens-logo-customer-grey.svg" loading="lazy" alt="siemens logo reference" height="40"></div>
+              <div id="w-node-_522ad4aa-4be1-2175-4b78-80ecd46fa4f8-61694a69" class="div-block-21"><img
+                  src="/images/harvard-university-logo-customer-grey.svg" loading="lazy"
+                  alt="harvard university logo reference" height="40"></div>
+              <div id="w-node-_522ad4aa-4be1-2175-4b78-80ecd46fa4fa-61694a69" class="div-block-21"><img
+                  src="/images/tcs-tata-consultancy-services-logo-customer-grey.svg" loading="lazy"
+                  alt="tata consulting logo reference" height="40"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="faq" class="section">
+        <div class="container-default rs-pricing w-container">
+          <h2 class="heading-5 center">FAQ</h2>
+          <p class="paragraph-3 center again ra">Frequently asked questions</p>
+          <div class="div-block-57">
+            <div data-w-id="e6465467-c2a1-570f-650a-3dd9af636af5" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Is there a free trial?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">Yes, we offer a fully-featured 14-day free trial. You can <a
+                    href="https://tsplus.net/download/" class="link-5">download it here.</a>
+                </p>
+              </div>
+            </div>
+            <div data-w-id="93caecee-1390-4a32-0206-651af62b73dc" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Can I buy with a purchase order?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">Yes, please send us a purchase order (PO) by mail at <strong
+                    class="bold-text-8">sales@tsplus.net</strong> and we will send you an invoice with instructions.<br><br>In
+                  your mail, please include:<br><br>- Name and address of the company<br>- VAT number (for EEC companies)<br>-
+                  Name of the product<br>- Name of the Edition or Bundle<br>- Number of users for the license (Unlimited, 25,
+                  10, 5 or 3 users)<br>- Add-ons (2FA, Advanced Security Essentials or Ultimate)<br>- Update &amp; Support
+                  services (1, 2 or 3 years)<br>- Number of licenses (If you need more than 1)<br>‍</p>
+              </div>
+            </div>
+            <div data-w-id="6871345a-1783-dcad-bdb7-2a60a3e05559" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Are the licenses permanent?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">Yes, our licences are permanent!<br><br>After you purchase your licence, you will be
+                  able to enjoy TSplus Remote Access without time limitation. However, we strongly recommend that you
+                  subscribe to our Update and Support services (the fee is a small percent of your licence’s
+                  price).<br><br>The Update and Support services include our worldwide licence re-hosting, ticket/Email
+                  support service, Forum access, FAQ, tutorial support and the right to install and to use any new release,
+                  patch and updates.</p>
+              </div>
+            </div>
+            <div data-w-id="076a687e-e08a-2ab7-c5cd-8ac6c8a7ea0c" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">On how many servers can I install a license?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">One license (Edition or Bundle) is valid for one server only.<br>‍<br>If you need to
+                  use this software on several servers, you will have the opportunity to select the number of licenses on the
+                  checkout page.<br>‍<br><span><em class="italic-text">Note:</em></span><em> In this case, most of our
+                    customers select the Enterprise Edition or Enterprise Edition PLUS which include the farm manager and
+                    gateway features to easily access and manage their farm of servers.</em></p>
+              </div>
+            </div>
+            <div data-w-id="b3864d3e-77c1-a4f8-b4e4-9f9c9ed39bc9" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Does the price includes tax?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">Depending on where you live, local taxes may apply and will be added to the total
+                  price during the checkout process. <br><br>In this case, you&#x27;ll be able to enter your tax ID
+                  (VAT/GST/etc.) on the last step of the checkout.</p>
+              </div>
+            </div>
+            <div data-w-id="e366a41f-ab36-4537-49b7-0f0abc4477ce" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Does the price includes the Updates and Support services?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">No. Once you selected your Edition on this page, you will be asked if you want to add
+                  the Update and Support services.<br><br>The fee for these services are a percentage of the license
+                  price.<br><br>- One year: 21% of license price<br>- Two years: 18% of license price<br>- Three years: 15% of
+                  license price <br><br>That’s why we recommend to select the 3 years to maximize your savings on the long
+                  term.</p>
+              </div>
+            </div>
+            <div data-w-id="b3864d3e-77c1-a4f8-b4e4-9f9c9ed39bd9" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Can I get support to deploy my TSplus software?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">Yes, you will find all the information you need in our <a
+                    href="https://support.tsplus.net/support/home" rel="noopener nofollow" target="_blank"
+                    class="link-5">knowledge base</a>, our <a href="https://docs.terminalserviceplus.com/tsplus/"
+                    rel="noopener nofollow" target="_blank" class="link-5">user guides</a> and the deployment support emails
+                  that you will receive. TSplus remote desktop access software are easy to deploy, but if you still face
+                  difficulties, our support team will be happy to help you.</p>
+              </div>
+            </div>
+            <div data-w-id="e6465467-c2a1-570f-650a-3dd9af636b47" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">I already bought a license, where can I manage it?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">If you already bought a license, you can upgrade/renew or manage it <a
+                    href="https://tsplus.net/store/" class="link-5">on this page.</a>
+                </p>
+              </div>
+            </div>
+            <div data-w-id="6f1f748f-1ff1-f029-d66b-c5e924f6d658" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Should I choose an Edition or a Bundle?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">A Bundle contains everything in the Edition + our other software products and their
+                  add-ons for almost the same price than the Edition.<br>‍<br>If you buy all these software products
+                  independently, it will be much more expensive.<br>‍<br>That’s why we strongly recommend you to choose a
+                  Bundle to maximize your savings and discover all our software products.</p>
+              </div>
+            </div>
+            <div data-w-id="6841f8e6-e941-eb8b-eb2e-464c7f1efcb7" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">Can I have a discount?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">As displayed on this page, we offer a discount based on the selected number of users.
+                  The more users you select and the bigger the discount will be.<br>‍<br>And for a maximum discount, our
+                  bundles includes a huge discount. It’s much cheaper compared to buying each software and add-on
+                  independently.</p>
+              </div>
+            </div>
+            <div data-w-id="818e672a-1908-0e67-bb69-ef0176f073f2" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">How to buy the Two-Factor Authentication add-on alone?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">You can buy it <a href="https://jwts.onfastspring.com/2FA" rel="nofollow noopener"
+                    target="_blank" class="link-7">on this page.</a>
+                </p>
+              </div>
+            </div>
+            <div data-w-id="71fa7ea6-4593-74df-2c1e-840c583626b8" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">What’s the difference between Advanced Security Essentials and Advanced Security
+                  Ultimate?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">TSplus Advanced Security Essentials includes:<br>‍<br>- Brute force defender<br>-
+                  Homeland protection<br>- Working hours protection<br>- Global IP management<br>‍<br>TSplus Advanced Security
+                  Ultimate includes:<br><br>- <span class="text-span-10">Everything in Essentials, PLUS:</span><br>-
+                  Ransonware protection<br>- Permissions management<br>- Access policies management<br>- Endpoint protection
+                </p>
+              </div>
+            </div>
+            <div data-w-id="e6465467-c2a1-570f-650a-3dd9af636b57" class="card faq-wrapper">
+              <div class="faq-top">
+                <h3 class="title faq">I have a special request, can I talk to the TSplus sales team?</h3>
+                <div class="faq-arrow-wrapper">
+                  <div class="faq-arrow-icon"></div>
+                </div>
+              </div>
+              <div
+                style="display:block;height:0PX;-webkit-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 161PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+                class="faq-content">
+                <p class="paragraph faq">Of course, we will be happy to help. Simply <a href="https://tsplus.net/contact/"
+                    class="link-5">contact us here.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 class="heading-9">Still have questions?</h3>
+        <a href="https://tsplus.net/contact/" class="button-secondary gray center dark-font w-button">Contact us</a>
+      </div>
+      <div class="container-default large abovefooter w-container">
+        <div class="div-block-5 top footer">
+          <div class="w-row">
+            <div class="w-col w-col-6">
+              <div class="columns w-row">
+                <div class="column-2 w-col w-col-6">
+                  <div>
+                    <a rel="nofollow noopener" target="_blank" href="https://www.g2.com/products/tsplus/reviews"
+                      class="w-inline-block"><img src="/images/G2-review.svg" loading="lazy" alt="five stars review on g2"
+                        class="image-4"></a>
+                    <h3 class="heading-2">4.8 out of 5</h3>
+                  </div>
+                </div>
+                <div class="column-3 w-col w-col-6">
+                  <div class="div-block-51">
+                    <a rel="nofollow noopener" target="_blank" href="https://www.trustpilot.com/review/tsplus.net"
+                      class="w-inline-block"><img src="/images/trustpilot-reviews.svg" loading="lazy"
+                        alt="five stars review on trustpilot" class="image-4"></a>
+                    <h3 class="heading-2 second">4.7 out of 5</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-col w-col-6">
+              <div class="columns w-row">
+                <div class="column-2 w-col w-col-6">
+                  <div>
+                    <a rel="nofollow noopener" target="_blank" href="https://g.page/r/CSzjdZj7O74rEBA"
+                      class="w-inline-block"><img src="/images/Google-reviews.svg" loading="lazy"
+                        alt="five stars review on google" class="image-4"></a>
+                    <h3 class="heading-2">4.9 out of 5</h3>
+                  </div>
+                </div>
+                <div class="column-3 last w-col w-col-6">
+                  <div class="div-block-52">
+                    <a rel="nofollow noopener" target="_blank" href="https://sourceforge.net/software/product/TSplus/"
+                      class="w-inline-block"><img src="/images/source-forge-reviews.svg" loading="lazy"
+                        alt="five stars review on sourceforge" class="image-4 last"></a>
+                    <h3 class="heading-2 last">4.8 out of 5</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</Base>
+
+<script is:inline src="/scripts/purchasing-process.js"></script>

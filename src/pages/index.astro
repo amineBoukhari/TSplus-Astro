@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import Blogs from "./Blogs.astro";
+import News from "./News.astro";
+import Test from "./Test";
+import "../styles/style.css"
+const homepage = true;
+---
+
+<Base title="HOME TITLE" description="HOME DESCRIPTION" canonical="" ogImage="https://test-image.com/" homepage={homepage}>
+    <News client:visible/>
+</Base>

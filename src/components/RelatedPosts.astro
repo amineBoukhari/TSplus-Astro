@@ -1,0 +1,97 @@
+---
+function hasIntersection(array1, array2) {
+  // Use the some method to check if any element from array1 is present in array2
+  return array1.some(element => array2.includes(element));
+}
+function getFirstTwentyWords(text) {
+  // Use the split method to split the text into an array of words
+  const words = text.split(/\s+/);
+
+  // Use the slice method to get the first twenty words
+  const firstTwentyWords = words.slice(0, 20);
+
+  // Use the join method to join the words back into a string
+  const result = firstTwentyWords.join(' ');
+
+  return result;
+}
+function cleanMarkdownText(text) {
+  // Define the patterns to match
+  var imageLinkPattern = /\[!\[.*?\]\(.*?\)\]\(.*?\)/;
+  var headingPattern = /##\s*/g; // Match ## followed by optional spaces
+  var boldPattern = /\*\*(.*?)\*\*/g; // Match **text**
+
+  // Remove the specified Markdown image link
+  var cleanedText = text.replace(imageLinkPattern, '');
+
+  // Remove Markdown headings
+  cleanedText = cleanedText.replace(headingPattern, '');
+
+  // Remove Markdown bold
+  cleanedText = cleanedText.replace(boldPattern, '$1'); // Keep the text inside bold
+
+  // Return the cleaned text
+  return cleanedText;
+}
+
+import { getCollection, getEntry } from 'astro:content';
+const {currentpost , type} = Astro.props
+let blogEntries = await getCollection(type);
+blogEntries =  blogEntries.filter(blog => hasIntersection(blog.data.tags,currentpost.data.tags) && blog.id !=  currentpost.id   )
+let descriptions =[] ;
+blogEntries= blogEntries.slice(0, 4);
+blogEntries.forEach(blog => {
+    descriptions [`${blog.slug}`] = getFirstTwentyWords(cleanMarkdownText(blog.body))
+})
+
+
+---
+
+<section class="elementor-section elementor-top-section elementor-element elementor-element-113e3b9d ignore-toc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="113e3b9d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" data-astro-cid-fzx4jmue="">
+    <div class="elementor-container elementor-column-gap-default" data-astro-cid-fzx4jmue="">
+      <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5883c9af" data-id="5883c9af" data-element_type="column" data-astro-cid-fzx4jmue="">
+        <div class="elementor-widget-wrap elementor-element-populated" data-astro-cid-fzx4jmue="">
+          <div class="elementor-element elementor-element-3397bb67 elementor-widget elementor-widget-heading" data-id="3397bb67" data-element_type="widget" data-widget_type="heading.default" data-astro-cid-fzx4jmue="">
+            <div class="elementor-widget-container" data-astro-cid-fzx4jmue="">
+              <div class="elementor-heading-title elementor-size-default" data-astro-cid-fzx4jmue="">
+                Related Posts
+              </div>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-16582fdf elementor-widget-divider--view-line_text elementor-widget-divider--element-align-right elementor-widget elementor-widget-divider" data-id="16582fdf" data-element_type="widget" data-widget_type="divider.default" data-astro-cid-fzx4jmue="">
+            <div class="elementor-widget-container" data-astro-cid-fzx4jmue="">
+              <div class="elementor-divider" data-astro-cid-fzx4jmue=""></div>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-5596731a elementor-grid-4 elementor-posts--align-left elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-widget elementor-widget-posts" data-id="5596731a" data-element_type="widget" data-settings="{&quot;classic_columns&quot;:&quot;4&quot;,&quot;classic_columns_tablet&quot;:&quot;2&quot;,&quot;classic_columns_mobile&quot;:&quot;1&quot;,&quot;classic_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:35,&quot;sizes&quot;:[]},&quot;classic_row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;classic_row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="posts.classic" data-astro-cid-fzx4jmue="">
+            <div class="elementor-widget-container" data-astro-cid-fzx4jmue="">
+              <div class="elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid elementor-has-item-ratio" data-astro-cid-fzx4jmue="">
+                 {
+                    blogEntries.map(blog => {
+                        return(
+                            
+                             <article class="elementor-post elementor-grid-item post-6827 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-access-remote-computer tag-application-delivery tag-cloud-computing tag-cloud-security tag-home-office tag-it-security tag-network-security tag-news tag-rds-web-access tag-remote-access tag-remote-desktop-security tag-server-security tag-work-safe tag-working-home">
+                                    <a class="elementor-post__thumbnail__link" href={blog.slug} tabindex="-1">
+                                    <div class="elementor-post__thumbnail"><img width="699" height="418" src={"../../images/"+blog.data.imageLink}  class="attachment-full size-full wp-image-6856" alt="TSplus Remote Desktop Access - Advanced Security Software" loading="lazy"></div></a>
+                                    <div class="elementor-post__text">
+                                        <h3 class="elementor-post__title"><a href="https://tsplus.net/remote-desktop-and-security-tsplus-14-70-has-it-all/">{blog.data.title}</a></h3>
+                                        <div class="elementor-post__excerpt">
+                                        <p>{descriptions [`${blog.slug}`]}</p>
+                                        </div>
+                                        <div class="elementor-post__read-more-wrapper">
+                                        <a class="elementor-post__read-more" href={blog.slug}  aria-label="Read more about Remote Desktop and Security: TSplus 14.70 Has it All" tabindex="-1">Read article →</a>
+                                        </div>
+                                    </div>
+                             </article>      
+                            </>
+                        )
+                    })
+                 }
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

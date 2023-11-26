@@ -1,0 +1,927 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from "../../layouts/Base.astro";
+import RelatedPosts from "../../components/RelatedPosts.astro"
+import ExtandedSideBar from "../../components/ExtandedSideBar.astro"
+import TableOfContent from  "../../components/TableOfContent.astro"
+
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  
+  return blogEntries.map(( blog) => {
+    return {
+      params: { slug: blog.slug },
+      props: { blog },
+    };
+  });
+ 
+}
+
+const { blog } = Astro.props;
+const { Content, headings , remarkPluginFrontmatter } = await blog.render();
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format("DD MMMM YYYY");
+---
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'>
+  <title>Best Remote Access Security Software | TSplus</title>
+  <style id="rocket-critical-css">
+  .fastspring *,.fastspring *::before,.fastspring *::after{-webkit-box-sizing:border-box;box-sizing:border-box}.fsb-modal{-webkit-animation-duration:.4s;animation-duration:.4s;background-color:#000;background-color:rgba(0,0,0,.3);display:none;height:100%;left:0;overflow:auto;position:fixed;top:0;width:100%;z-index:1039}@-webkit-keyframes fsb-fadeIn{from{opacity:0}to{opacity:1}}@keyframes fsb-fadeIn{from{opacity:0}to{opacity:1}}#fastspring_spinner{-webkit-animation-duration:.4s;animation-duration:.4s;width:100%;height:100%;z-index:99999998;background:rgba(0,0,0,.3);position:fixed;top:0;left:0}#fastspring_spinner img{-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-delay:.4s;animation-delay:.4s;-webkit-animation-name:fsb-fadeIn;animation-name:fsb-fadeIn;position:fixed;top:50%;margin-top:-50px;left:50%;margin-left:-50px;z-index:99999999}.minicart{border-radius:5px;position:fixed;-webkit-box-shadow:0 0 15px 5px rgba(0,0,0,.2);box-shadow:0 0 15px 5px rgba(0,0,0,.2);color:#000;background:#fff;z-index:999998;height:58px;width:58px}.minicart.bottomleft{bottom:20px;left:20px}.minicart .fa{font-size:25px;padding:15px}.minicart-count{position:absolute;background:red;border-radius:50%;height:20px;width:20px;line-height:21px;text-align:center;color:#fff;font-size:12px}.bottomleft .minicart-count{top:-10px;right:-10px}#minicart{text-align:center}@font-face{font-display:swap;font-family:dashicons;src:url(/wp-includes/fonts/dashicons.woff),url(/wp-includes/fonts/dashicons.ttf) format("truetype"),url(/wp-includes/fonts/dashicons.svg#dashicons) format("svg"),url(/wp-includes/fonts/dashicons.eot);font-weight:400;font-style:normal}#trp_ald_modal_container{background-color:rgba(0,0,0,.2);top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;position:fixed;z-index:2000000000000}#trp_ald_modal_popup{box-shadow:0 0 10px #6c7781;top:40px!important;position:relative}#trp_ald_modal_popup{background-color:#F0F0EE;width:570px;max-width:75%;border:1px solid #4c6066;padding:25px 40px;margin:auto}#trp_ald_popup_text{text-align:left;font-size:17px}.trp_ald_select_and_button{display:flex;justify-content:space-between;margin-top:14px;font-size:17px}.trp_ald_button{margin-left:12px;width:287px}#trp_ald_popup_change_language{text-transform:none;width:100%;background:#2271b1;border-color:#2271b1;color:#fff;text-decoration:none;text-shadow:none;justify-content:center;align-items:center;display:inline-grid;font-weight:400;font-size:17px;height:50px;min-height:30px;margin:0;padding:0;border-width:1px;border-style:solid;-webkit-appearance:none;border-radius:3px;white-space:nowrap;box-sizing:border-box}#trp_ald_x_button_and_textarea{text-decoration:none;display:flex;vertical-align:middle;align-items:center;color:#0085ba!important;font-size:14px;margin-top:15px;width:50%;height:100%}#trp_ald_x_button_textarea{text-decoration:underline;margin-bottom:3px;height:auto;width:auto;color:#0085ba!important;text-align:left}#trp_ald_modal_popup #trp_ald_x_button{display:inline-table;width:0;background:0 0;padding:0;border:none;text-decoration:none;color:transparent;-webkit-backface-visibility:hidden;outline:none;z-index:1}#trp_ald_modal_popup #trp_ald_x_button::before{content:"\f153";font:normal 16px/20px dashicons;text-align:center;color:#0085ba!important;background:0 0!important;-webkit-font-smoothing:antialiased}.trp_ald_ls_container{height:50px;width:100%;color:#4c6066;font-size:19px}.trp_ald_ls_container .trp-language-switcher-container{width:100%;margin:0}.trp_ald_ls_container .trp-language-switcher-container>div{background-image:linear-gradient(60deg,transparent 50%,#C9C0BB 50%),linear-gradient(120deg,#C9C0BB 50%,transparent 50%);background-position:calc(100% - 18px) calc(1em),calc(100% - 12px) calc(1em);background-size:6px 12px,6px 12px;background-repeat:no-repeat}.trp_ald_ls_container .trp-ls-shortcode-current-language{width:100%;height:50px;justify-content:left;padding-bottom:12px;border:2px solid #C9C0BB;padding-top:8px;padding-right:33px;vertical-align:middle;color:#4c6066;font-size:18px;overflow:hidden}.trp_ald_ls_container .trp-ls-shortcode-language{width:100%;height:50px;justify-content:left;border:2px solid #C9C0BB;z-index:1000000000000000}.trp_ald_ls_container .trp-ald-popup-select{padding-top:5px;padding-bottom:5px;padding-right:33px;font-size:18px;margin-right:-15px}.trp_ald_ls_container .trp-ls-shortcode-current-language{padding-bottom:12px;padding-top:6px;vertical-align:middle;color:#4c6066;font-size:18px}.trp_ald_ls_container .trp-ls-shortcode-language{padding-bottom:3px;padding-top:3px;vertical-align:middle;color:#4c6066;font-size:18px}.trp_ald_ls_container .trp-ls-shortcode-current-language img.trp-flag-image{display:inline-block;padding-top:9px;margin-left:8px;margin-right:8px}.trp_ald_ls_container .trp-ls-shortcode-language img.trp-flag-image{display:inline-block;padding-top:9px;margin-left:8px;margin-right:8px}#trp_ald_popup_select_container .trp-ls-shortcode-language{display:none}@media screen and (max-width:780px){#trp_ald_modal_popup{width:80%}.trp_ald_select_and_button{display:block;margin-top:32px}.trp_ald_button{width:100%;margin-left:0;margin-top:14px}#trp_ald_x_button_and_textarea{width:100%}}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}nav,section{display:block}template{display:none}a{background-color:transparent}b{font-weight:bold}h1{font-size:2em;margin:0.67em 0}img{border:0}svg:not(:root){overflow:hidden}[class^="w-icon-"],[class*=" w-icon-"]{font-family:'webflow-icons'!important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-icon-nav-menu:before{content:"\e602"}.w-icon-dropdown-toggle:before{content:"\e603"}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{height:100%}body{margin:0;min-height:100%;background-color:#fff;font-family:Arial,sans-serif;font-size:14px;line-height:20px;color:#333}img{max-width:100%;vertical-align:middle;display:inline-block}.w-inline-block{max-width:100%;display:inline-block}.w-button{display:inline-block;padding:9px 15px;background-color:#3898EC;color:white;border:0;line-height:inherit;text-decoration:none;border-radius:0}h1{font-weight:bold;margin-bottom:10px}h1{font-size:38px;line-height:44px;margin-top:20px}p{margin-top:0;margin-bottom:10px}blockquote{margin:0 0 10px 0;padding:10px 20px;border-left:5px solid #E2E2E2;font-size:18px;line-height:22px}ul{margin-top:0px;margin-bottom:10px;padding-left:40px}.w-list-unstyled{padding-left:0;list-style:none}.w-embed:before,.w-embed:after{content:" ";display:table;grid-column-start:1;grid-row-start:1;grid-column-end:2;grid-row-end:2}.w-embed:after{clear:both}.w-dropdown{display:inline-block;position:relative;text-align:left;margin-left:auto;margin-right:auto;z-index:900}.w-dropdown-toggle{position:relative;vertical-align:top;text-decoration:none;color:#222222;padding:20px;text-align:left;margin-left:auto;margin-right:auto;white-space:nowrap}.w-dropdown-toggle{display:inline-block;padding-right:40px}.w-icon-dropdown-toggle{position:absolute;top:0;right:0;bottom:0;margin:auto;margin-right:20px;width:1em;height:1em}.w-dropdown-list{position:absolute;background:#dddddd;display:none;min-width:100%}@media screen and (max-width:767px){.w-nav-brand{padding-left:10px}}.w-nav{position:relative;background:#dddddd;z-index:1000}.w-nav:before,.w-nav:after{content:" ";display:table;grid-column-start:1;grid-row-start:1;grid-column-end:2;grid-row-end:2}.w-nav:after{clear:both}.w-nav-brand{position:relative;float:left;text-decoration:none;color:#333333}.w-nav-menu{position:relative;float:right}.w-nav-button{position:relative;float:right;padding:18px;font-size:24px;display:none}@media screen and (max-width:991px){.w-nav[data-collapse="medium"] .w-nav-menu{display:none}.w-nav[data-collapse="medium"] .w-nav-button{display:block}}@media screen and (max-width:767px){.w-nav-brand{padding-left:10px}}body{background-color:transparent;font-family:Inter,sans-serif;color:#6b7280;font-size:18px;line-height:1.667em}h1{margin-top:0px;margin-bottom:20px;color:#fff;font-size:60px;line-height:1.133em;font-weight:700}p{margin-bottom:0px;color:#6b7280}a{color:#6b7280;text-decoration:underline}ul{margin-top:0px;margin-bottom:10px;padding-left:40px}li{margin-bottom:14px}img{display:inline-block;max-width:100%;margin-bottom:16px}blockquote{margin-bottom:10px;padding:68px 72px;border-left:0px solid #000;border-radius:24px;background-color:#39394b;font-size:24px;line-height:1.583em}.button-primary{position:static;padding:19px 28px;border-radius:6px;background-color:#fe813a;background-image:linear-gradient(90deg,#fe813a,#ffaf48);box-shadow:0 1px 2px -1px rgba(0,0,0,0.1),0 1px 3px 0 rgba(0,0,0,0.1);color:#fff;font-size:18px;line-height:20px;font-weight:600;text-align:center;text-decoration:none;background-clip:border-box;-webkit-text-fill-color:inherit;transform-style:preserve-3d}.button-primary.sign-up-header{padding:16px 26px;font-family:Inter,sans-serif;font-size:16px;line-height:18px}.html-embed-14{display:none;margin-top:-10px;color:#1f2937}.image-7{display:block;max-width:80%;margin-bottom:0px;padding-top:5px;padding-bottom:5px}.image-7.large{max-width:100%}.image-10-close{display:none;margin-bottom:0px}.navbar-logo-left{position:-webkit-sticky;position:sticky;top:0px;z-index:1501;background-color:#fff;box-shadow:0 0 10px 0 rgba(0,0,0,0.15)}.navbar-logo-left.net{box-shadow:0 0 10px 0 rgba(31,41,55,0.15)}.navbar-logo-left-container{z-index:1501;width:1280px;max-width:100%;margin-right:auto;margin-left:auto;padding:12px 20px;background-color:transparent}.container-2{position:relative;z-index:4;width:100%;max-width:940px;margin-right:auto;margin-left:auto}.container-2.larger{max-width:80rem}.navbar-wrapper{display:flex;justify-content:space-between;align-items:center}.navbar-brand{justify-content:space-between;transform-style:preserve-3d}.nav-menu-wrapper{min-width:360px}.nav-menu-two{display:flex;margin-bottom:0px;justify-content:space-between;align-items:center}.nav-link-3{margin-right:5px;margin-left:5px;padding:5px 10px;color:#6b7280;font-size:16px;line-height:20px;font-weight:600;letter-spacing:0.25px;text-decoration:none}.nav-dropdown{margin-right:5px;margin-left:5px}.nav-dropdown-toggle{padding:5px 30px 5px 10px;color:#6b7280;font-size:16px;line-height:20px;font-weight:600;letter-spacing:0.25px}.nav-dropdown-icon{margin-right:10px}.nav-dropdown-list{border-radius:12px;background-color:#fff}.nav-dropdown-list.shadow-three.mobile-shadow-hide{z-index:15000}.nav-dropdown-list.shadow-three.mobile-shadow-hide.middle.larger{width:300px}.nav-divider{width:1px;height:22px;margin-right:30px;margin-left:15px;background-color:#e4ebf3}.nav-divider.main-header{margin-right:15px}.mobile-margin-top-10{margin-bottom:0px;text-decoration:none}.list-item-6{margin-bottom:0px}.link-block-8{display:flex;margin:-12px;padding:12px 15px;flex-direction:row;justify-content:flex-start;align-items:flex-start;grid-auto-columns:1fr;grid-column-gap:16px;grid-row-gap:4px;-ms-grid-columns:1fr 1fr;grid-template-columns:1fr 1fr;-ms-grid-rows:auto auto;grid-template-rows:auto auto;background-color:#fff;text-decoration:none}.link-block-8.middle{width:190px;margin-top:-12px;margin-bottom:-12px;padding-top:6px;padding-bottom:6px;grid-column-gap:12px}.link-block-8.middle.larger{width:290px}.paragraph-55{margin-bottom:0px;font-family:Inter,sans-serif;color:#1f2937;font-size:16px;line-height:24px;font-weight:500;text-decoration:none}.paragraph-55.small{font-family:Inter,sans-serif;color:#6b7280}.paragraph-56{margin-bottom:0px;font-family:Inter,sans-serif;font-size:14px;line-height:20px}.image-22{max-width:40px;margin-bottom:16px}.html-embed-23{width:24px;height:24px;color:#ff9c4b}.html-embed-29{margin-right:15px}.html-embed-34{display:flex;width:30px;height:30px;margin-right:0px;transform-style:preserve-3d}.link-block-9{display:block;flex-direction:column;align-items:center;text-decoration:none}.link-block-9.gap-right{display:flex;margin-right:15px}.paragraph-77{height:9px;margin-top:5px;margin-bottom:0px;-ms-grid-row-align:center;align-self:center;font-size:11px;line-height:9px;font-weight:600;text-decoration:none}.modal-gpt{position:fixed;left:auto;top:auto;right:30px;bottom:80px;z-index:9999;display:none;overflow:hidden;width:450px;max-height:700px;max-width:85%;flex-direction:column;justify-content:flex-end;align-items:stretch;border-radius:12px;background-color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 0 20px 8px rgba(0,0,0,0.1)}.btn-gpt{position:fixed;left:auto;top:auto;right:30px;bottom:2%;z-index:999999;display:none}.html-embed-48{position:relative;left:0px;top:auto;right:0px;bottom:0px;z-index:0;overflow:hidden;margin-bottom:0px;align-items:flex-start;border-radius:12px}.image-10-open{margin-bottom:0px}.btn-gpt-close{position:fixed;left:auto;top:auto;right:30px;bottom:2%;z-index:999999}@media screen and (max-width:991px){h1{font-size:50px}blockquote{padding:60px 70px}.image-7{max-width:75%}.container-2{max-width:728px}.nav-menu-wrapper{background-color:transparent}.nav-menu-two{display:flex;margin-top:10px;padding:20px;justify-content:space-around;flex-wrap:wrap;align-items:center;border-radius:50px;background-color:#fff;box-shadow:0 8px 50px 0 rgba(0,0,0,0.05)}.nav-link-3{padding-right:5px;padding-left:5px}.menu-button-2{padding:12px}.modal-gpt{right:20px;display:none}.btn-gpt{right:20px;display:none}.btn-gpt-close{right:20px;display:none}}@media screen and (max-width:767px){h1{margin-bottom:16px;font-size:42px}blockquote{padding:50px 40px;font-size:20px}.button-primary{padding-right:40px;padding-left:40px}.navbar-logo-left-container{max-width:100%}.navbar-brand{padding-left:0px}.nav-menu-two{padding-bottom:30px;flex-direction:column;border-radius:20px}.nav-link-3{display:inline-block;padding-top:10px;padding-bottom:10px}.nav-dropdown{display:flex;flex-direction:column;align-items:center}.nav-dropdown-toggle{padding-top:10px;padding-bottom:10px}.nav-dropdown-list.shadow-three{box-shadow:0 8px 50px 0 rgba(0,0,0,0.05)}.nav-dropdown-list.shadow-three.mobile-shadow-hide{box-shadow:none}.nav-dropdown-list.shadow-three.mobile-shadow-hide{box-shadow:none}.nav-divider{width:200px;height:1px;max-width:100%;margin-top:10px;margin-bottom:10px}.mobile-margin-top-10{margin-top:10px;text-decoration:none}.html-embed-34{margin-top:10px}}@media screen and (max-width:479px){h1{font-size:35px}blockquote{padding:40px 20px;border-radius:20px;font-size:18px}.button-primary{width:100%;padding-right:20px;padding-left:20px}.navbar-logo-left-container{z-index:auto}.container-2{max-width:none}.nav-menu-two{flex-direction:column}.mobile-margin-top-10{text-decoration:none}.html-embed-34{margin-top:10px}.modal-gpt{padding-right:0rem;padding-left:0rem}}html{line-height:1.15;-webkit-text-size-adjust:100%}*,:after,:before{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#333;background-color:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}h1{margin-top:.5rem;margin-bottom:1rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}p{margin-top:0;margin-bottom:.9rem}a{background-color:transparent;text-decoration:none;color:#c36}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}b{font-weight:bolder}img{border-style:none;height:auto;max-width:100%}template{display:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}li,ul{margin-top:0;margin-bottom:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}.elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated>.elementor-widget-wrap{padding:10px}@media (max-width:767px){.elementor-column{width:100%}}.screen-reader-text{position:absolute;top:-10000em;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}.elementor-clearfix:after{content:"";display:block;clear:both;width:0;height:0}.elementor *,.elementor :after,.elementor :before{box-sizing:border-box}.elementor a{box-shadow:none;text-decoration:none}.elementor img{height:auto;max-width:100%;border:none;border-radius:0;box-shadow:none}.elementor iframe{max-width:100%;width:100%;margin:0;line-height:1;border:none}.elementor-widget-wrap .elementor-element.elementor-widget__width-auto{max-width:100%}.elementor-element{--flex-direction:initial;--flex-wrap:initial;--justify-content:initial;--align-items:initial;--align-content:initial;--gap:initial;--flex-basis:initial;--flex-grow:initial;--flex-shrink:initial;--order:initial;--align-self:initial;flex-basis:var(--flex-basis);flex-grow:var(--flex-grow);flex-shrink:var(--flex-shrink);order:var(--order);align-self:var(--align-self)}.elementor-align-center{text-align:center}.elementor-align-left{text-align:left}.elementor-align-left .elementor-button{width:auto}:root{--page-title-display:block}.elementor-page-title{display:var(--page-title-display)}.elementor-section{position:relative}.elementor-section .elementor-container{display:flex;margin-right:auto;margin-left:auto;position:relative}@media (max-width:1024px){.elementor-section .elementor-container{flex-wrap:wrap}}.elementor-section.elementor-section-boxed>.elementor-container{max-width:1140px}.elementor-row{width:100%;display:flex}@media (max-width:1024px){.elementor-row{flex-wrap:wrap}}.elementor-widget-wrap{position:relative;width:100%;flex-wrap:wrap;align-content:flex-start}.elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap{display:flex}.elementor-widget-wrap>.elementor-element{width:100%}.elementor-widget{position:relative}.elementor-widget:not(:last-child){margin-bottom:20px}.elementor-widget:not(:last-child).elementor-widget__width-auto{margin-bottom:0}.elementor-column{position:relative;min-height:1px;display:flex}.elementor-column-wrap{width:100%;position:relative;display:flex}@media (min-width:768px){.elementor-column.elementor-col-50{width:50%}.elementor-column.elementor-col-100{width:100%}}@media (max-width:767px){.elementor-column{width:100%}}ul.elementor-icon-list-items.elementor-inline-items{display:flex;flex-wrap:wrap}ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item{word-break:break-word}.elementor-button{display:inline-block;line-height:1;background-color:#69727d;font-size:15px;padding:12px 24px;border-radius:3px;color:#fff;fill:#fff;text-align:center}.elementor-button:visited{color:#fff}.elementor-button-content-wrapper{display:flex;justify-content:center}.elementor-button-text{flex-grow:1;order:10;display:inline-block}.elementor-button span{text-decoration:inherit}.elementor-element{--swiper-theme-color:#000;--swiper-navigation-size:44px;--swiper-pagination-bullet-size:6px;--swiper-pagination-bullet-horizontal-gap:6px}.elementor .elementor-element ul.elementor-icon-list-items{padding:0}.elementor-widget-divider{--divider-border-style:none;--divider-border-width:1px;--divider-color:#0c0d0e;--divider-icon-size:20px;--divider-element-spacing:10px;--divider-pattern-height:24px;--divider-pattern-size:20px;--divider-pattern-url:none;--divider-pattern-repeat:repeat-x}.elementor-widget-divider .elementor-divider{display:flex}.elementor-widget-divider .elementor-divider-separator{display:flex;margin:0;direction:ltr}.elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon) .elementor-divider-separator{border-top:var(--divider-border-width) var(--divider-border-style) var(--divider-color)}.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget .elementor-icon-list-items.elementor-inline-items{margin-right:-8px;margin-left:-8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:8px;margin-left:8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{width:auto;left:auto;right:auto;position:relative;height:100%;border-top:0;border-bottom:0;border-right:0;border-left-width:1px;border-style:solid;right:-8px}.elementor-widget .elementor-icon-list-items{list-style-type:none;margin:0;padding:0}.elementor-widget .elementor-icon-list-item{margin:0;padding:0;position:relative}.elementor-widget .elementor-icon-list-item:after{position:absolute;bottom:0;width:100%}.elementor-widget .elementor-icon-list-item{display:flex;font-size:inherit;align-items:var(--icon-vertical-align,center)}.elementor-widget .elementor-icon-list-icon+.elementor-icon-list-text{align-self:center;padding-left:5px}.elementor-widget .elementor-icon-list-icon{display:flex;position:relative;top:var(--icon-vertical-offset,initial)}.elementor-widget .elementor-icon-list-icon svg{width:var(--e-icon-list-icon-size,1em);height:var(--e-icon-list-icon-size,1em)}.elementor-widget .elementor-icon-list-icon i{width:1.25em;font-size:var(--e-icon-list-icon-size)}.elementor-widget.elementor-widget-icon-list .elementor-icon-list-icon{text-align:var(--e-icon-list-icon-align)}.elementor-widget.elementor-widget-icon-list .elementor-icon-list-icon svg{margin:var(--e-icon-list-icon-margin,0 calc(var(--e-icon-list-icon-size, 1em) * .25) 0 0)}.elementor-widget.elementor-align-center .elementor-icon-list-item{justify-content:center}.elementor-widget.elementor-align-center .elementor-icon-list-item:after{margin:auto}.elementor-widget.elementor-align-center .elementor-inline-items{justify-content:center}.elementor-widget:not(.elementor-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-align-left) .elementor-icon-list-item:after{right:0}@media (min-width:-1){.elementor-widget:not(.elementor-widescreen-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-widescreen-align-left) .elementor-icon-list-item:after{right:0}}@media (max-width:-1){.elementor-widget:not(.elementor-laptop-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-laptop-align-left) .elementor-icon-list-item:after{right:0}}@media (max-width:-1){.elementor-widget:not(.elementor-tablet_extra-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-tablet_extra-align-left) .elementor-icon-list-item:after{right:0}}@media (max-width:1024px){.elementor-widget:not(.elementor-tablet-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-tablet-align-left) .elementor-icon-list-item:after{right:0}}@media (max-width:-1){.elementor-widget:not(.elementor-mobile_extra-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-mobile_extra-align-left) .elementor-icon-list-item:after{right:0}}@media (max-width:767px){.elementor-widget:not(.elementor-mobile-align-right) .elementor-icon-list-item:after{left:0}.elementor-widget:not(.elementor-mobile-align-left) .elementor-icon-list-item:after{right:0}}.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image img{vertical-align:middle;display:inline-block}.elementor-location-header:before{content:"";display:table;clear:both}.elementor-widget-post-info.elementor-align-center .elementor-icon-list-item:after{margin:initial}.elementor-icon-list-items .elementor-icon-list-item .elementor-icon-list-text{display:inline-block}.elementor-widget-blockquote blockquote{margin:0;padding:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;quotes:none;border:0;font-style:normal;color:#3a3f45}.elementor-widget-blockquote blockquote:after,.elementor-widget-blockquote blockquote:before{content:none}.elementor-blockquote__content{margin-bottom:0;font-style:normal}.elementor-blockquote--skin-border .elementor-blockquote{border-color:#f9fafa;border-left:7px #f9fafa;border-style:solid;padding-left:20px}.elementor-11320 .elementor-element.elementor-element-644ca40>.elementor-container{max-width:1400px}.elementor-11320 .elementor-element.elementor-element-644ca40:not(.elementor-motion-effects-element-type-background){background-color:var(--e-global-color-8f866b1)}.elementor-11320 .elementor-element.elementor-element-644ca40{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px}.elementor-11320 .elementor-element.elementor-element-685aeff7>.elementor-column-wrap>.elementor-widget-wrap>.elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute){margin-bottom:50px}.elementor-11320 .elementor-element.elementor-element-685aeff7>.elementor-element-populated{margin:0px 20px 0px 0px;--e-column-margin-right:20px;--e-column-margin-left:0px}.elementor-11320 .elementor-element.elementor-element-685aeff7>.elementor-element-populated>.elementor-widget-wrap{padding:100px 50px 0px 100px}.elementor-11320 .elementor-element.elementor-element-d1bdd80{text-align:center;color:#FE813A;font-family:"Inter",Sans-serif;font-size:18px;font-weight:600}.elementor-11320 .elementor-element.elementor-element-d1bdd80>.elementor-widget-container{margin:0px 0px -35px 0px;padding:0px 0px 0px 0px}.elementor-11320 .elementor-element.elementor-element-27afdb49{text-align:center;width:100%;max-width:100%}.elementor-11320 .elementor-element.elementor-element-27afdb49 .elementor-heading-title{color:var(--e-global-color-9b79c44);font-family:"Inter",Sans-serif;font-size:45px;font-weight:800;line-height:1.1em;letter-spacing:-0.05em}.elementor-11320 .elementor-element.elementor-element-27afdb49>.elementor-widget-container{margin:-22px 50px -50px 50px;padding:0px 0px 20px 0px}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(18px/2);margin-left:calc(18px/2)}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-18px/2);margin-left:calc(-18px/2)}body:not(.rtl) .elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-18px/2)}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-item:not(:last-child):after{content:"";height:65%;border-color:var(--e-global-color-45b2f27)}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:not(:last-child):after{border-left-style:solid}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-inline-items .elementor-icon-list-item:not(:last-child):after{border-left-width:1px}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-icon i{color:var(--e-global-color-accent)}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-text{color:var(--e-global-color-text)}.elementor-11320 .elementor-element.elementor-element-aea0aef .elementor-icon-list-item{font-family:"Inter",Sans-serif;font-size:16px;font-weight:400}.elementor-11320 .elementor-element.elementor-element-aea0aef>.elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 20px 0px;border-radius:0px 0px 0px 0px}.elementor-11320 .elementor-element.elementor-element-aea0aef{width:100%;max-width:100%}.elementor-11320 .elementor-element.elementor-element-5faa1d87{text-align:left;color:var(--e-global-color-text);font-family:"Inter",Sans-serif;font-size:16px;font-weight:400;line-height:1.5em;width:100%;max-width:100%}.elementor-11320 .elementor-element.elementor-element-9f4c0f1:not(.elementor-motion-effects-element-type-background)>.elementor-column-wrap{background-color:var(--e-global-color-906638f)}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated{border-style:none;box-shadow:0px 2px 20px 0px rgba(0,0,0,0.1);margin:100px 0px 50px 0px;--e-column-margin-right:0px;--e-column-margin-left:0px}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated{border-radius:10px 10px 10px 10px}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated>.elementor-widget-wrap{padding:20px 20px 80px 20px}.elementor-11320 .elementor-element.elementor-element-3666862 .elementor-blockquote__content{color:var(--e-global-color-primary);font-family:"Inter",Sans-serif;font-size:18px;font-weight:700}.elementor-11320 .elementor-element.elementor-element-3666862 .elementor-blockquote{border-color:#FF9C4B}.elementor-11320 .elementor-element.elementor-element-3666862>.elementor-widget-container{margin:0px -50px 0px 0px}.elementor-11320 .elementor-element.elementor-element-ea08f88{color:var(--e-global-color-text);font-family:"Inter",Sans-serif;font-size:14px;font-weight:400}.elementor-11320 .elementor-element.elementor-element-0ce3e5a .elementor-icon-list-icon svg{fill:var(--e-global-color-accent)}.elementor-11320 .elementor-element.elementor-element-0ce3e5a{--e-icon-list-icon-size:6px;--icon-vertical-offset:0px}.elementor-11320 .elementor-element.elementor-element-0ce3e5a .elementor-icon-list-item>.elementor-icon-list-text{font-family:"Inter",Sans-serif;font-size:14px;font-weight:400}.elementor-11320 .elementor-element.elementor-element-0ce3e5a .elementor-icon-list-text{color:var(--e-global-color-text)}.elementor-11320 .elementor-element.elementor-element-bdf396b .elementor-button{font-family:"Inter",Sans-serif;font-size:16px;font-weight:600;background-color:transparent;background-image:linear-gradient(90deg,var(--e-global-color-45b2f27) 0%,var(--e-global-color-de7637a) 100%);border-radius:5px 5px 5px 5px}.elementor-11320 .elementor-element.elementor-element-bdf396b>.elementor-widget-container{margin:0px 20px 20px 0px}.elementor-11320 .elementor-element.elementor-element-bdf396b{width:auto;max-width:auto}.elementor-11320 .elementor-element.elementor-element-fd8e789{--divider-border-style:solid;--divider-color:#DDDDDD;--divider-border-width:1px}.elementor-11320 .elementor-element.elementor-element-fd8e789 .elementor-divider-separator{width:100%}.elementor-11320 .elementor-element.elementor-element-fd8e789 .elementor-divider{padding-top:2px;padding-bottom:2px}.elementor-11320 .elementor-element.elementor-element-fd8e789>.elementor-widget-container{margin:17px 0px -15px 0px}.elementor-11320 .elementor-element.elementor-element-e8de215 .elementor-blockquote__content{color:var(--e-global-color-primary);font-family:"Inter",Sans-serif;font-size:18px;font-weight:700}.elementor-11320 .elementor-element.elementor-element-e8de215 .elementor-blockquote{border-color:var(--e-global-color-accent)}.elementor-11320 .elementor-element.elementor-element-e8de215>.elementor-widget-container{margin:30px 0px 0px 0px}.elementor-11320 .elementor-element.elementor-element-ca85fdb{color:var(--e-global-color-text);font-family:"Inter",Sans-serif;font-size:14px;font-weight:400}.elementor-11320 .elementor-element.elementor-element-92c1b14 .elementor-button{font-family:"Inter",Sans-serif;font-size:16px;font-weight:600;background-color:transparent;background-image:linear-gradient(90deg,var(--e-global-color-45b2f27) 0%,var(--e-global-color-de7637a) 100%);border-radius:5px 5px 5px 5px}.elementor-11320 .elementor-element.elementor-element-92c1b14>.elementor-widget-container{margin:0px 20px 20px 0px}.elementor-11320 .elementor-element.elementor-element-92c1b14{width:auto;max-width:auto}@media (max-width:1024px){.elementor-11320 .elementor-element.elementor-element-644ca40{margin-top:0px;margin-bottom:0px}.elementor-11320 .elementor-element.elementor-element-685aeff7.elementor-column>.elementor-column-wrap>.elementor-widget-wrap{justify-content:center}.elementor-11320 .elementor-element.elementor-element-685aeff7>.elementor-element-populated>.elementor-widget-wrap{padding:0px 50px 50px 50px}.elementor-11320 .elementor-element.elementor-element-27afdb49 .elementor-heading-title{font-size:35px}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated{margin:0px 10px 0165px 10px;--e-column-margin-right:10px;--e-column-margin-left:10px}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated>.elementor-widget-wrap{padding:20px 10px 0px 10px}}@media (max-width:767px){.elementor-11320 .elementor-element.elementor-element-644ca40{margin-top:0px;margin-bottom:0px}.elementor-11320 .elementor-element.elementor-element-685aeff7>.elementor-element-populated>.elementor-widget-wrap{padding:0px 20px 0px 20px}.elementor-11320 .elementor-element.elementor-element-27afdb49 .elementor-heading-title{font-size:25px}.elementor-11320 .elementor-element.elementor-element-27afdb49>.elementor-widget-container{margin:0px 0px 0px 0px}.elementor-11320 .elementor-element.elementor-element-27afdb49{width:100%;max-width:100%}.elementor-11320 .elementor-element.elementor-element-aea0aef{width:100%;max-width:100%}.elementor-11320 .elementor-element.elementor-element-5faa1d87{width:100%;max-width:100%}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated{margin:50px 10px 0px 10px;--e-column-margin-right:10px;--e-column-margin-left:10px}.elementor-11320 .elementor-element.elementor-element-9f4c0f1>.elementor-element-populated>.elementor-widget-wrap{padding:20px 20px 80px 20px}.elementor-11320 .elementor-element.elementor-element-bdf396b>.elementor-widget-container{margin:0px 0px 10px 0px;padding:0px 0px 0px 0px}.elementor-11320 .elementor-element.elementor-element-92c1b14>.elementor-widget-container{margin:0px 0px 10px 0px;padding:0px 0px 0px 0px}}@media (min-width:768px){.elementor-11320 .elementor-element.elementor-element-685aeff7{width:77%}.elementor-11320 .elementor-element.elementor-element-9f4c0f1{width:23%}}@media (max-width:1024px) and (min-width:768px){.elementor-11320 .elementor-element.elementor-element-685aeff7{width:100%}.elementor-11320 .elementor-element.elementor-element-9f4c0f1{width:100%}}.rplg *,.rplg *:before,.rplg *:after{box-sizing:inherit!important}.rplg span{margin:0;padding:0;border:0!important;font-size:100%!important;font:inherit!important;vertical-align:baseline!important}.rplg img{max-width:100%!important;height:auto!important}.rplg .rplg-more{display:none!important}.fa,.far{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-shopping-cart:before{content:"\f07a"}.fa-tags:before{content:"\f02c"}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:swap;src:url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-regular-400.eot);src:url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-regular-400.woff2) format("woff2"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-regular-400.woff) format("woff"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-regular-400.ttf) format("truetype"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-regular-400.svg#fontawesome) format("svg")}.far{font-weight:400}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:swap;src:url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-solid-900.eot);src:url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-solid-900.woff2) format("woff2"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-solid-900.woff) format("woff"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-solid-900.ttf) format("truetype"),url(https://tsplus.net/wp-content/plugins/fastspring/public/webfonts/fa-solid-900.svg#fontawesome) format("svg")}.fa,.far{font-family:"Font Awesome 5 Free"}.fa{font-weight:900}
+  </style>
+  <meta name="description" content="From security-centred remote access software to add-on security suites for remote solutions, explore best remote access security software.">
+  <link rel="canonical" href="https://tsplus.net/best-remote-access-security-software/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best Remote Access Security Software | TSplus">
+  <meta property="og:description" content="From security-centred remote access software to add-on security suites for remote solutions, explore best remote access security software.">
+  <meta property="og:url" content="https://tsplus.net/best-remote-access-security-software/">
+  <meta property="og:site_name" content="TSplus.net">
+  <meta property="article:published_time" content="2023-08-21T13:49:06+00:00">
+  <meta property="article:modified_time" content="2023-08-30T10:29:08+00:00">
+  <meta property="og:image" content="https://tsplus.net/wp-content/uploads/2023/08/Best-Remote-Access-Security-Software.png">
+  <meta property="og:image:width" content="1120">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta name="author" content="Dominique Mould">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Remote Access Security Software | TSplus">
+  <meta name="twitter:description" content="From security-centred remote access software to add-on security suites for remote solutions, explore best remote access security software.">
+  <meta name="twitter:image" content="https://tsplus.net/wp-content/uploads/2023/08/Best-Remote-Access-Security-Software.png">
+  <meta name="twitter:label1" content="Written by">
+  <meta name="twitter:data1" content="Dominique Mould">
+  <script type="application/ld+json" class="yoast-schema-graph">
+  {"@context":"https://schema.org","@graph":[{"@type":["Article","BlogPosting"],"@id":"https://tsplus.net/best-remote-access-security-software/#article","isPartOf":{"@id":"https://tsplus.net/best-remote-access-security-software/"},"author":{"name":"Dominique Mould","@id":"https://tsplus.net/#/schema/person/7d2f99e4c764664a3a57b29347703353"},"headline":"Best Remote Access Security Software","datePublished":"2023-08-21T13:49:06+00:00","dateModified":"2023-08-30T10:29:08+00:00","mainEntityOfPage":{"@id":"https://tsplus.net/best-remote-access-security-software/"},"wordCount":2190,"publisher":{"@id":"https://tsplus.net/#organization"},"image":{"@id":"https://tsplus.net/best-remote-access-security-software/#primaryimage"},"thumbnailUrl":"https://tsplus.net/wp-content/uploads/2023/08/Best-Remote-Access-Security-Software.png","keywords":["Advanced Security","Advanced Security Blog","Blog","cyber security","Cybersecurity","it security","IT Services","IT specialists","rds servers","secure remote access","tsplus"],"articleSection":["Advanced Security"],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://tsplus.net/best-remote-access-security-software/","url":"https://tsplus.net/best-remote-access-security-software/","name":"Best Remote Access Security Software | TSplus","isPartOf":{"@id":"https://tsplus.net/#website"},"primaryImageOfPage":{"@id":"https://tsplus.net/best-remote-access-security-software/#primaryimage"},"image":{"@id":"https://tsplus.net/best-remote-access-security-software/#primaryimage"},"thumbnailUrl":"https://tsplus.net/wp-content/uploads/2023/08/Best-Remote-Access-Security-Software.png","datePublished":"2023-08-21T13:49:06+00:00","dateModified":"2023-08-30T10:29:08+00:00","description":"From security-centred remote access software to add-on security suites for remote solutions, explore best remote access security software.","breadcrumb":{"@id":"https://tsplus.net/best-remote-access-security-software/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tsplus.net/best-remote-access-security-software/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/best-remote-access-security-software/#primaryimage","url":"https://tsplus.net/wp-content/uploads/2023/08/Best-Remote-Access-Security-Software.png","contentUrl":"https://tsplus.net/wp-content/uploads/2023/08/Best-Remote-Access-Security-Software.png","width":1120,"height":630,"caption":"Title of article \"Best Remote Access Security Software\", TSplus logo and link, illustrated by a picture of a locked padlock with a curtain of IT symbols."},{"@type":"BreadcrumbList","@id":"https://tsplus.net/best-remote-access-security-software/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tsplus.net/"},{"@type":"ListItem","position":2,"name":"Best Remote Access Security Software"}]},{"@type":"WebSite","@id":"https://tsplus.net/#website","url":"https://tsplus.net/","name":"TSplus.net","description":"Bringing together Remote Access, Application Delivery and Security solutions to IT professionals","publisher":{"@id":"https://tsplus.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tsplus.net/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://tsplus.net/#organization","name":"TSplus","url":"https://tsplus.net/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/#/schema/logo/image/","url":"https://tsplus.net/wp-content/uploads/2021/01/square-transparent.png","contentUrl":"https://tsplus.net/wp-content/uploads/2021/01/square-transparent.png","width":250,"height":250,"caption":"TSplus"},"image":{"@id":"https://tsplus.net/#/schema/logo/image/"}},{"@type":"Person","@id":"https://tsplus.net/#/schema/person/7d2f99e4c764664a3a57b29347703353","name":"Dominique Mould","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tsplus.net/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/ca899ba1b583dcdb88577b18f1be5927?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/ca899ba1b583dcdb88577b18f1be5927?s=96&d=mm&r=g","caption":"Dominique Mould"}}]}
+  </script>
+  <link rel='dns-prefetch' href='//sbl.onfastspring.com'>
+  <link rel='dns-prefetch' href='//plausible.io'>
+  <link rel='dns-prefetch' href='//www.googletagmanager.com'>
+  <link rel='dns-prefetch' href='//www.google-analytics.com'>
+  <link rel='preload' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/fastspring__dist__blocks-style-build-css-v96aa362f1328f27e2fad549091a52fc45365440f.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <style id='classic-theme-styles-inline-css'>
+  /*! This file is auto-generated */
+  .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+  </style>
+  <style data-wpacu-inline-css-file='1'>
+  /*!/wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher.css*/.menu-item-object-language_switcher .trp-flag-image{display:inline-block;margin:-1px 5px;vertical-align:baseline;padding:0;border:0;border-radius:0}.trp-language-switcher{height:42px;position:relative;box-sizing:border-box;width:200px;text-overflow:ellipsis;white-space:nowrap}.trp-language-switcher>div{box-sizing:border-box;padding:4px 20px 3px 13px;border:1.5px solid #949494;border-radius:2px;background-image:url(/wp-content/plugins/translatepress-multilingual/assets/css/../../assets/images/arrow-down-3101.svg);background-repeat:no-repeat;background-position:calc(100% - 20px) calc(1em + 2px),
+            calc(100% - 3px) calc(1em + 0px); background-size:8px 8px,8px 8px;background-repeat:no-repeat;background-color:#fff}.trp-language-switcher>div:hover{background-image:none}.trp-language-switcher>div>a{display:block;padding:7px 12px;border-radius:3px;text-decoration:none;color:#1E1E1E;font-style:normal;font-weight:400;font-size:16px}.trp-language-switcher>div>a:hover{background:#F0F0F0;border-radius:2px}.trp-language-switcher>div>a.trp-ls-shortcode-disabled-language{cursor:default}.trp-language-switcher>div>a.trp-ls-shortcode-disabled-language:hover{background:none}.trp-language-switcher>div>a>img{display:inline;margin:0 3px;width:18px;height:12px;border-radius:0}.trp-language-switcher .trp-ls-shortcode-current-language{display:inline-block}.trp-language-switcher:focus .trp-ls-shortcode-current-language,.trp-language-switcher:hover .trp-ls-shortcode-current-language{visibility:hidden}.trp-language-switcher .trp-ls-shortcode-language{display:inline-block;height:1px;overflow:hidden;visibility:hidden;z-index:1;max-height:250px;overflow-y:auto;left:0;top:0;min-height:auto}.trp-language-switcher:focus .trp-ls-shortcode-language,.trp-language-switcher:hover .trp-ls-shortcode-language{visibility:visible;max-height:250px;padding:4px 13px;height:auto;overflow-y:auto;position:absolute;left:0;top:0;display:inline-block!important;min-height:auto}#wpadminbar #wp-admin-bar-trp_edit_translation .ab-icon:before{content:'\f326';top:3px}@media screen and (max-width:782px){#wpadminbar #wp-admin-bar-trp_edit_translation>.ab-item{text-indent:0}#wpadminbar li#wp-admin-bar-trp_edit_translation{display:block}}
+  </style>
+  <link rel='preload' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/translatepress-developer__add-ons-pro__automatic-language-detection__assets__css__trp-popup-css-vb1cbd9f2d07ba9e486fabbdc8dd287b5f0a05081.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel='preload' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/normalize.css?ver=1700288798' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel='preload' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/webflow.css?ver=1700288798' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel='preload' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/tsplus.webflow.css?ver=1700288798' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel='preload' href='https://tsplus.net/wp-content/themes/hello-elementor/style.min.css?ver=2.9.0' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel='preload' href='https://tsplus.net/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-kit-6{--e-global-color-primary:#1F2937;--e-global-color-secondary:#1F2937;--e-global-color-text:#6B7280;--e-global-color-accent:#FF9C4B;--e-global-color-906638f:#FFFFFF;--e-global-color-9b79c44:#1F2937;--e-global-color-00ed603:#6B7280;--e-global-color-99309a0:#6B7280;--e-global-color-1cccb09:#9CA3AF;--e-global-color-852c622:#E5E7EB;--e-global-color-2310507:#F3F4F6;--e-global-color-8f866b1:#F9FAFB;--e-global-color-1c9bc30:#32455D;--e-global-color-61a2a0f:#111827;--e-global-color-45b2f27:#FE813A;--e-global-color-4d7ad8d:#FF9C4B;--e-global-color-de7637a:#FFAF48;--e-global-color-de7d129:#FED7AA;--e-global-color-7a7541b:#F99106;--e-global-color-f0d7e9c:#212529;--e-global-color-db3a4a3:#000000;--e-global-color-ac5cbbf:#F99209;--e-global-color-a93a9f9:#AAAAAA;--e-global-color-bd6135e:#03294E;--e-global-color-c78c8b4:#185180;--e-global-color-2c131e0:#031F3A;--e-global-color-99520a4:#CD7500;--e-global-typography-primary-font-family:"Inter";--e-global-typography-primary-font-weight:400;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Inter";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Inter";--e-global-typography-accent-font-weight:500;--e-global-typography-59e417c-font-family:"Inter";--e-global-typography-59e417c-font-weight:700;--e-global-typography-59e417c-line-height:1.4em;--e-global-typography-479e7a4-font-family:"Inter";--e-global-typography-479e7a4-line-height:1.4em;--e-global-typography-b3c0468-font-family:"Inter";--e-global-typography-b3c0468-font-weight:400;--e-global-typography-bc7e1e3-font-family:"Inter";--e-global-typography-bc7e1e3-font-size:14px;font-family:"Inter", Sans-serif;}.elementor-kit-6 a{font-family:"Inter", Sans-serif;}.elementor-kit-6 h1{font-family:"Inter", Sans-serif;}.elementor-kit-6 h2{font-family:"Inter", Sans-serif;}.elementor-kit-6 h3{font-family:"Inter", Sans-serif;}.elementor-kit-6 h4{font-family:"Inter", Sans-serif;}.elementor-kit-6 h5{font-family:"Inter", Sans-serif;}.elementor-kit-6 h6{font-family:"Inter", Sans-serif;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){margin-bottom:20px;}.elementor-element{--widgets-spacing:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+  </style>
+  <link rel='preload' href='https://tsplus.net/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.17.1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-33980 .elementor-element.elementor-element-48784ab0{text-align:justify;font-family:"Roboto", Sans-serif;font-weight:400;}.elementor-33980 .elementor-element.elementor-element-5899234{text-align:center;}.elementor-33980 .elementor-element.elementor-element-2a1fb5a{text-align:justify;color:var( --e-global-color-secondary );}.elementor-33980 .elementor-element.elementor-element-41192d7{text-align:justify;color:var( --e-global-color-secondary );}/* Start custom CSS for text-editor, class: .elementor-element-2a1fb5a */h2 {
+  display: block;
+  font-weight: bold;
+  color: #F99106;
+  font-size: 32px;
+  text-align: left;
+  }/* End custom CSS */
+  /* Start custom CSS for text-editor, class: .elementor-element-41192d7 */h2 {
+  display: block;
+  font-weight: bold;
+  color: #F99106;
+  font-size: 32px;
+  text-align: left;
+  }/* End custom CSS */
+  /* Start custom CSS */.post-tags {
+  display: none;
+  }/* End custom CSS */
+  </style>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-11395 .elementor-element.elementor-element-6edfa2b{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-11395 .elementor-element.elementor-element-4ad2124 > .elementor-element-populated{margin:0px 0px 0px 0px;--e-column-margin-right:0px;--e-column-margin-left:0px;padding:0px 0px 0px 0px;}.elementor-11395 .elementor-element.elementor-element-82ac0c0 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}/* Start custom CSS for html, class: .elementor-element-82ac0c0 */.ts-phone-number{margin-block-end:0}/* End custom CSS */
+  </style>
+  <style data-wpacu-inline-css-file='1'>
+  .elementor-12291 .elementor-element.elementor-element-52b12d6{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-12291 .elementor-element.elementor-element-fc02960 > .elementor-element-populated{margin:0px 0px 0px 0px;--e-column-margin-right:0px;--e-column-margin-left:0px;padding:0px 0px 0px 0px;}.elementor-12291 .elementor-element.elementor-element-287cf1a > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}
+  </style>
+  <link rel='preload' href='https://tsplus.net/wp-content/uploads/elementor/css/post-11320.css?ver=1691060295' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel="https://api.w.org/" href="https://tsplus.net/wp-json/">
+  <link rel="alternate" type="application/json" href="https://tsplus.net/wp-json/wp/v2/posts/33980">
+  <meta name="msvalidate.01" content="92E52F04BAED205275B6F510CB4C749E">
+  <meta name="google-site-verification" content="C2qN6IlVo3vYIpSNlIplWLcQ9KYtdLXrWBqbFOVPpZ4">
+  <style id="wplmi-inline-css" type="text/css">
+  span.wplmi-user-avatar { width: 16px;display: inline-block !important;flex-shrink: 0; } img.wplmi-elementor-avatar { border-radius: 100%;margin-right: 3px; }
+  </style>
+  <link rel="alternate" hreflang="en-US" href="https://tsplus.net/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="es-ES" href="https://tsplus.net/es/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="pt-BR" href="https://tsplus.net/pt/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="pt-PT" href="https://tsplus.net/pt_pt/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="it-IT" href="https://tsplus.net/it/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="fr-FR" href="https://tsplus.net/fr/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="zh-CN" href="https://tsplus.net/zh/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ru-RU" href="https://tsplus.net/ru/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="hi-IN" href="https://tsplus.net/hi/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="tr-TR" href="https://tsplus.net/tr/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ja" href="https://tsplus.net/ja/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ar" href="https://tsplus.net/ar/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="cs-CZ" href="https://tsplus.net/cs/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="hu-HU" href="https://tsplus.net/hu/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="sk-SK" href="https://tsplus.net/sk/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="bg-BG" href="https://tsplus.net/bg/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="bn-BD" href="https://tsplus.net/bn/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ca" href="https://tsplus.net/ca/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="da-DK" href="https://tsplus.net/da/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="el" href="https://tsplus.net/el/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="fa-IR" href="https://tsplus.net/fa/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="hr" href="https://tsplus.net/hr/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="fi" href="https://tsplus.net/fi/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="id-ID" href="https://tsplus.net/id/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="km" href="https://tsplus.net/km/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ko-KR" href="https://tsplus.net/ko/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="lo" href="https://tsplus.net/lo/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ms-MY" href="https://tsplus.net/ms/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="nb-NO" href="https://tsplus.net/nb/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="nl-NL" href="https://tsplus.net/nl/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="pl-PL" href="https://tsplus.net/pl/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ro-RO" href="https://tsplus.net/ro/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="sv-SE" href="https://tsplus.net/sv/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ta-IN" href="https://tsplus.net/ta/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="th" href="https://tsplus.net/th/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="tl" href="https://tsplus.net/tl/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="te" href="https://tsplus.net/te/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="vi" href="https://tsplus.net/vi/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="zh-TW" href="https://tsplus.net/zh_tw/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="en-GB" href="https://tsplus.net/en_gb/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="en" href="https://tsplus.net/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="es" href="https://tsplus.net/es/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="pt" href="https://tsplus.net/pt/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="it" href="https://tsplus.net/it/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="fr" href="https://tsplus.net/fr/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="zh" href="https://tsplus.net/zh/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ru" href="https://tsplus.net/ru/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="hi" href="https://tsplus.net/hi/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="tr" href="https://tsplus.net/tr/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="cs" href="https://tsplus.net/cs/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="hu" href="https://tsplus.net/hu/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="sk" href="https://tsplus.net/sk/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="bg" href="https://tsplus.net/bg/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="bn" href="https://tsplus.net/bn/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="da" href="https://tsplus.net/da/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="fa" href="https://tsplus.net/fa/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="id" href="https://tsplus.net/id/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ko" href="https://tsplus.net/ko/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ms" href="https://tsplus.net/ms/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="nb" href="https://tsplus.net/nb/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="nl" href="https://tsplus.net/nl/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="pl" href="https://tsplus.net/pl/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ro" href="https://tsplus.net/ro/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="sv" href="https://tsplus.net/sv/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="ta" href="https://tsplus.net/ta/best-remote-access-security-software/">
+  <link rel="alternate" hreflang="x-default" href="https://tsplus.net/best-remote-access-security-software/">
+  <meta name="description" content="With the growing reliance on remote access, security has become more important than ever. To help you navigate the 2023 market of remote access security solutions, I've compiled my list of the best remote access security software. From remote access software with security at its centre to full blown security suites that come on top of existing remote solutions, there is also a middle ground. Let us see if we can get the best of both worlds!">
+  <meta name="generator" content="Elementor 3.17.3; features: e_dom_optimization, e_optimized_assets_loading, e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+  <link rel="icon" href="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp" sizes="32x32">
+  <link rel="icon" href="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp">
+  <meta name="msapplication-TileImage" content="https://tsplus.net/wp-content/uploads/2021/01/favicon.bmp">
+</head>
+<body class="post-template-default single single-post postid-33980 single-format-standard wp-custom-logo translatepress-en_US elementor-default elementor-kit-6 elementor-page elementor-page-33980 elementor-page-11320">
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/autop.min.js?ver=dacd785d109317df2707' id='wp-autop-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/blob.min.js?ver=10a1c5c0acdef3d15657' id='wp-blob-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/block-serialization-default-parser.min.js?ver=30ffd7e7e199f10b2a6d' id='wp-block-serialization-default-parser-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/react.min.js?ver=18.2.0' id='react-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1' id='wp-hooks-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/deprecated.min.js?ver=73ad3591e7bc95f4777a' id='wp-deprecated-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/dom.min.js?ver=845eabf47b55af03adfa' id='wp-dom-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.2.0' id='react-dom-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/escape-html.min.js?ver=03e27a7b6ae14f7afaa6' id='wp-escape-html-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/element.min.js?ver=ed1c7604880e8b574b40' id='wp-element-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/is-shallow-equal.min.js?ver=20c2b06ecf04afb14fee' id='wp-is-shallow-equal-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef' id='wp-i18n-js'></script> 
+  <script id="wp-i18n-js-after">
+
+  wp.i18n.setLocaleData({'text direction\u0004ltr':['ltr']})
+  </script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/keycodes.min.js?ver=3460bd0fac9859d6886c' id='wp-keycodes-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/priority-queue.min.js?ver=422e19e9d48b269c5219' id='wp-priority-queue-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/compose.min.js?ver=9424edf50a26435105c0' id='wp-compose-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/private-apis.min.js?ver=c7aedd57ea3c9b334e7d' id='wp-private-apis-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/redux-routine.min.js?ver=0be1b2a6a79703e28531' id='wp-redux-routine-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/data.min.js?ver=1504e29349b8a9d1ae51' id='wp-data-js'></script> 
+  <script id="wp-data-js-after">
+
+  (function(){var userId=0;var storageKey="WP_DATA_USER_"+userId;wp.data.use(wp.data.plugins.persistence,{storageKey:storageKey})})()
+  </script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/html-entities.min.js?ver=36a4a255da7dd2e1bf8e' id='wp-html-entities-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/shortcode.min.js?ver=c128a3008a96e820aa86' id='wp-shortcode-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/dist/blocks.min.js?ver=b5d3b99262dfb659bd26' id='wp-blocks-js'></script> 
+  <script type="text/javascript" src="https://sbl.onfastspring.com/sbl/0.9.4/fastspring-builder.min.js?ver=1" defer="true" id="fsc-api" data-storefront="jwts.onfastspring.com/popup-tsplus-net"></script> 
+  <script src='https://tsplus.net/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script> 
+  <script id='trp-language-cookie-js-extra'>
+
+  var trp_language_cookie_data={"abs_home":"https:\/\/tsplus.net","url_slugs":{"en_US":"en","es_ES":"es","pt_BR":"pt","pt_PT":"pt_pt","it_IT":"it","fr_FR":"fr","zh_CN":"zh","ru_RU":"ru","hi_IN":"hi","tr_TR":"tr","ja":"ja","ar":"ar","cs_CZ":"cs","hu_HU":"hu","sk_SK":"sk","bg_BG":"bg","bn_BD":"bn","ca":"ca","da_DK":"da","el":"el","fa_IR":"fa","hr":"hr","fi":"fi","id_ID":"id","km":"km","ko_KR":"ko","lo":"lo","ms_MY":"ms","nb_NO":"nb","nl_NL":"nl","pl_PL":"pl","ro_RO":"ro","sv_SE":"sv","ta_IN":"ta","th":"th","tl":"tl","te":"te","vi":"vi","zh_TW":"zh_tw","en_GB":"en_gb"},"cookie_name":"trp_language","cookie_age":"30","cookie_path":"\/","default_language":"en_US","publish_languages":["en_US","es_ES","pt_BR","pt_PT","it_IT","fr_FR","zh_CN","ru_RU","hi_IN","tr_TR","ja","ar","cs_CZ","hu_HU","sk_SK","bg_BG","bn_BD","ca","da_DK","el","fa_IR","hr","fi","id_ID","km","ko_KR","lo","ms_MY","nb_NO","nl_NL","pl_PL","ro_RO","sv_SE","ta_IN","th","tl","te","vi","zh_TW","en_GB"],"trp_ald_ajax_url":"https:\/\/tsplus.net\/wp-content\/plugins\/translatepress-developer\/add-ons-pro\/automatic-language-detection\/includes\/trp-ald-ajax.php","detection_method":"browser-ip","popup_option":"popup","popup_type":"normal_popup","popup_textarea":"We've detected you might be speaking a different language. Do you want to change to:","popup_textarea_change_button":"Change Language","popup_textarea_close_button":"Close and do not switch language","iso_codes":{"en_US":"en","es_ES":"es","pt_BR":"pt","pt_PT":"pt","it_IT":"it","fr_FR":"fr","zh_CN":"zh-CN","ru_RU":"ru","hi_IN":"hi","tr_TR":"tr","ja":"ja","ar":"ar","cs_CZ":"cs","hu_HU":"hu","sk_SK":"sk","bg_BG":"bg","bn_BD":"bn","ca":"ca","da_DK":"da","el":"el","fa_IR":"fa","hr":"hr","fi":"fi","id_ID":"id","km":"km","ko_KR":"ko","lo":"lo","ms_MY":"ms","nb_NO":"no","nl_NL":"nl","pl_PL":"pl","ro_RO":"ro","sv_SE":"sv","ta_IN":"ta","th":"th","tl":"tl","te":"te","vi":"vi","zh_TW":"zh-TW","en_GB":"en"},"language_urls":{"en_US":"https:\/\/tsplus.net\/best-remote-access-security-software\/","es_ES":"https:\/\/tsplus.net\/es\/best-remote-access-security-software\/","pt_BR":"https:\/\/tsplus.net\/pt\/best-remote-access-security-software\/","pt_PT":"https:\/\/tsplus.net\/pt_pt\/best-remote-access-security-software\/","it_IT":"https:\/\/tsplus.net\/it\/best-remote-access-security-software\/","fr_FR":"https:\/\/tsplus.net\/fr\/best-remote-access-security-software\/","zh_CN":"https:\/\/tsplus.net\/zh\/best-remote-access-security-software\/","ru_RU":"https:\/\/tsplus.net\/ru\/best-remote-access-security-software\/","hi_IN":"https:\/\/tsplus.net\/hi\/best-remote-access-security-software\/","tr_TR":"https:\/\/tsplus.net\/tr\/best-remote-access-security-software\/","ja":"https:\/\/tsplus.net\/ja\/best-remote-access-security-software\/","ar":"https:\/\/tsplus.net\/ar\/best-remote-access-security-software\/","cs_CZ":"https:\/\/tsplus.net\/cs\/best-remote-access-security-software\/","hu_HU":"https:\/\/tsplus.net\/hu\/best-remote-access-security-software\/","sk_SK":"https:\/\/tsplus.net\/sk\/best-remote-access-security-software\/","bg_BG":"https:\/\/tsplus.net\/bg\/best-remote-access-security-software\/","bn_BD":"https:\/\/tsplus.net\/bn\/best-remote-access-security-software\/","ca":"https:\/\/tsplus.net\/ca\/best-remote-access-security-software\/","da_DK":"https:\/\/tsplus.net\/da\/best-remote-access-security-software\/","el":"https:\/\/tsplus.net\/el\/best-remote-access-security-software\/","fa_IR":"https:\/\/tsplus.net\/fa\/best-remote-access-security-software\/","hr":"https:\/\/tsplus.net\/hr\/best-remote-access-security-software\/","fi":"https:\/\/tsplus.net\/fi\/best-remote-access-security-software\/","id_ID":"https:\/\/tsplus.net\/id\/best-remote-access-security-software\/","km":"https:\/\/tsplus.net\/km\/best-remote-access-security-software\/","ko_KR":"https:\/\/tsplus.net\/ko\/best-remote-access-security-software\/","lo":"https:\/\/tsplus.net\/lo\/best-remote-access-security-software\/","ms_MY":"https:\/\/tsplus.net\/ms\/best-remote-access-security-software\/","nb_NO":"https:\/\/tsplus.net\/nb\/best-remote-access-security-software\/","nl_NL":"https:\/\/tsplus.net\/nl\/best-remote-access-security-software\/","pl_PL":"https:\/\/tsplus.net\/pl\/best-remote-access-security-software\/","ro_RO":"https:\/\/tsplus.net\/ro\/best-remote-access-security-software\/","sv_SE":"https:\/\/tsplus.net\/sv\/best-remote-access-security-software\/","ta_IN":"https:\/\/tsplus.net\/ta\/best-remote-access-security-software\/","th":"https:\/\/tsplus.net\/th\/best-remote-access-security-software\/","tl":"https:\/\/tsplus.net\/tl\/best-remote-access-security-software\/","te":"https:\/\/tsplus.net\/te\/best-remote-access-security-software\/","vi":"https:\/\/tsplus.net\/vi\/best-remote-access-security-software\/","zh_TW":"https:\/\/tsplus.net\/zh_tw\/best-remote-access-security-software\/","en_GB":"https:\/\/tsplus.net\/en_gb\/best-remote-access-security-software\/"},"english_name":{"en_US":"English (United States)","es_ES":"Spanish","pt_BR":"Portuguese (Brazil)","pt_PT":"Portuguese (Portugal)","it_IT":"Italian","fr_FR":"French","zh_CN":"Chinese (China)","ru_RU":"Russian","hi_IN":"Hindi","tr_TR":"Turkish","ja":"Japanese","ar":"Arabic","cs_CZ":"Czech","hu_HU":"Hungarian","sk_SK":"Slovak","bg_BG":"Bulgarian","bn_BD":"Bengali","ca":"Catalan","da_DK":"Danish","el":"Greek","fa_IR":"Persian","hr":"Croatian","fi":"Finnish","id_ID":"Indonesian","km":"Khmer","ko_KR":"Korean","lo":"Lao","ms_MY":"Malay","nb_NO":"Norwegian","nl_NL":"Dutch","pl_PL":"Polish","ro_RO":"Romanian","sv_SE":"Swedish","ta_IN":"Tamil","th":"Thai","tl":"Tagalog","te":"Telugu","vi":"Vietnamese","zh_TW":"Chinese (Taiwan)","en_GB":"English (UK)"},"is_iphone_user_check":""}
+  </script> 
+  <script src='https://tsplus.net/wp-content/plugins/translatepress-developer/add-ons-pro/automatic-language-detection/assets/js/trp-language-cookie.js?ver=1.0.9' id='trp-language-cookie-js'></script> 
+  <script defer data-domain='tsplus.net' data-api='https://plausible.io/api/event' src='https://plausible.io/js/plausible.outbound-links.js?ver=1.3.6' id='plausible'></script> 
+  <script id="plausible-analytics-js-after">
+
+  window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}
+  </script> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10872320716"></script> 
+  <script>
+
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+  gtag('js',new Date());gtag('config','AW-10872320716')
+  </script> 
+  <script>
+
+  /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+  (function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+  var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+  return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+  if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+  setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+  var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+  if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+  </script> <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+  <Base>
+    <div data-elementor-type="single-post" data-elementor-id="11320" class="elementor elementor-11320 elementor-location-single post-33980 post type-post status-publish format-standard has-post-thumbnail hentry category-advanced-security tag-advanced-security tag-advanced-security-blog tag-blog tag-cyber-security tag-cybersecurity tag-it-security tag-it-services tag-it-specialists tag-rds-servers tag-secure-remote-access tag-tsplus" data-elementor-post-type="elementor_library">
+      <section class="elementor-section elementor-top-section elementor-element elementor-element-644ca40 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="644ca40" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+        <div class="elementor-container elementor-column-gap-default">
+          <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-685aeff7" data-id="685aeff7" data-element_type="column">
+            <div class="elementor-widget-wrap elementor-element-populated">
+              <div class="elementor-element elementor-element-d1bdd80 elementor-widget elementor-widget-text-editor" data-id="d1bdd80" data-element_type="widget" data-widget_type="text-editor.default">
+                <div class="elementor-widget-container">
+                      <p style="color:#FE813A;">TSPLUS BLOG</p>						</div>
+                </div>
+                <div class="elementor-element elementor-element-27afdb49 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="27afdb49" data-element_type="widget" data-widget_type="theme-post-title.default">
+                  <div class="elementor-widget-container">
+                <h1 class="elementor-heading-title elementor-size-default">{blog.data.title}</h1>		</div>
+                  </div>
+                  <div style="margin-top:60px" class="elementor-element elementor-element-aea0aef elementor-widget-mobile__width-inherit elementor-align-center elementor-widget__width-initial elementor-widget elementor-widget-post-info" data-id="aea0aef" data-element_type="widget" data-widget_type="post-info.default">
+                    <div class="elementor-widget-container">
+                      <ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+                            <li class="elementor-icon-list-item elementor-repeater-item-3c00436 elementor-inline-item">
+                                <span class="elementor-icon-list-icon">
+                            <i aria-hidden="true" class="far fa-tags"></i>							</span>
+                              <span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-custom">
+                                Published by TSplus					</span>
+                            </li>
+                    <li class="elementor-icon-list-item elementor-repeater-item-be1f9c5 elementor-inline-item" itemprop="dateModified">
+                                      <span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
+                          <span class="elementor-post-info__item-prefix">Published:</span>
+                                January 2, 2023					</span>
+                            </li>
+                    <li class="elementor-icon-list-item elementor-repeater-item-0ee39f1 elementor-inline-item">
+                                      <span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-custom">
+                                Modified: {lastModified}					</span>
+                            </li>
+                    </ul>
+                    </div>
+                    </div>
+                   <TableOfContent headings={headings}/>
+            <Content/>
+            </div>
+          </div>
+        <ExtandedSideBar/>
+        </div>
+      </section>
+      <RelatedPosts currentpost ={blog} type="blog">
+    </div>
+  </Base>
+
+  <template id="tp-language" data-tp-language="en_US"></template>
+  <style>
+  .elementor-button-link.elementor-button.elementor-size-sm{
+  display:inline-block!important;
+  }
+
+  [data-fsb-viewdetails]{
+  color: #f99106;
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+  .fsb-emptyCart, .fa-shopping-basket{
+  color: #1f2937;
+  }
+
+  .fsb-promocode{
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: sans-serif;
+  }
+
+  [data-fsb-crossselltitle]{
+  color: #1f2937;
+  font-size:20px;
+  font-weight: 500;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+
+  .name{
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+  input.form-control{
+  font-size: 1rem;
+  font-family: Arial;
+  }
+
+  [data-fsb-viewdetails]:hover{
+  color: #FE813A;
+  }
+
+  .col{
+  line-height: 24px;
+  font-size: 16px;
+  }
+
+  span.pricing{
+  font-size: 16px;
+  line-height: 24px;
+  }
+
+  .fsb-display{
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 24px;
+  }
+
+  .fsb-number, .fsb-qtyinput{
+  font-family: Arial;
+  line-height: 24px;
+  color: #1f2937;
+  }
+
+  .fsb-inline-item, [data-fsc-item-quantity]{
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 24px;
+  }
+
+  .fsb-extPrice, .fsb-total{
+  font-size: 1rem;
+  font-family: Arial;
+  color: #1f2937;
+  font-size: 20px;
+  }
+
+  div.text-right > strong{
+  font-size: 1rem;
+  font-family: Arial;
+  color: #1f2937;
+  font-size: 16px;
+  }
+
+  #fsb-modal-content{
+  background-color:#F9FAFB;
+  margin-top: 8%!important;
+  }
+
+  #fsb-close{
+  color: #ffffff;
+  }
+
+  [aria-labelledby="portfolioModal1Label"]{
+  top: 22%!important;
+  }
+
+  .fsb-border{
+  background-color:#FFFFFF;
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.08), 0px 15px 25px -5px rgba(0, 0, 0, 0.05);
+  border-width: 0!important;
+  border-radius:10px!important;
+  }
+
+  .fastspring .border{
+  border-width: 0!important;
+  }
+
+  .fsb-plus, .fsb-minus{
+  cursor:pointer;
+  }
+
+  .minicart{
+  color: #1f2937!important;
+  }
+
+  [data-fsc-minicart]:hover{
+  box-shadow: 0px 0px 15px 5px rgb(51 69 93 / 20%)!important;
+  outline: #00B67A solid 3px;
+  cursor: pointer!important;
+  }
+
+  [data-fsc-minicart]{
+  box-shadow: 0px 0px 15px 5px rgb(51 69 93 / 20%)!important;
+  }
+
+
+  span[data-fsb-carttitle]{ 
+  color: #FFFFFF!important;
+  font-family: sans-serif;
+  font-weight: 600;
+  } 
+
+  .row > * > * > div.card-header { 
+  background-image: linear-gradient(20deg,  #008459, #00B67A);
+  color: #FFFFFF!important;
+  padding-bottom: 5px!important;
+  padding-top: 5px!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  border-width: 0!important;
+  border-radius-top:5px!important;
+  border-radius-bottom:5px!important;
+  line-height: 24px;
+  } 
+
+  h4[data-fsb-crossselltitle] + div > * > div { 
+  background-color:#FFFFFF;
+  box-shadow: 0px 8px 10px -6px rgba(0, 0, 0, 0.08), 0px 15px 25px -5px rgba(0, 0, 0, 0.05);
+  border-radius:6px!important;
+  } 
+
+  .fsb-modal-header{
+  background-image: linear-gradient(20deg, #FE813A, #FFAF48);
+  }
+
+  .fsb-promocode{
+  padding-right: 8px;
+  font-family: sans-serif;
+  }
+
+  .form-control{
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  border-width: 0!important;
+  }
+
+  button[data-fsb-applycouponbuttonclass]{
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  background-color: #E5E7EB!important;
+  color: #6B7280!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  border-width: 0!important;
+  line-height: 26px;
+  }
+
+  button[data-fsb-applycouponbuttonclass]:hover{
+  background-color: #d3d5db!important;
+  }
+
+  button[data-fsb-checkoutbuttonclass]{
+  background-image: linear-gradient(90deg, #FE813A, #FFAF48);
+  border-width: 0!important;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size:17px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border-radius: 5px!important;
+  }
+
+  button[data-fsb-checkoutbuttonclass]:hover{
+  background-image: linear-gradient(90deg, #FE813A, #FE813A);
+  }
+
+  .fsb-total{
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size:20px;
+  }
+
+  a[data-fsb-crosssellbuttonclass]{
+  background-image: linear-gradient(90deg, #FE813A, #FFAF48);
+  border-width: 0!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  color:#ffffff!important;
+  border-radius: 5px!important;
+  }
+
+  a[data-fsb-crosssellbuttonclass]:hover{
+  background-image: linear-gradient(90deg, #FE813A, #FE813A);
+  }
+
+  button[data-fsb-upsellbuttonclass]{
+  background-image: linear-gradient(90deg, #FE813A, #FFAF48);
+  border-width: 0!important;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  color:#ffffff!important;
+  border-radius: 5px!important;
+  }
+
+  button[data-fsb-upsellbuttonclass]:hover{
+  background-image: linear-gradient(90deg, #FE813A, #FE813A);
+  }
+
+  [class="card mt-2 mb-3"]{
+  box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.08);
+  border-width: 0!important;
+  }
+
+  [data-fsb-crossselltitle]{
+  font-family: sans-serif!important;
+  }
+
+  [data-fsc-item-display]{
+  font-weight:700;
+  }
+
+  .fsb-inline-item.price{
+  color: #6B7280!important;
+  }
+
+  hr{
+  background-color: #6B7280!important;
+  }
+
+  .card-body > .row{
+  margin-bottom: 16px!important;
+  }
+
+  .fsb-option-input{
+  width: 24px!important;
+  height: 24px!important;
+  border-color:#E5E7EB!important;
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  }
+
+  .fsb-option-input:checked::before{
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79289 19.6858L1.29288 12.7126C0.902373 12.2936 0.902373 11.6144 1.29288 11.1954L2.70706 9.67821C3.09757 9.25923 3.73077 9.25923 4.12128 9.67821L8.5 14.3756L17.8787 4.3142C18.2692 3.89527 18.9024 3.89527 19.2929 4.3142L20.7071 5.83138C21.0976 6.25031 21.0976 6.92957 20.7071 7.34855L9.20711 19.6858C8.81656 20.1047 8.1834 20.1047 7.79289 19.6858Z' fill='url(%23paint0_linear_102_18)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_102_18' x1='21' y1='12' x2='1' y2='12' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2300B67A'/%3E%3Cstop offset='1' stop-color='%23008459'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")!important;
+  width: 24px!important;
+  height: 24px!important;
+  }
+
+  .fsb-option-input:checked::after{
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.79289 19.6858L1.29288 12.7126C0.902373 12.2936 0.902373 11.6144 1.29288 11.1954L2.70706 9.67821C3.09757 9.25923 3.73077 9.25923 4.12128 9.67821L8.5 14.3756L17.8787 4.3142C18.2692 3.89527 18.9024 3.89527 19.2929 4.3142L20.7071 5.83138C21.0976 6.25031 21.0976 6.92957 20.7071 7.34855L9.20711 19.6858C8.81656 20.1047 8.1834 20.1047 7.79289 19.6858Z' fill='url(%23paint0_linear_102_18)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_102_18' x1='21' y1='12' x2='1' y2='12' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2300B67A'/%3E%3Cstop offset='1' stop-color='%23008459'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")!important;
+  width: 24px!important;
+  height: 24px!important;
+  }a.removeText { color: #6b7280;}a.removeText:hover { color: #c60b0b;}p.text-success {color: #28a745;}
+  </style>
+  <script>
+  fastspring_options={enableTranslations:"yes",loadFA:!1,enableGA:"yes",enableCart:!0,cartType:"fsb-MODSM",showPromo:"yes",applyCouponButtonClass:"fastspring_btn fastspring_btn-success",checkoutButtonClass:"fastspring_btn fastspring_btn-success",crossSellButtonClass:"fastspring_btn fastspring_btn-success",upSellButtonClass:"fastspring_btn fastspring_btn-success",edsButtonClass:"fastspring_btn fastspring_btn-success",removeIcon:"fa fa-trash-alt",applyCouponButtonIcon:"none",checkoutButtonIcon:"fa fa-arrow-right",crossSellButtonIcon:"fa fa-plus",upSellButtonIcon:"fa fa-plus",edsButtonIcon:"fa fa-plus",enableMiniCart:"yes",miniCartLocation:"bottomleft",miniCartIcon:"fa fa-shopping-cart",miniCartBubbleColor:"#c60b0b",cartHeaderBGColor:"#fe813a",cartHeaderTextColor:"#ffffff",popupClosedRedirectURL:"/",miniCartCheckoutBGColor:"#fe813a",miniCartCheckoutBGColorHover:"#d65912",miniCartCheckoutTextColor:"#ffffff",miniCartCheckoutTextColorHover:"#ffffff",popupClosedRedirectParameter:"orderID",translations:{en:{couponLabelText:"Have a promo code?",couponPlaceholderText:"Coupon ID",crossSellText:"Add to Order",edsText:"Add to Order",orderEmptyText:"Your cart is empty.",upSellText:"Upgrade Now",},da:{},de:{},es:{},fi:{},fr:{crossSellText:"Ajouter au panier",edsText:"Ajouter au panier",nextChargeText:"Prochaine facture:",},hr:{},it:{},ja:{},ko:{},nl:{},no:{},pt:{},ru:{},sv:{},zh:{},}};var cartlocation='fsb-MODSM';function popupClosed(data){var fsb_spinner=document.getElementById("fsb-spinner");fsb_spinner.style.animationName="fsb-revfadeIn";setTimeout(function(){fsb_spinner.style.animationName="fsb-fadeIn";fsb_spinner.style.display="none"},450);if(data){fastspring.builder.reset();window.location.replace("/")}else{closeitall()}}
+  </script>
+  <div class="trp_model_container" id="trp_ald_modal_container" style="display: none" data-no-dynamic-translation="" data-no-translation="">
+    <div class="trp_ald_modal" id="trp_ald_modal_popup">
+      <div id="trp_ald_popup_text"></div>
+      <div class="trp_ald_select_and_button">
+        <div class="trp_ald_ls_container">
+          <div class="trp-language-switcher trp-language-switcher-container" id="trp_ald_popup_select_container" data-no-translation="">
+            <div class="trp-ls-shortcode-current-language" id="en_US" special-selector="trp_ald_popup_current_language" data-trp-ald-selected-language="en_US">
+              <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+            </div>
+            <div class="trp-ls-shortcode-language">
+              <div class="trp-ald-popup-select" id="en_US" data-trp-ald-selected-language="en_US">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+              </div>
+              <div class="trp-ald-popup-select" id="es_ES" data-trp-ald-selected-language="es_ES">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_ES.png" width="18" height="12" alt="es_ES" title="Spanish"> ES
+              </div>
+              <div class="trp-ald-popup-select" id="pt_BR" data-trp-ald-selected-language="pt_BR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese (Brazil)"> PT
+              </div>
+              <div class="trp-ald-popup-select" id="pt_PT" data-trp-ald-selected-language="pt_PT">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_PT.png" width="18" height="12" alt="pt_PT" title="Portuguese (Portugal)"> PT_PT
+              </div>
+              <div class="trp-ald-popup-select" id="it_IT" data-trp-ald-selected-language="it_IT">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/it_IT.png" width="18" height="12" alt="it_IT" title="Italian"> IT
+              </div>
+              <div class="trp-ald-popup-select" id="fr_FR" data-trp-ald-selected-language="fr_FR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"> FR
+              </div>
+              <div class="trp-ald-popup-select" id="zh_CN" data-trp-ald-selected-language="zh_CN">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_CN.png" width="18" height="12" alt="zh_CN" title="Chinese (China)"> ZH
+              </div>
+              <div class="trp-ald-popup-select" id="ru_RU" data-trp-ald-selected-language="ru_RU">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ru_RU.png" width="18" height="12" alt="ru_RU" title="Russian"> RU
+              </div>
+              <div class="trp-ald-popup-select" id="hi_IN" data-trp-ald-selected-language="hi_IN">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hi_IN.png" width="18" height="12" alt="hi_IN" title="Hindi"> HI
+              </div>
+              <div class="trp-ald-popup-select" id="tr_TR" data-trp-ald-selected-language="tr_TR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tr_TR.png" width="18" height="12" alt="tr_TR" title="Turkish"> TR
+              </div>
+              <div class="trp-ald-popup-select" id="ja" data-trp-ald-selected-language="ja">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ja.png" width="18" height="12" alt="ja" title="Japanese"> JA
+              </div>
+              <div class="trp-ald-popup-select" id="ar" data-trp-ald-selected-language="ar">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ar.png" width="18" height="12" alt="ar" title="Arabic"> AR
+              </div>
+              <div class="trp-ald-popup-select" id="cs_CZ" data-trp-ald-selected-language="cs_CZ">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/cs_CZ.png" width="18" height="12" alt="cs_CZ" title="Czech"> CS
+              </div>
+              <div class="trp-ald-popup-select" id="hu_HU" data-trp-ald-selected-language="hu_HU">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hu_HU.png" width="18" height="12" alt="hu_HU" title="Hungarian"> HU
+              </div>
+              <div class="trp-ald-popup-select" id="sk_SK" data-trp-ald-selected-language="sk_SK">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sk_SK.png" width="18" height="12" alt="sk_SK" title="Slovak"> SK
+              </div>
+              <div class="trp-ald-popup-select" id="bg_BG" data-trp-ald-selected-language="bg_BG">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bg_BG.png" width="18" height="12" alt="bg_BG" title="Bulgarian"> BG
+              </div>
+              <div class="trp-ald-popup-select" id="bn_BD" data-trp-ald-selected-language="bn_BD">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bn_BD.png" width="18" height="12" alt="bn_BD" title="Bengali"> BN
+              </div>
+              <div class="trp-ald-popup-select" id="ca" data-trp-ald-selected-language="ca">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ca.png" width="18" height="12" alt="ca" title="Catalan"> CA
+              </div>
+              <div class="trp-ald-popup-select" id="da_DK" data-trp-ald-selected-language="da_DK">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/da_DK.png" width="18" height="12" alt="da_DK" title="Danish"> DA
+              </div>
+              <div class="trp-ald-popup-select" id="el" data-trp-ald-selected-language="el">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/el.png" width="18" height="12" alt="el" title="Greek"> EL
+              </div>
+              <div class="trp-ald-popup-select" id="fa_IR" data-trp-ald-selected-language="fa_IR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fa_IR.png" width="18" height="12" alt="fa_IR" title="Persian"> FA
+              </div>
+              <div class="trp-ald-popup-select" id="hr" data-trp-ald-selected-language="hr">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hr.png" width="18" height="12" alt="hr" title="Croatian"> HR
+              </div>
+              <div class="trp-ald-popup-select" id="fi" data-trp-ald-selected-language="fi">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fi.png" width="18" height="12" alt="fi" title="Finnish"> FI
+              </div>
+              <div class="trp-ald-popup-select" id="id_ID" data-trp-ald-selected-language="id_ID">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/id_ID.png" width="18" height="12" alt="id_ID" title="Indonesian"> ID
+              </div>
+              <div class="trp-ald-popup-select" id="km" data-trp-ald-selected-language="km">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/km.png" width="18" height="12" alt="km" title="Khmer"> KM
+              </div>
+              <div class="trp-ald-popup-select" id="ko_KR" data-trp-ald-selected-language="ko_KR">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ko_KR.png" width="18" height="12" alt="ko_KR" title="Korean"> KO
+              </div>
+              <div class="trp-ald-popup-select" id="lo" data-trp-ald-selected-language="lo">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/lo.png" width="18" height="12" alt="lo" title="Lao"> LO
+              </div>
+              <div class="trp-ald-popup-select" id="ms_MY" data-trp-ald-selected-language="ms_MY">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ms_MY.png" width="18" height="12" alt="ms_MY" title="Malay"> MS
+              </div>
+              <div class="trp-ald-popup-select" id="nb_NO" data-trp-ald-selected-language="nb_NO">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nb_NO.png" width="18" height="12" alt="nb_NO" title="Norwegian"> NB
+              </div>
+              <div class="trp-ald-popup-select" id="nl_NL" data-trp-ald-selected-language="nl_NL">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nl_NL.png" width="18" height="12" alt="nl_NL" title="Dutch"> NL
+              </div>
+              <div class="trp-ald-popup-select" id="pl_PL" data-trp-ald-selected-language="pl_PL">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pl_PL.png" width="18" height="12" alt="pl_PL" title="Polish"> PL
+              </div>
+              <div class="trp-ald-popup-select" id="ro_RO" data-trp-ald-selected-language="ro_RO">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ro_RO.png" width="18" height="12" alt="ro_RO" title="Romanian"> RO
+              </div>
+              <div class="trp-ald-popup-select" id="sv_SE" data-trp-ald-selected-language="sv_SE">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sv_SE.png" width="18" height="12" alt="sv_SE" title="Swedish"> SV
+              </div>
+              <div class="trp-ald-popup-select" id="ta_IN" data-trp-ald-selected-language="ta_IN">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ta_IN.png" width="18" height="12" alt="ta_IN" title="Tamil"> TA
+              </div>
+              <div class="trp-ald-popup-select" id="th" data-trp-ald-selected-language="th">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/th.png" width="18" height="12" alt="th" title="Thai"> TH
+              </div>
+              <div class="trp-ald-popup-select" id="tl" data-trp-ald-selected-language="tl">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tl.png" width="18" height="12" alt="tl" title="Tagalog"> TL
+              </div>
+              <div class="trp-ald-popup-select" id="te" data-trp-ald-selected-language="te">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/te.png" width="18" height="12" alt="te" title="Telugu"> TE
+              </div>
+              <div class="trp-ald-popup-select" id="vi" data-trp-ald-selected-language="vi">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png" width="18" height="12" alt="vi" title="Vietnamese"> VI
+              </div>
+              <div class="trp-ald-popup-select" id="zh_TW" data-trp-ald-selected-language="zh_TW">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_TW.png" width="18" height="12" alt="zh_TW" title="Chinese (Taiwan)"> ZH_TW
+              </div>
+              <div class="trp-ald-popup-select" id="en_GB" data-trp-ald-selected-language="en_GB">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_GB.png" width="18" height="12" alt="en_GB" title="English (UK)"> EN_GB
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trp_ald_button">
+          <a href="https://tsplus.net" id="trp_ald_popup_change_language"></a>
+        </div>
+      </div><a id="trp_ald_x_button_and_textarea"><span id="trp_ald_x_button"></span><span id="trp_ald_x_button_textarea"></span></a>
+    </div>
+  </div>
+  <template id="trp_ald_no_text_popup_template">
+    <div id="trp_no_text_popup_wrap">
+      <div id="trp_no_text_popup" class="trp_ald_no_text_popup" data-no-dynamic-translation="" data-no-translation="">
+        <div id="trp_ald_not_text_popup_ls_and_button">
+          <div id="trp_ald_no_text_popup_div">
+            <span id="trp_ald_no_text_popup_text"></span>
+          </div>
+          <div class="trp_ald_ls_container">
+            <div class="trp-language-switcher trp-language-switcher-container" id="trp_ald_no_text_select" data-no-translation="">
+              <div class="trp-ls-shortcode-current-language" id="en_US" special-selector="trp_ald_popup_current_language" data-trp-ald-selected-language="en_US">
+                <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+              </div>
+              <div class="trp-ls-shortcode-language" id="trp_ald_no_text_popup_select_container">
+                <div class="trp-ald-popup-select" id="en_US" data-trp-ald-selected-language="en_US">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> EN
+                </div>
+                <div class="trp-ald-popup-select" id="es_ES" data-trp-ald-selected-language="es_ES">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_ES.png" width="18" height="12" alt="es_ES" title="Spanish"> ES
+                </div>
+                <div class="trp-ald-popup-select" id="pt_BR" data-trp-ald-selected-language="pt_BR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese (Brazil)"> PT
+                </div>
+                <div class="trp-ald-popup-select" id="pt_PT" data-trp-ald-selected-language="pt_PT">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_PT.png" width="18" height="12" alt="pt_PT" title="Portuguese (Portugal)"> PT_PT
+                </div>
+                <div class="trp-ald-popup-select" id="it_IT" data-trp-ald-selected-language="it_IT">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/it_IT.png" width="18" height="12" alt="it_IT" title="Italian"> IT
+                </div>
+                <div class="trp-ald-popup-select" id="fr_FR" data-trp-ald-selected-language="fr_FR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"> FR
+                </div>
+                <div class="trp-ald-popup-select" id="zh_CN" data-trp-ald-selected-language="zh_CN">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_CN.png" width="18" height="12" alt="zh_CN" title="Chinese (China)"> ZH
+                </div>
+                <div class="trp-ald-popup-select" id="ru_RU" data-trp-ald-selected-language="ru_RU">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ru_RU.png" width="18" height="12" alt="ru_RU" title="Russian"> RU
+                </div>
+                <div class="trp-ald-popup-select" id="hi_IN" data-trp-ald-selected-language="hi_IN">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hi_IN.png" width="18" height="12" alt="hi_IN" title="Hindi"> HI
+                </div>
+                <div class="trp-ald-popup-select" id="tr_TR" data-trp-ald-selected-language="tr_TR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tr_TR.png" width="18" height="12" alt="tr_TR" title="Turkish"> TR
+                </div>
+                <div class="trp-ald-popup-select" id="ja" data-trp-ald-selected-language="ja">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ja.png" width="18" height="12" alt="ja" title="Japanese"> JA
+                </div>
+                <div class="trp-ald-popup-select" id="ar" data-trp-ald-selected-language="ar">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ar.png" width="18" height="12" alt="ar" title="Arabic"> AR
+                </div>
+                <div class="trp-ald-popup-select" id="cs_CZ" data-trp-ald-selected-language="cs_CZ">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/cs_CZ.png" width="18" height="12" alt="cs_CZ" title="Czech"> CS
+                </div>
+                <div class="trp-ald-popup-select" id="hu_HU" data-trp-ald-selected-language="hu_HU">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hu_HU.png" width="18" height="12" alt="hu_HU" title="Hungarian"> HU
+                </div>
+                <div class="trp-ald-popup-select" id="sk_SK" data-trp-ald-selected-language="sk_SK">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sk_SK.png" width="18" height="12" alt="sk_SK" title="Slovak"> SK
+                </div>
+                <div class="trp-ald-popup-select" id="bg_BG" data-trp-ald-selected-language="bg_BG">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bg_BG.png" width="18" height="12" alt="bg_BG" title="Bulgarian"> BG
+                </div>
+                <div class="trp-ald-popup-select" id="bn_BD" data-trp-ald-selected-language="bn_BD">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/bn_BD.png" width="18" height="12" alt="bn_BD" title="Bengali"> BN
+                </div>
+                <div class="trp-ald-popup-select" id="ca" data-trp-ald-selected-language="ca">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ca.png" width="18" height="12" alt="ca" title="Catalan"> CA
+                </div>
+                <div class="trp-ald-popup-select" id="da_DK" data-trp-ald-selected-language="da_DK">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/da_DK.png" width="18" height="12" alt="da_DK" title="Danish"> DA
+                </div>
+                <div class="trp-ald-popup-select" id="el" data-trp-ald-selected-language="el">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/el.png" width="18" height="12" alt="el" title="Greek"> EL
+                </div>
+                <div class="trp-ald-popup-select" id="fa_IR" data-trp-ald-selected-language="fa_IR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fa_IR.png" width="18" height="12" alt="fa_IR" title="Persian"> FA
+                </div>
+                <div class="trp-ald-popup-select" id="hr" data-trp-ald-selected-language="hr">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/hr.png" width="18" height="12" alt="hr" title="Croatian"> HR
+                </div>
+                <div class="trp-ald-popup-select" id="fi" data-trp-ald-selected-language="fi">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/fi.png" width="18" height="12" alt="fi" title="Finnish"> FI
+                </div>
+                <div class="trp-ald-popup-select" id="id_ID" data-trp-ald-selected-language="id_ID">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/id_ID.png" width="18" height="12" alt="id_ID" title="Indonesian"> ID
+                </div>
+                <div class="trp-ald-popup-select" id="km" data-trp-ald-selected-language="km">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/km.png" width="18" height="12" alt="km" title="Khmer"> KM
+                </div>
+                <div class="trp-ald-popup-select" id="ko_KR" data-trp-ald-selected-language="ko_KR">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ko_KR.png" width="18" height="12" alt="ko_KR" title="Korean"> KO
+                </div>
+                <div class="trp-ald-popup-select" id="lo" data-trp-ald-selected-language="lo">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/lo.png" width="18" height="12" alt="lo" title="Lao"> LO
+                </div>
+                <div class="trp-ald-popup-select" id="ms_MY" data-trp-ald-selected-language="ms_MY">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ms_MY.png" width="18" height="12" alt="ms_MY" title="Malay"> MS
+                </div>
+                <div class="trp-ald-popup-select" id="nb_NO" data-trp-ald-selected-language="nb_NO">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nb_NO.png" width="18" height="12" alt="nb_NO" title="Norwegian"> NB
+                </div>
+                <div class="trp-ald-popup-select" id="nl_NL" data-trp-ald-selected-language="nl_NL">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/nl_NL.png" width="18" height="12" alt="nl_NL" title="Dutch"> NL
+                </div>
+                <div class="trp-ald-popup-select" id="pl_PL" data-trp-ald-selected-language="pl_PL">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/pl_PL.png" width="18" height="12" alt="pl_PL" title="Polish"> PL
+                </div>
+                <div class="trp-ald-popup-select" id="ro_RO" data-trp-ald-selected-language="ro_RO">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ro_RO.png" width="18" height="12" alt="ro_RO" title="Romanian"> RO
+                </div>
+                <div class="trp-ald-popup-select" id="sv_SE" data-trp-ald-selected-language="sv_SE">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/sv_SE.png" width="18" height="12" alt="sv_SE" title="Swedish"> SV
+                </div>
+                <div class="trp-ald-popup-select" id="ta_IN" data-trp-ald-selected-language="ta_IN">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/ta_IN.png" width="18" height="12" alt="ta_IN" title="Tamil"> TA
+                </div>
+                <div class="trp-ald-popup-select" id="th" data-trp-ald-selected-language="th">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/th.png" width="18" height="12" alt="th" title="Thai"> TH
+                </div>
+                <div class="trp-ald-popup-select" id="tl" data-trp-ald-selected-language="tl">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/tl.png" width="18" height="12" alt="tl" title="Tagalog"> TL
+                </div>
+                <div class="trp-ald-popup-select" id="te" data-trp-ald-selected-language="te">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/te.png" width="18" height="12" alt="te" title="Telugu"> TE
+                </div>
+                <div class="trp-ald-popup-select" id="vi" data-trp-ald-selected-language="vi">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/vi.png" width="18" height="12" alt="vi" title="Vietnamese"> VI
+                </div>
+                <div class="trp-ald-popup-select" id="zh_TW" data-trp-ald-selected-language="zh_TW">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_TW.png" width="18" height="12" alt="zh_TW" title="Chinese (Taiwan)"> ZH_TW
+                </div>
+                <div class="trp-ald-popup-select" id="en_GB" data-trp-ald-selected-language="en_GB">
+                  <img class="trp-flag-image" src="https://tsplus.net/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_GB.png" width="18" height="12" alt="en_GB" title="English (UK)"> EN_GB
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="trp_ald_change_language_div">
+            <a href="https://tsplus.net" id="trp_ald_no_text_popup_change_language"></a>
+          </div>
+          <div id="trp_ald_no_text_popup_x_button_and_textarea">
+            <a id="trp_ald_no_text_popup_x_button"></a><span id="trp_ald_no_text_popup_x_button_textarea"></span>
+          </div>
+        </div>
+        <div id="trp_ald_no_text_popup_x">
+          <button id="trp_close"></button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+  document.addEventListener('DOMContentLoaded',function(){var wpacuLinkTag1001=document.createElement('link');wpacuLinkTag1001.rel='stylesheet';wpacuLinkTag1001.href='https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.3';wpacuLinkTag1001.type='text/css';wpacuLinkTag1001.media='all';wpacuLinkTag1001.property='stylesheet';var wpacuUa=window.navigator.userAgent;if((wpacuUa.indexOf('MSIE ')>0||wpacuUa.indexOf('Trident/')>0||wpacuUa.indexOf('Edge/')>0)||typeof document.documentMode!=='undefined'){document.body.appendChild(wpacuLinkTag1001)}else{document.body.prepend(wpacuLinkTag1001)}})
+  </script> <noscript>
+  <link rel='preload' as='style' data-wpacu-preload-it-async='1' onload="this.onload=null;this.rel='stylesheet'" id='wpacu-moved-from-head-to-body-wpacu-preload-elementor-frontend-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.3' media='all'></noscript>
+  <link rel='preload' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/business-reviews-bundle__assets__css__brb-main-css-v1ce85d4ef17414bb1f455e8833e6a1a1a0b9f78c.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <link rel='preload' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/fastspring__includes__-__public__css__awesome-css-vc03568f46222bd0e3de8fba2eb832859c85a964c.css' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media='all'>
+  <script src='https://tsplus.net/wp-content/plugins/fastspring/public/js/fastspring-public.js?ver=1.0.0' id='fastspring-js'></script> 
+  <script id="rocket-browser-checker-js-after">
+
+  "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}()
+  </script> 
+  <script id='rocket-preload-links-js-extra'>
+
+  var RocketPreloadLinksConfig={"excludeUris":"\/recommendations\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/tsplus.net","onHoverDelay":"100","rateThrottle":"3"}
+  </script> 
+  <script id="rocket-preload-links-js-after">
+
+  (function(){"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run()}())
+  </script> 
+  <script src='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../js/ts-utilities.js?ver=1700288798' id='ts-utilities-js'></script> 
+  <script src='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../js/webflow.js?ver=1700288798' id='webflow-js-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script> 
+  <script async='async' defer="defer" src='https://tsplus.net/wp-content/cache/asset-cleanup/js/item/business-reviews-bundle__assets__js__brb-main-js-v6de7674c0165e50521ecfa86b4ff00517d1bc1ff.js' id='brb-main-js-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.17.1' id='elementor-pro-webpack-runtime-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.17.3' id='elementor-webpack-runtime-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.17.3' id='elementor-frontend-modules-js'></script> 
+  <script id="elementor-pro-frontend-js-before">
+
+  var ElementorProFrontendConfig={"ajaxurl":"https:\/\/tsplus.net\/wp-admin\/admin-ajax.php","nonce":"d033737a00","urls":{"assets":"https:\/\/tsplus.net\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/tsplus.net\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":!0},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":!0},"pinterest":{"title":"Pinterest","has_counter":!0},"reddit":{"title":"Reddit","has_counter":!0},"vk":{"title":"VK","has_counter":!0},"odnoklassniki":{"title":"OK","has_counter":!0},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":!0},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":!0},"xing":{"title":"XING","has_counter":!0},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/tsplus.net\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}}
+  </script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.17.1' id='elementor-pro-frontend-js'></script> 
+  <script src='https://tsplus.net/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script> 
+  <script id="elementor-frontend-js-before">
+
+  var elementorFrontendConfig={"environmentMode":{"edit":!1,"wpPreview":!1,"isScriptDebug":!1},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":!1,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":!0},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":!1},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":!0},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":!1},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":!1},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":!1}}},"version":"3.17.3","is_static":!1,"experimentalFeatures":{"e_dom_optimization":!0,"e_optimized_assets_loading":!0,"e_font_icon_svg":!0,"additional_custom_breakpoints":!0,"theme_builder_v2":!0,"landing-pages":!0,"page-transitions":!0,"notes":!0,"form-submissions":!0,"e_scroll_snap":!0},"urls":{"assets":"https:\/\/tsplus.net\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":33980,"title":"Best%20Remote%20Access%20Security%20Software%20%7C%20TSplus","excerpt":"With the growing reliance on remote access, security has become more important than ever. To help you navigate the 2023 market of remote access security solutions, I've compiled my list of the best remote access security software. From remote access software with security at its centre to full blown security suites that come on top of existing remote solutions, there is also a middle ground. Let us see if we can get the best of both worlds!","featuredImage":"https:\/\/tsplus.net\/wp-content\/uploads\/2023\/08\/Best-Remote-Access-Security-Software-1024x576.png"}}
+  </script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.17.3' id='elementor-frontend-js'></script> 
+  <script src='https://tsplus.net/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.17.1' id='pro-elements-handlers-js'></script> <noscript>
+  <link rel="stylesheet" href="https://tsplus.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.17.3" media="all"></noscript> <noscript>
+  <link rel='stylesheet' id='fastspring-style-css-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/fastspring__dist__blocks-style-build-css-v96aa362f1328f27e2fad549091a52fc45365440f.css' media='all'>
+  <link rel='stylesheet' id='trp-popup-style-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/translatepress-developer__add-ons-pro__automatic-language-detection__assets__css__trp-popup-css-vb1cbd9f2d07ba9e486fabbdc8dd287b5f0a05081.css' media='all'>
+  <link rel='stylesheet' id='normalize-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/normalize.css?ver=1700288798' media='all'>
+  <link rel='stylesheet' id='webflow-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/webflow.css?ver=1700288798' media='all'>
+  <link rel='stylesheet' id='tsplus.webflow-css' href='https://tsplus.net/wp-content/themes/hello-theme-child-master../../../../css/tsplus.webflow.css?ver=1700288798' media='all'>
+  <link rel='stylesheet' id='hello-elementor-css' href='https://tsplus.net/wp-content/themes/hello-elementor/style.min.css?ver=2.9.0' media='all'>
+  <link rel='stylesheet' id='swiper-css' href='https://tsplus.net/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' media='all'>
+  <link rel='stylesheet' id='elementor-pro-css' href='https://tsplus.net/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.17.1' media='all'>
+  <link rel='stylesheet' id='elementor-post-11320-css' href='https://tsplus.net/wp-content/uploads/elementor/css/post-11320.css?ver=1691060295' media='all'>
+  <link rel='stylesheet' id='brb-main-css-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/business-reviews-bundle__assets__css__brb-main-css-v1ce85d4ef17414bb1f455e8833e6a1a1a0b9f78c.css' media='all'>
+  <link rel='stylesheet' id='fsb_fontawesome-css' href='https://tsplus.net/wp-content/cache/asset-cleanup/css/item/fastspring__includes__-__public__css__awesome-css-vc03568f46222bd0e3de8fba2eb832859c85a964c.css' media='all'></noscript><!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
