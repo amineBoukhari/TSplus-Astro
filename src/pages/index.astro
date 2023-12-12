@@ -4,9 +4,10 @@ import Blogs from "./Blogs.astro";
 import News from "./News.astro";
 import Test from "./Test";
 import "../styles/style.css"
+import RemoteAccess from "../pages/other-posts/RemoteAccess.astro" 
 const homepage = true;
 ---
 
 <Base title="HOME TITLE" description="HOME DESCRIPTION" canonical="" ogImage="https://test-image.com/" homepage={homepage}>
-    <News client:visible/>
+    <RemoteAccess client:visible/>
 </Base>

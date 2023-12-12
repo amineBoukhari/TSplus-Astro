@@ -97,3 +97,7 @@
 .main-Pagination{
   display: flex;
 }
+
+.w-lightbox {
+  display: block;
+}

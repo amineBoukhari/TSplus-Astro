@@ -2,13 +2,10 @@
 import SideBar from "../components/SideBar.astro"
 import ExtandedSideBar from "../components/ExtandedSideBar.astro"
 import { getCollection, getEntry } from 'astro:content';
+
 import Card from "../components/Card.astro"
-import Test from "./Test";
-import Pagination from "../components/react/Pagination"
 let  allBlogPosts = await getCollection('blog')
 allBlogPosts = allBlogPosts.filter(blog=>blog.data.draft == false) 
-
-
 
 ---
 
@@ -122,7 +119,7 @@ allBlogPosts = allBlogPosts.filter(blog=>blog.data.draft == false)
                         </div>
                         <div class="elementor-element elementor-element-5a1fa0e5 elementor-widget elementor-widget-text-editor" data-id="5a1fa0e5" data-element_type="widget" data-widget_type="text-editor.default">
                           <div class="elementor-widget-container">
-                            <p style="color:#ffffff;">Industry-related content to guide you through the exciting world of remote access software.</p>
+                            <p style="color:#ffffff;">industry-related content to guide you through the exciting world of remote access software.</p>
                           </div>
                         </div>
                       </div>
@@ -135,7 +132,34 @@ allBlogPosts = allBlogPosts.filter(blog=>blog.data.draft == false)
         </section>
         <section class="elementor-section elementor-top-section elementor-element elementor-element-1a2e2895 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1a2e2895" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
           <div class="elementor-container elementor-column-gap-default">
-            <Pagination Data={allBlogPosts} client:load />
+            <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e0b7cf6" data-id="e0b7cf6" data-element_type="column">
+              <div class="elementor-widget-wrap elementor-element-populated">
+                <div class="elementor-element elementor-element-d744839 elementor-grid-eael-col-3 elementor-grid-tablet-eael-col-2 elementor-grid-mobile-eael-col-1 elementor-widget elementor-widget-eael-post-grid" data-id="d744839" data-element_type="widget" data-settings="{&quot;eael_post_grid_columns&quot;:&quot;eael-col-3&quot;,&quot;eael_post_grid_columns_tablet&quot;:&quot;eael-col-2&quot;,&quot;eael_post_grid_columns_mobile&quot;:&quot;eael-col-1&quot;}" data-widget_type="eael-post-grid.default">
+                  <div class="elementor-widget-container">
+                    <div id="eael-post-grid-d744839" class="eael-post-grid-container">
+                      <div class="eael-post-grid eael-post-appender eael-post-appender-d744839 eael-post-grid-style-two" data-layout-mode="grid">
+                        
+                         <!-- missed Article  -->
+                       
+                         {
+
+                        allBlogPosts.map(blog=>{
+                             return <Card title={blog.data.title} imageLink={blog.data.imageLink} data={blog.body} slug={"../blogs/"+blog.slug}/>
+                          })
+                         
+                        }
+                      
+                        
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="eael-load-more-button-wrap">
+                      <button class="eael-load-more-button" id="eael-load-more-btn-d744839" data-widget-id="d744839" data-widget="d744839" data-page-id="13019" data-template="{&quot;dir&quot;:&quot;lite&quot;,&quot;file_name&quot;:&quot;default.php&quot;,&quot;name&quot;:&quot;Post-Grid&quot;}" data-class="Essential_Addons_Elementor\Elements\Post_Grid" data-layout="grid" data-page="1" data-args="orderby=date&amp;order=desc&amp;ignore_sticky_posts=1&amp;post_status=publish&amp;posts_per_page=12&amp;offset=&amp;post_type=post&amp;tax_query%5B0%5D%5Btaxonomy%5D=post_tag&amp;tax_query%5B0%5D%5Bfield%5D=term_id&amp;tax_query%5B0%5D%5Bterms%5D%5B0%5D=131&amp;tax_query%5Brelation%5D=AND&amp;post__not_in%5B0%5D=22235&amp;post__not_in%5B1%5D=31271" data-max-page="3"><span class="eael_load_more_text">See More</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <SideBar/>
           </div>
         </section>
@@ -147,4 +171,4 @@ allBlogPosts = allBlogPosts.filter(blog=>blog.data.draft == false)
   
   </script>
 </body>
-</html>
+</html>     
